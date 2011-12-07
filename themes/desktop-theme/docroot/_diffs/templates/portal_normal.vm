@@ -2,7 +2,7 @@
 
 #parse ($init)
 
-<html class="#language ("lang.dir")" dir="#language ("lang.dir")">
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
 
 <head>
 	<title>$the_title - $company_name</title>
@@ -16,11 +16,11 @@
 	#dockbar()
 #end
 
-<div id="main">
+<div id="wrapper">
 	<header id="banner" role="banner">
 		#if (!$is_signed_in && !$is_maximized)
 			<div id="login">
-				<a href="$sign_in_url">$sign_in_text</a>
+				<a href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
 			</div>
 		#end
 	</header>

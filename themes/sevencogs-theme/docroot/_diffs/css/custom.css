@@ -21,7 +21,6 @@ a:focus {
 #skip-to-content,
 #heading .company-title span,
 #heading .page-title,
-#heading .site-title,
 #navigation h1,
 #navigation .child-menu,
 #breadcrumbs h1 {
@@ -52,10 +51,6 @@ a:focus {
 	min-height: 40px;
 }
 
-#heading .company-title {
-	margin: 0;
-}
-
 /* ---------- Sign In ---------- */
 
 #sign-in {
@@ -64,6 +59,31 @@ a:focus {
 	position: absolute;
 	right: 0;
 	top: -1em;
+}
+
+/* ---------- Heading ---------- */
+
+#heading .site-title {
+	margin: 0;
+}
+
+#heading .site-title .site-name {
+	@include border-radius(4px);
+	@include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 1px #FFF);
+	background: #1F4E6E;
+	color: #FFF;
+	float: right;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 7px 17px 7px 17px;
+	position: absolute;
+	right: 0;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+	top: -1.5em;
+}
+
+.signed-out #heading .site-title .site-name {
+	margin-top: 4em;
 }
 
 /* ---------- Navigation ---------- */
@@ -454,8 +474,8 @@ a:focus .callout-extraborder {
 
 @mixin widthSelector($selector, $sWidth, $mWidth, $lWidth) {
 	html.#{$selector}{
-		@if $selector != device-brand-unknown {	
-			
+		@if $selector != device-brand-unknown {
+
 /* -------- Custom Seven Cogs Web Content -------- */
 
 			@include customContent("aui-view-4", $sWidth);
@@ -463,8 +483,8 @@ a:focus .callout-extraborder {
 			@include customContent("aui-view-480", $mWidth);
 			@include customContent("aui-view-720", $lWidth);
 
-/* -------- Seven Cogs Mobile Views -------- */	
-			
+/* -------- Seven Cogs Mobile Views -------- */
+
 			&.aui-view-4,
 			&.aui-view-320,
 			&.aui-view-480,

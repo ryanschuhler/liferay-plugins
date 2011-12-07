@@ -1,9 +1,10 @@
+@import "compass";
+
 @import url(color_schemes/day.css);
 
 /* -------- Global -------- */
 
 #skip-to-content,
-#heading .community-title,
 #heading .page-title,
 #navigation h1,
 #navigation .child-menu {
@@ -16,13 +17,18 @@
 #footer {
 	margin: 0 auto;
 }
-	
+
 body {
 	background: #1C3240 url(../images/custom/bg.png) 100% 0 repeat-x;
+	overflow: hidden;
 }
 
 body.signed-in {
 	background-position: 0 31px;
+}
+
+html {
+	min-height: 100%;
 }
 
 /* -------- Wrapper / Skip / Banner / Sign-in -------- */
@@ -63,17 +69,30 @@ body.signed-in {
 
 /* -------- Heading -------- */
 
-#heading .company-title,
 #heading .logo {
+	margin: 55px 0 0;
+	position: absolute;
+}
+
+#heading .site-title {
 	float: left;
-}
-
-#heading .company-title {
 	margin: 0;
+	position: absolute;
+	width: 960px;
 }
 
-#heading .logo {
-	margin: 56px 0 0;
+#heading .site-title .site-name {
+	@include border-radius(4px);
+	@include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 1px #FFF);
+	background: #1D3646;
+	color: #FFF;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 7px 17px 7px 17px;
+	position: absolute;
+	right: 0;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+	top: 3em;
 }
 
 /* -------- Navigation -------- */
@@ -89,7 +108,7 @@ body.signed-in {
 
 #navigation ul {
 	list-style: none;
-	margin: 0;
+	margin: 0 0 0 200px;
 }
 
 .ie6 #navigation ul,
@@ -124,7 +143,7 @@ body.signed-in {
 
 .ie6 #navigation .selected a {
 	background: #2F2F2F none;
-}	
+}
 
 #navigation span {
 	text-shadow: 1px 1px #000;

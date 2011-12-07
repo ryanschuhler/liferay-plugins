@@ -22,21 +22,21 @@
 
 		<header id="banner" role="banner">
 			<hgroup id="heading">
-				<h1 class="company-title">
-					<a class="$logo_css_class" href="$company_url" title="#language("go-to") $company_name">
-						<span>$company_name</span>
+				<h1 class="site-title">
+					<a class="$logo_css_class" href="$site_default_url" title="#language("go-to") $site_name">
+						<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
 					</a>
+
+					#if ($show_site_name)
+						<span class="site-name" title="#language("go-to") $site_name">
+							$site_name
+						</span>
+					#end
 				</h1>
 
-				<h2 class="community-title">
-					<a href="$community_default_url" title="#language("go-to") $community_name">
-						<span>$community_name</span>
-					</a>
-				</h2>
-
-				<h3 class="page-title">
-					<span>$the_title</span>
-				</h3>
+			<h2 class="page-title">
+				<span>$the_title</span>
+			</h2>
 			</hgroup>
 
 			#if (!$is_signed_in)

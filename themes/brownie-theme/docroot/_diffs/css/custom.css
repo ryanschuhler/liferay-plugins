@@ -1,7 +1,8 @@
+@import "compass";
+
 /* -------- Global -------- */
 
 #skip-to-content,
-#heading .community-title,
 #heading .page-title,
 #navigation h1,
 #navigation .child-menu,
@@ -18,6 +19,7 @@ body {
 
 #wrapper {
 	margin: 0 auto;
+	overflow-x: hidden;
 	position: relative;
 }
 
@@ -49,15 +51,39 @@ body {
 	position: relative;
 }
 
-#heading .company-title {
+#heading .logo {
+	display: block;
+}
+
+#heading .logo img {
+	display: block;
+	margin: 0 auto;
+	zoom: 1;
+}
+
+#heading .site-title {
 	height: 115px;
 	margin: 0 auto;
 	padding: 15px;
 	width: 1024px;
 }
 
-#heading .company-title a {
-	margin: 0 auto;
+#heading .site-title .site-name {
+	@include border-radius(4px);
+	@include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 1px #FFF);
+	background: #88715A;
+	color: #FFF;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 7px 17px 7px 17px;
+	position: absolute;
+	right: 3em;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+	top: 1em;
+}
+
+.signed-out #heading .site-title .site-name {
+	margin-top: 2em;
 }
 
 /* -------- Navigation -------- */

@@ -1,7 +1,8 @@
+@import "compass";
+
 /* -------- Global -------- */
 
 #skip-to-content,
-#heading .community-title,
 #heading .page-title,
 #navigation h1,
 #navigation .child-menu {
@@ -39,7 +40,7 @@
 
 #sign-in {
 	position: absolute;
-	top: 2.5em;
+	top: 3.5em;
 }
 
 /* -------- Banner -------- */
@@ -67,8 +68,34 @@
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #00B017),color-stop(1, #00570C));
 }
 
-#heading .company-title {
+#heading .site-title {
 	margin: 0;
+}
+
+#heading .site-title .site-name {
+	@include border-radius(4px);
+	@include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 1px #FFF);
+	color: #FFF;
+	float: right;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: -5px;
+	padding: 3px 13px 3px 13px;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.ie7 #heading .site-title .site-name {
+	position: absolute;
+	right: 4em;
+	top: 1em;
+}
+
+.signed-out #heading .site-title .site-name {
+	margin-top: -17px;
+}
+
+.ie7 .signed-out #heading .site-title .site-name {
+	margin-top: 5px;
 }
 
 /* -------- Navigation -------- */
@@ -153,9 +180,6 @@
 
 #breadcrumbs {
 	display: none;
-}
-
-.portlet {
 }
 
 /* -------- Footer -------- */

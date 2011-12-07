@@ -2,6 +2,10 @@
 
 @import url(custom_common.css);
 
+@import url(color_schemes/green.css);
+
+@import url(color_schemes/orange.css);
+
 /* ---------- Base styles ---------- */
 
 body {
@@ -74,11 +78,11 @@ body #banner .logo a {
 	margin-top: 2em;
 }
 
-.current-community {
+.current-site {
 	display: none;
 }
 
-.logo .current-community {
+.logo .current-site {
 	background: #A6AFBE url(../images/dock/my_places_public.png) no-repeat 15px 50%;
 	color: #FFF;
 	display: block;
@@ -91,7 +95,7 @@ body #banner .logo a {
 }
 
 #skip-to-content:focus {
-	clip: auto;
+	clip: rect(auto auto auto auto);
 	right: 0;
 	z-index: 200;
 }
@@ -105,11 +109,11 @@ body #banner .logo a {
 	top: 1.4em;
 }
 
-.guest-community .logo .current-community {
+.guest-site .logo .current-site {
 	display: none;
 }
 
-.private-page .logo .current-community {
+.private-page .logo .current-site {
 	background-image: url(../images/dock/my_places_private.png);
 }
 
@@ -129,12 +133,18 @@ body #banner .logo a {
 	margin: 0 auto 5px;
 	min-height: 2.2em;
 	padding: 0 5px;
+	position: relative;
+	z-index: 1;
 }
 
 #navigation ul {
 	list-style: none;
 	margin: 0;
 	padding: 3px;
+}
+
+.ie7 #navigation ul {
+	padding: 2px;
 }
 
 #navigation li, #navigation a {
@@ -144,6 +154,7 @@ body #banner .logo a {
 .ie6 #navigation li, .ie7 #navigation li, .ie6 #navigation a, .ie7 #navigation a {
 	display: inline;
 	zoom: 1;
+	z-index: 200;
 }
 
 #navigation li {
@@ -160,27 +171,32 @@ body #banner .logo a {
 	text-decoration: none;
 }
 
-#navigation .selected a, #navigation a:hover, #navigation a:focus, #navigation .child-menu li a {
+.ie6 #navigation a, .ie7 #navigation a {
+	padding: 4px 15px;
+}
+
+#navigation .yui3-dd-drop a {
+	cursor: move;
+}
+
+#navigation .selected a, #navigation li.hover a, #navigation a:hover, #navigation a:focus, #navigation .child-menu li a, #navigation .yui3-dd-dragging, .lfr-navigation-proxy {
 	background: #313334;
 	color: #FFF;
 	outline: 0;
 	text-shadow: -1px -1px #000;
 }
 
-#navigation li:hover .child-menu {
+#navigation li.hover .child-menu {
 	background: #1E2529;
 	display: block;
 	position: absolute;
 	width: 200px;
-	z-index: 200;
+	z-index: 250;
 }
 
-.ie6 #navigation li.hover .child-menu {
-	background: #1E2529;
-	display: block;
-	position: absolute;
-	width: 200px;
-	z-index: 200;
+.ie6 #navigation ul.child-menu-visible, .ie6 #navigation li.hover .child-menu, .ie7 #navigation ul.child-menu-visible, .ie7 #navigation li.hover ul.child-menu {
+	left: 0;
+	top: 25px;
 }
 
 #navigation .child-menu {
@@ -202,12 +218,16 @@ body #banner .logo a {
 	zoom: 1;
 }
 
-#navigation .child-menu li a:hover {
+#navigation .child-menu li a:hover, #navigation li a.active {
 	background-color: #020509;
 }
 
 #navigation .child-menu .selected a {
 	background: #020509 url(../images/navigation/bullet_selected.png) no-repeat 5px 50%;
+}
+
+.nav-menu-style-arrows ul {
+	list-style-image: url(../images/navigation/bullet_selected.png);
 }
 
 /* ---------- Portlet wrapper and icons ---------- */
@@ -282,12 +302,64 @@ body #banner .logo a {
 	text-align: right;
 }
 
+/* ---------- Site breadcrumbs ---------- */
+
+.site-breadcrumbs {
+	margin: 0 0 5px;
+	width: auto;
+}
+
+.site-breadcrumbs ul {
+	background-color: #FFF;
+	border: 1px solid #DEDEDE;
+	border-color: #C0C2C5;
+	margin: 0;
+}
+
+.site-breadcrumbs li {
+	background-image: none;
+	margin-right: 0;
+	padding-left: 0.75em;
+	padding-right: 0;
+}
+
+.site-breadcrumbs li span {
+	background: url(../images/common/breadcrumbs.png) no-repeat 100% 50%;
+	display: block;
+	padding: 0.5em 15px 0.5em 0;
+}
+
+.site-breadcrumbs li span a {
+	text-decoration: none;
+}
+
+.site-breadcrumbs li.first a {
+	color: #369;
+	font-weight: bold;
+}
+
+.site-breadcrumbs li.last a {
+	color: #4B5567;
+	font-size: 1.3em;
+}
+
+.site-breadcrumbs .last {
+	font-size: 1em;
+	margin-top: 0;
+	padding-right: 0;
+}
+
+.site-breadcrumbs .last span {
+	background-image: none;
+	padding: 0;
+}
+
 /* ---------- Hudcrumbs ---------- */
 
 .lfr-hudcrumbs {
 	position: fixed;
 	top: 0;
-	z-index: 200;
+	z-index: 440;
 }
 
 .lfr-hudcrumbs ul {
@@ -342,7 +414,7 @@ body #banner .logo a {
 	box-shadow: 1px 1px 0 #FFF;
 }
 
-.logo .current-community {
+.logo .current-site {
 	-moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5), 1px 1px 0 #FFF;
 	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5), 1px 1px 0 #FFF;
 	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5), 1px 1px 0 #FFF;

@@ -49,18 +49,30 @@ $theme.include($body_top_include)
 		#end
 	</header>
 
-	#if ($selectable)
-		$theme.include($content_include)
-	#else
-		$portletDisplay.recycle()
+	<div id="content">
+		<nav class="site-breadcrumbs" id="breadcrumbs">
+			<h1>
+				<span>#language("breadcrumbs")</span>
+			</h1>
 
-		$portletDisplay.setTitle($the_title)
+			#breadcrumbs()
+		</nav>
 
-		$theme.wrapPortlet("portlet.vm", $content_include)
-	#end
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
 
 	<footer id="footer" role="contentinfo">
-		<div class="language">$theme.language()</div>
+		<p class="powered-by">
+			#language("powered-by") <a href="http://www.liferay.com" rel="external">Liferay</a>
+		</p>
 	</footer>
 </div>
 
