@@ -2,17 +2,13 @@
 
 /* -------- Global -------- */
 
-#skip-to-content,
-#heading .page-title,
-#navigation h1,
-#navigation .child-menu {
+#heading .page-title, #navigation h1, #navigation .child-menu, #skip-to-content {
 	clip: rect(0 0 0 0);
 	position: absolute;
 }
 
 body {
-	background: #E7E7E7;
-	overflow: hidden;
+	background-color: #E7E7E7;
 }
 
 html {
@@ -21,30 +17,28 @@ html {
 
 /* -------- Wrapper / Skip / Sign-in -------- */
 
-#wrapper {
-	margin: 16px auto;
-	position: relative;
-	width: 967px;
-}
-
-#skip-to-content,
 #sign-in {
-	color: #FFF;
-	right: 2em;
+	position: absolute;
+	top: 1.5em;
 }
 
 #skip-to-content {
 	top: 2.75em;
+
+	&:active, &:focus {
+		clip: auto;
+	}
 }
 
-#skip-to-content:active,
-#skip-to-content:focus {
-	clip: auto;
+#sign-in, #skip-to-content {
+	color: #FFF;
+	right: 2em;
 }
 
-#sign-in {
-	position: absolute;
-	top: 1.5em;
+#wrapper {
+	margin: 16px auto;
+	position: relative;
+	width: 967px;
 }
 
 /* -------- Heading -------- */
@@ -52,34 +46,34 @@ html {
 #heading {
 	background: url(../images/custom/heading_bg.png) no-repeat;
 	height: 194px;
-}
 
-#heading .logo {
-	display: block;
-}
+	.logo {
+		display: block;
 
-#heading .logo img {
-	display: block;
-	margin: 0 auto;
-}
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
 
-#heading .site-title {
-	margin: 0;
-	padding: 70px 30px;
-}
+	.site-title {
+		margin: 0;
+		padding: 70px 30px;
 
-#heading .site-title .site-name {
-	@include border-radius(4px);
-	@include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 1px #FFF);
-	background: #E7E7E7;
-	color: #FFF;
-	font-size: 1em;
-	font-weight: bold;
-	padding: 7px 17px 7px 17px;
-	position: absolute;
-	right: 2em;
-	text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-	top: 2em;
+		.site-name {
+			@include border-radius(4px);
+			@include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 1px #FFF);
+			background-color: #E7E7E7;
+			color: #FFF;
+			font-size: 1em;
+			font-weight: bold;
+			padding: 7px 17px 7px 17px;
+			position: absolute;
+			right: 2em;
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+			top: 2em;
+		}
+	}
 }
 
 /* -------- Navigation -------- */
@@ -89,53 +83,55 @@ html {
 	right: 5px;
 	position: absolute;
 	width: 182px;
+
+	a {
+		color: #27A;
+		font-family: Verdana, Arial, Sans-Serif;
+		font-size: 14px/1.5;
+
+		&:active, &:focus, &:hover {
+			text-decoration: underline;
+		}
+
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+
+		&:after {
+			clear: both;
+			content: ".";
+			display: block;
+			height: 0;
+			line-height: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+#navigation a, #navigation li {
+	text-decoration: none;
 }
 
 .ie6 #navigation {
 	margin: 5px;
+
+	.delete-tab {
+		right: 0;
+		top: 5px;
+	}
 }
 
-#navigation ul {
-	list-style: none;
-	margin: 0;
-}
-
-.ie6 #navigation ul,
-.ie7 #navigation ul {
+.ie6 #navigation ul, .ie7 #navigation ul {
 	zoom: 1;
 }
 
-#navigation ul:after {
-	clear: both;
-	content: ".";
-	display: block;
-	height: 0;
-	line-height: 0;
-	visibility: hidden;
-}
-
-#navigation li,
-#navigation a {
-	text-decoration: none;
-}
-
-#navigation a {
-	color: #27A;
-	font: 14px/1.5 Verdana, Arial, Sans-Serif;
-}
-
-#navigation a:active,
-#navigation a:focus,
-#navigation a:hover {
-	text-decoration: underline;
-}
-
-.ie6 #navigation .delete-tab {
-	right: 0;
-	top: 5px;
-}
-
 /* -------- Content -------- */
+
+#breadcrumbs {
+	display: none;
+}
 
 #content {
 	background: url(../images/custom/content_bg.png);
@@ -147,27 +143,10 @@ html {
 	margin-top: -22px;
 }
 
-#breadcrumbs {
-	display: none;
-}
-
 /* ---------- Portlet ---------- */
 
 .portlet {
 	margin: 0 0 20px;
-}
-
-.portlet-topper {
-	margin: 0 0 8px;
-}
-
-.portlet-title {
-	font: 18px Trebuchet MS, Verdana, sans-serif;
-	letter-spacing: -1px;
-}
-
-.portlet-title img {
-	display: none;
 }
 
 .portlet-content {
@@ -176,13 +155,26 @@ html {
 	padding: 0;
 }
 
+.portlet-title {
+	font: 18px Trebuchet MS, Verdana, sans-serif;
+	letter-spacing: -1px;
+
+	img {
+		display: none;
+	}
+}
+
+.portlet-topper {
+	margin: 0 0 8px;
+}
+
 /* -------- Footer -------- */
 
 #footer {
 	background: url(../images/custom/footer_bg.png);
 	height: 54px;
-}
 
-#footer p {
-	margin-left: 20px;
+	p {
+		margin-left: 20px;
+	}
 }

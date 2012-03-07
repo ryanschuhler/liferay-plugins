@@ -2,15 +2,9 @@
 
 /* -------- Global -------- */
 
-#skip-to-content,
-#heading .page-title,
-#navigation h1 {
+#heading .page-title, #navigation h1, #skip-to-content {
 	clip: rect(0 0 0 0);
 	position: absolute;
-}
-
-body {
-	overflow: hidden;
 }
 
 html {
@@ -19,29 +13,27 @@ html {
 
 /* -------- Wrapper / Skip / Sign-in -------- */
 
-#wrapper {
-	margin: 0 auto;
-	position: relative;
-}
-
-#skip-to-content,
 #sign-in {
-	color: #FFF;
-	top: 1.5em;
+	position: absolute;
+	right: 2em;
 }
 
 #skip-to-content {
 	left: 2em;
+
+	&:active, &:focus {
+		clip: auto;
+	}
 }
 
-#skip-to-content:active,
-#skip-to-content:focus {
-	clip: auto;
+#sign-in, #skip-to-content {
+	color: #FFF;
+	top: 1.5em;
 }
 
-#sign-in {
-	position: absolute;
-	right: 2em;
+#wrapper {
+	margin: 0 auto;
+	position: relative;
 }
 
 /* -------- Banner-------- */
@@ -54,24 +46,24 @@ html {
 #heading {
 	margin: 0 auto;
 	width: 960px;
-}
 
-#heading .site-title {
-	margin: 0;
-	padding: 15px 0 10px;
-}
+	.site-title {
+		margin: 0;
+		padding: 15px 0 10px;
 
-#heading .site-title .site-name {
-	@include border-radius(4px);
-	@include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 1px #FFF);
-	background: #EEEEEE;
-	color: #0F0F0F;
-	font-size: 1em;
-	font-weight: bold;
-	left: 29em;
-	padding: 7px 17px 7px 17px;
-	position: relative;
-	top: -0.5em;
+		.site-name {
+			@include border-radius(4px);
+			@include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 1px #FFF);
+			background-color: #EEEEEE;
+			color: #0F0F0F;
+			font-size: 1em;
+			font-weight: bold;
+			left: 29em;
+			padding: 7px 17px 7px 17px;
+			position: relative;
+			top: -0.5em;
+		}
+	}
 }
 
 /* -------- Navigation -------- */
@@ -81,56 +73,58 @@ html {
 	margin: -23px auto;
 	text-transform: uppercase;
 	width: 960px;
+
+	a {
+		background: url(../images/custom/navigation_bg.png);
+		color: #B7B7B7;
+		padding: 9px;
+		text-decoration: none;
+
+		&:active, &:focus, &:hover {
+			color: #FFF;
+		}
+
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+
+		&:after {
+			clear: both;
+			content: ".";
+			display: block;
+			height: 0;
+			line-height: 0;
+			visibility: hidden;
+		}
+	}
+
+	.first {
+		background: url(../images/custom/navigation_bg.png) no-repeat left -32px;
+		padding-left: 7px;
+	}
+
+	.last {
+		background: url(../images/custom/navigation_bg.png) no-repeat right -64px;
+		padding-right: 7px;
+	}
 }
 
-#navigation ul {
-	list-style: none;
-	margin: 0;
-}
-
-.ie6 #navigation ul,
-.ie7 #navigation ul {
-	zoom: 1;
-}
-
-#navigation ul:after {
-	clear: both;
-	content: ".";
-	display: block;
-	height: 0;
-	line-height: 0;
-	visibility: hidden;
-}
-
-#navigation li,
-#navigation a {
+#navigation a, #navigation li {
 	float: left;
 }
 
-#navigation .first {
-	background: url(../images/custom/navigation_bg.png) no-repeat left -32px;
-	padding-left: 7px;
-}
 
-#navigation .last {
-	background: url(../images/custom/navigation_bg.png) no-repeat right -64px;
-	padding-right: 7px;
-}
-
-#navigation a {
-	background: url(../images/custom/navigation_bg.png);
-	color: #B7B7B7;
-	padding: 9px;
-	text-decoration: none;
-}
-
-#navigation a:active,
-#navigation a:focus,
-#navigation a:hover {
-	color: #FFF;
+.ie6 #navigation ul, .ie7 #navigation ul {
+	zoom: 1;
 }
 
 /* -------- Content -------- */
+
+#breadcrumbs {
+	display: none;
+}
 
 #content {
 	margin: 0 auto;
@@ -139,23 +133,15 @@ html {
 	width: 960px;
 }
 
-#breadcrumbs {
-	display: none;
-}
-
 .portlet {
 	margin: 0 0 15px;
-}
-
-.portlet-topper {
-	background: #EEE;
-	padding: 4px;
 }
 
 .portlet-content {
 	border: 1px solid #EEE;
 	color: #303030;
-	font: 12px Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
 	padding: 10px;
 }
 
@@ -165,15 +151,20 @@ html {
 	text-transform: uppercase;
 }
 
+.portlet-topper {
+	background-color: #EEE;
+	padding: 4px;
+}
+
 /* -------- Footer -------- */
 
 #footer {
 	background: url(../images/custom/navigation_bg.png);
 	padding: 9px 0;
-}
 
-#footer p {
-	color: #EEE;
-	margin: 0 auto;
-	width: 960px;
+	p {
+		color: #EEE;
+		margin: 0 auto;
+		width: 960px;
+	}
 }

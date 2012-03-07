@@ -12,7 +12,7 @@
 				<td id="column-2" class="aui-w33 portlet-column portlet-column-first">
 					$processor.processColumn("column-2", "portlet-column-content portlet-column-content-first")
 				</td>
-				<td id="column-3" class="aui-w33 portlet-column" id="column-3">
+				<td id="column-3" class="aui-w33 portlet-column">
 					$processor.processColumn("column-3", "portlet-column-content")
 				</td>
 				<td id="column-4" class="aui-w33 portlet-column portlet-column-last">

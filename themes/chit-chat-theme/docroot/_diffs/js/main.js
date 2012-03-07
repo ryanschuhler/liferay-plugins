@@ -3,6 +3,8 @@ AUI().ready(
 	function(A) {
 		var toggleTask = A.debounce(
 			function(event) {
+				var currentTarget = event.currentTarget;
+				
 				var childMenu = this.one('.child-menu');
 
 				if (childMenu) {
@@ -18,7 +20,7 @@ AUI().ready(
 					toggleTask.delay(0, event);
 				},
 
-				mouseleave: hideTask
+				mouseleave: toggleTask
 			}
 		);
 	}

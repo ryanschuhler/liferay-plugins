@@ -1,3 +1,5 @@
+@import "compass";
+
 /* ---------- Base styles ---------- */
 
 .simple #login a {
@@ -8,4 +10,8 @@
 
 body.simple {
 	background: url(../../images/color_schemes/simple/wallpaper/bg.jpg) no-repeat fixed 50% 50%;
+
+	&.portal-popup {
+		background: none;
+	}
 }

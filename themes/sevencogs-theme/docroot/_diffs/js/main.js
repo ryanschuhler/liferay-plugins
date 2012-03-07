@@ -1,3 +1,5 @@
-if (!AUI().UA.ie || AUI().UA.ie >= 8) {
+var ie = AUI().UA.ie;
+
+if (!ie || ie >= 8) {
 	AUI().use('aui-viewport');
 }

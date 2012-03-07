@@ -2,10 +2,7 @@
 
 /* -------- Global -------- */
 
-#skip-to-content,
-#heading .page-title,
-#navigation h1,
-#navigation .child-menu {
+#heading .page-title, #navigation h1, #navigation .child-menu, #skip-to-content {
 	clip: rect(0 0 0 0);
 	position: absolute;
 }
@@ -13,7 +10,6 @@
 body {
 	background: #698E00 url(../images/custom/body_bg.png) center top;
 	color: #333;
-	overflow-x: hidden;
 }
 
 html {
@@ -23,31 +19,30 @@ html {
 /* -------- Wrapper / Skip / Sign-in -------- */
 
 #wrapper {
-	font: 12px "Lucida Sans Unicode", sans-serif;
+	font-family: "Lucida Sans Unicode", sans-serif;
+	font-size: 12px;
 	margin: 0 auto;
 	position: relative;
 	width: 960px;
 }
 
-#skip-to-content,
 #sign-in {
-	color: #688B00;
-	right: 2em;
+	position: absolute;
+	top: 1.5em;
 }
 
 #skip-to-content {
 	top: 3em;
 	z-index: 1;
+
+	&:active, &:focus {
+		clip: auto;
+	}
 }
 
-#skip-to-content:active,
-#skip-to-content:focus {
-	clip: auto;
-}
-
-#sign-in {
-	position: absolute;
-	top: 1.5em;
+#sign-in, #skip-to-content {
+	color: #688B00;
+	right: 2em;
 }
 
 /* -------- Heading -------- */
@@ -56,25 +51,25 @@ html {
 	background: #688B00 url(../images/custom/heading_bg.jpg) no-repeat center bottom;
 	height: 135px;
 	position: relative;
-}
 
-#heading .site-title {
-	margin: 0;
-	padding: 18px 25px;
-}
+	.site-title {
+		margin: 0;
+		padding: 18px 25px;
 
-#heading .site-title .site-name {
-	@include border-radius(4px);
-	@include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 1px #FFF);
-	background: #7EA800;
-	color: #FFF;
-	font-size: 1em;
-	font-weight: bold;
-	padding: 7px 17px;
-	position: absolute;
-	right: 1em;
-	text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-	top: 2em;
+		.site-name {
+			@include border-radius(4px);
+			@include box-shadow(inset 0 0 5px rgba(0, 0, 0, 0.8), 1px 1px 1px #FFF);
+			background-color: #7EA800;
+			color: #FFF;
+			font-size: 1em;
+			font-weight: bold;
+			padding: 7px 17px;
+			position: absolute;
+			right: 1em;
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+			top: 2em;
+		}
+	}
 }
 
 .signed-out #heading .site-title .site-name {
@@ -86,55 +81,51 @@ html {
 #navigation {
 	background: url(../images/custom/navigation_bg.png) 0 100%;
 	height: 42px;
+
+	a {
+		color: #553;
+		display: block;
+		padding: 12px 20px 14px;
+		text-decoration: none;
+
+		&:active, &:focus, &:hover {
+			background-color: #E8F6BF;
+			color: #553;
+		}
+	}
+
+	ul {
+		float: right;
+		list-style: none;
+		margin: 0;
+
+		&:after {
+			clear: both;
+			content: ".";
+			display: block;
+			height: 0;
+			line-height: 0;
+			visibility: hidden;
+		}
+	}
 }
 
-#navigation ul {
-	float: right;
-	list-style: none;
-	margin: 0;
-}
-
-.ie6 #navigation ul,
-.ie7 #navigation ul {
-	zoom: 1;
-}
-
-#navigation ul:after {
-	clear: both;
-	content: ".";
-	display: block;
-	height: 0;
-	line-height: 0;
-	visibility: hidden;
-}
-
-#navigation li,
-#navigation a {
+#navigation a, #navigation li {
 	float: left;
 }
 
-#navigation a {
-	color: #553;
-	display: block;
-	padding: 12px 20px 14px;
-	text-decoration: none;
-}
-
-#navigation a:active,
-#navigation a:focus,
-#navigation a:hover {
-	background: #E8F6BF;
-	color: #553;
+.ie6 #navigation ul, .ie7 #navigation ul {
+	zoom: 1;
 }
 
 /* -------- Content -------- */
 
-#content {
-	padding: 0 10px 24px;
-}
-
 #breadcrumbs {
 	display: none;
+}
+
+#content {
+	padding: 0 10px 24px;
 }
 
 /* -------- Footer -------- */
@@ -143,8 +134,8 @@ html {
 	background: #8BBE2E url(../images/custom/footer_bg.gif) repeat-x;
 	padding: 20px 10px;
 	text-align: right;
-}
 
-#footer p {
-	margin: 0;
+	p {
+		margin: 0;
+	}
 }

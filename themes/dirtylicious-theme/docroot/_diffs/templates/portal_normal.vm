@@ -22,7 +22,7 @@
 			<a href="#main-content" id="skip-to-content">#language("skip-to-content")</a>
 
 			<header id="banner" role="banner">
-				<hgroup id="heading">
+				<div id="heading">
 					<h1 class="site-title">
 						<a class="$logo_css_class" href="$site_default_url" title="#language("go-to") $site_name">
 							<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
@@ -38,7 +38,7 @@
 					<h2 class="page-title">
 						<span>$the_title</span>
 					</h2>
-				</hgroup>
+				</div>
 
 				#if (!$is_signed_in)
 					<a href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>

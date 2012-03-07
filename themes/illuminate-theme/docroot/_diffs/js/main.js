@@ -1,10 +1,11 @@
 AUI().ready(
+	'aui-base', 'anim-node-plugin',
 
 	/*
 	This function gets loaded when all the HTML, not including the portlets, is
 	loaded.
 	*/
-		'aui-base', 'anim-node-plugin', function(A) {
+	function(A) {
 		var nav = A.all('#navigation ul');
 		var navLight = A.all('#navigation #navigation-light');
 		
@@ -18,13 +19,15 @@ AUI().ready(
 			duration: 0.3
 		});
 
-		nav.hover(function(event) {
-			A.one('#navigation-light').fx.set('reverse', false).run();
-		},
-		function(event) {
-			A.one('#navigation-light').fx.set('reverse', true).run();
-		});
+		nav.hover(
+			function(event) {
+				A.one('#navigation-light').fx.set('reverse', false).run();
+			},
 
+			function(event) {
+				A.one('#navigation-light').fx.set('reverse', true).run();
+			}
+		);
 	}
 );
 

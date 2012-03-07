@@ -1,3 +1,5 @@
+@import "compass";
+
 @import url(color_schemes/nature.css);
 
 @import url(color_schemes/simple.css);
@@ -10,15 +12,14 @@
 
 #login {
 	border-bottom: 1px solid #EEF0F2;
-	min-width: 960px;
 	padding: 3px;
 	text-align: right;
+
+	a {
+		margin-right: 10px;
+	}
 }
 
-#login a {
-	margin-right: 10px;
-}
-
-#main {
+#login, #main {
 	min-width: 960px;
 }
