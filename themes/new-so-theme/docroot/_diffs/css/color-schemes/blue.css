@@ -1,0 +1,65 @@
+@import "compass";
+
+body.new-so-blue {
+	color: #1A1A1A;
+	background: #A7CEDF;
+
+	#banner {
+		border-bottom: solid 2px #878787;
+	}
+
+	#sign-in {
+		border: solid 1px #878787;	
+	}
+
+	#navigation ul {
+		border: solid 1px #878787;	
+	}
+
+	#navigation li {
+		border-right: solid 1px #878787;
+	}
+
+	#navigation li:last-child {
+		border-right: 0;
+	}
+
+	#navigation li:hover:last-child {
+		box-shadow: none;
+	}
+
+	.portlet-topper {
+		border: solid 1px #878787;
+		box-shadow: 0px 1px 0px #525151;
+	}
+
+	.portlet a {
+		color: #1A1A1A;
+	}
+
+	.portlet a:hover {
+		color: #8F8F8F;
+		text-decoration: none;
+	}
+
+	.portlet-document-library .lfr-app-column-view .lfr-app-column-view-content {
+		background: #FFF;
+	}
+
+	.aui-paginator-container, .document-library-breadcrumb, .lfr-header-row, .portlet-section-header th, .portlet-wiki .child-pages h2, .results-row.alt td, .site-breadcrumbs {
+		border: solid 1px #DFDFDF;
+		color: #1A1A1A;
+	}
+}
+
+/* ---------- EXTRAS ---------- */
+
+body.new-so-blue {
+	#banner, #sign-in, #navigation ul, .portlet-topper {
+		@include background(linear-gradient(#DFF4FF, #FFF));
+	}
+
+	.aui-paginator-container, .document-library-breadcrumb, .lfr-header-row, .portlet-section-header th, .portlet-wiki .child-pages h2, .results-row.alt td, .site-breadcrumbs {
+		@include background(linear-gradient(#FFF, #DFF4FF));
+	}
+}
