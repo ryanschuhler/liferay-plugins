@@ -177,6 +177,7 @@ body {
 }
 
 #navigation .child-menu li:hover .grandchild-menu {
+	box-shadow: 0px 2px 5px #BFBFBF;
 	position: absolute;
 	left: 175px;
 	top: -13px;
