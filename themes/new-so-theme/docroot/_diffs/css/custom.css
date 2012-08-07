@@ -6,6 +6,10 @@ body {
 	color: #1A1A1A;
 }
 
+#navigation h1, #skip-to-content, .page-title, .powered-by, .site-breadcrumbs {
+	display: none;
+}
+
 #banner {
 	border-bottom: solid 2px #DFDFDF;
 	float: left;
@@ -51,8 +55,9 @@ body {
 #navigation li {
 	border-right: solid 1px #DFDFDF;
 	float: left;
-	padding: 3px 15px;
+	padding: 3px 20px;
 	text-shadow: 0px 1px 0px #FFF;
+	position: relative;
 }
 
 #navigation li:last-child {
@@ -60,14 +65,13 @@ body {
 }
 
 #navigation li:hover, #sign-in:hover {
-	background: #DFDFDF;
 	box-shadow: 1px 0px 0px #FFF;
 }
 
 #navigation .selected, #navigation .selected:hover {
 	background: #878787;
-	box-shadow: #575757 0px 0px 15px 0px inset;
 	border: solid 1px #555555;
+	box-shadow: #575757 0px 0px 15px 0px inset;
 	height: 17px;
 }
 
@@ -83,6 +87,93 @@ body {
 #navigation a {
 	color: #1A1A1A;
 	text-decoration: none;
+}
+
+#navigation .child-menu {
+	display: none;
+}
+
+#navigation li:hover .child-menu {
+	background: #EAEAEA;
+	border: solid 1px #CFCFCF;
+	box-shadow: 0px 2px 5px #BFBFBF;
+	display: block;
+	float: none;
+	left: -60px;
+	margin: 5px 0 0 0;
+	position: absolute;
+	top: 100%;
+	width: 200px;
+	z-index: 5;
+}
+
+#navigation .child-menu li a {
+	display: block;
+	padding: 5px;
+	text-align: center;
+}
+
+#navigation .child-menu li {
+	background: #FFF;
+	border-bottom: solid 1px #DFDFDF;
+	border-right: 0;
+	box-shadow: 0 0 0;
+	float: none;
+	margin: 0 auto;
+	padding: 0;
+	width: 190px;
+}
+
+#navigation .child-menu li:first-child {
+	margin-top: 5px;
+}
+
+#navigation .child-menu li:last-child {
+	box-shadow: 0 1px 0 #FFF;
+	margin-bottom: 5px;
+}
+
+#navigation .child-menu:before {
+	border: 10px solid transparent;
+	border-bottom-color: #EAEAEA;
+	content: "";
+	display: block;
+	left: 90px;
+	position: absolute;
+	top: -19px;
+	z-index: 10;
+}
+
+#navigation .child-menu:after {
+	border: 10px solid transparent;
+	border-bottom-color: #CFCFCF;
+	content: "";
+	display: block;
+	left: 90px;
+	position: absolute;
+	top: -20px;
+	z-index: 9;
+}
+
+#navigation .child-menu .selected, #navigation .child-menu .selected:hover {
+	background: #878787;
+	border: solid 1px #555555;
+	box-shadow: #575757 0px 0px 15px 0px inset;
+	height: auto;
+}
+
+#navigation .selected .child-menu a {
+	color: #1A1A1A;
+	text-shadow: none;
+}
+
+#navigation .selected .child-menu .selected a {
+	color: #FFF;
+	text-shadow: -1px -1px 0px #000;
+}
+
+#navigation .selected .child-menu .selected a:hover {
+	color: #878787;
 }
 
 .portlet-column-content {
@@ -154,10 +245,6 @@ body {
 	padding: 5px;
 }
 
-#navigation h1, #navigation .child-menu, #skip-to-content, .page-title, .powered-by, .site-breadcrumbs {
-	display: none;
-}
-
 /* ---------- EXTRAS ---------- */
 
 #banner {
@@ -181,4 +268,32 @@ body {
 
 .lfr-panel-container {
 	@include border-radius(4px);
+}
+
+#navigation li:hover, #sign-in:hover, #navigation .child-menu li:hover {
+	@include background(linear-gradient(#EFEFEF, #CFCFCF));
+}
+
+#navigation .child-menu li:first-child {
+	@include border-corner-radius(top, right, 4px);
+	@include border-corner-radius(top, left, 4px);
+}
+
+#navigation .child-menu li:last-child {
+	@include border-corner-radius(bottom, right, 4px);
+	@include border-corner-radius(bottom, left, 4px);
+}
+
+#navigation .child-menu li:hover:first-child {
+	@include border-corner-radius(top, left, 4px);
+	@include border-corner-radius(top, right, 4px);
+	@include border-corner-radius(bottom, left, 0px);
+	@include border-corner-radius(bottom, right, 0px);
+}
+
+#navigation .child-menu li:hover:last-child {
+	@include border-corner-radius(top, left, 0px);
+	@include border-corner-radius(top, right, 0px);
+	@include border-corner-radius(bottom, left, 4px);
+	@include border-corner-radius(bottom, right, 4px);
 }
