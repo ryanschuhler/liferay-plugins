@@ -99,7 +99,7 @@ body {
 	box-shadow: 0px 2px 5px #BFBFBF;
 	display: block;
 	float: none;
-	left: -60px;
+	left: -50px;
 	margin: 5px 0 0 0;
 	position: absolute;
 	top: 100%;
@@ -289,7 +289,7 @@ body {
 }
 
 #navigation ul, .portlet-topper, #sign-in {
-	@include background(linear-gradient(#FFF, #EAEAEA));	
+	@include background(linear-gradient(#FFF, #EAEAEA));
 	@include border-radius(4px);
 }
 
