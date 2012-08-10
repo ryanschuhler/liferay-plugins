@@ -30,200 +30,231 @@ body {
 .site-title {
 	float: left;
 	margin: 0;
+	
+	img {
+		border-right: solid 1px #DFDFDF;
+		height: 40px;
+		padding: 3px 14px 0px 12px;
+		width: auto;
+	}
 }
 
-.site-title img {
-	border-right: solid 1px #DFDFDF;
-	height: 40px;
-	padding: 3px 14px 0px 12px;
-	width: auto;
-}
+/* ---------- NAVIGATION ---------- */
 
-#navigation ul:after {
-	content: "";
-	clear: both;
-}
+#navigation {
+	
+	ul {
+		border: solid 1px #DFDFDF;
+		box-shadow: 0px 1px 0px #FFF;
+		float: left;
+		list-style: none;
+		margin: 9px 25px;
+		
+		&:after {
+			content: "";
+			clear: both;
+		}
+	}
+	
+	li {
+		border-right: solid 1px #DFDFDF;
+		float: left;
+		text-shadow: 0px 1px 0px #FFF;
+		position: relative;
+		
+		&:hover .child-menu {
+			background: #EAEAEA;
+			border: solid 1px #CFCFCF;
+			box-shadow: 0px 2px 5px #BFBFBF;
+			display: block;
+			float: none;
+			left: -50px;
+			margin: 5px 0 0 0;
+			position: absolute;
+			top: 100%;
+			width: 200px;
+			z-index: 5;
+		}
 
-#navigation ul {
-	border: solid 1px #DFDFDF;
-	box-shadow: 0px 1px 0px #FFF;
-	float: left;
-	list-style: none;
-	margin: 9px 25px;
-}
+		&:last-child {
+			border-right: 0;
+		}
+	}
 
-#navigation li {
-	border-right: solid 1px #DFDFDF;
-	float: left;
-	padding: 3px 20px;
-	text-shadow: 0px 1px 0px #FFF;
-	position: relative;
-}
+	a {
+		border: solid 1px transparent;
+		color: #1A1A1A;
+		display: block;
+		padding: 3px 20px;
+		text-decoration: none;
+		word-wrap: break-word;
+	}
 
-#navigation li:last-child {
-	border-right: 0;
+	.child-menu {
+		display: none;
+
+		li {
+			background: #FFF;
+			border: solid 1px #DFDFDF;
+			border-top: 0;
+			box-shadow: 0 0 0;
+			float: none;
+			margin: 0 auto;
+			padding: 0;
+			width: 190px;
+			
+			a {
+				border: solid 1px transparent;
+				display: block;
+				padding: 5px;
+				text-align: center;
+			}
+			
+			&:first-child {
+				border-top: solid 1px #DFDFDF;
+				margin-top: 5px;
+			}
+
+			&:last-child {
+				box-shadow: 0 1px 0 #FFF;
+				margin-bottom: 5px;
+			}
+
+			&:last-child:hover {
+				box-shadow: 1px 1px 0 #FFF;
+			}
+				
+			&:hover .grandchild-menu {
+				background: #EAEAEA;
+				box-shadow: 0px 2px 5px #BFBFBF;
+				display: block;
+				left: 175px;
+				position: absolute;
+				top: -13px;
+				width: 150px;
+				z-index: 10;
+			}
+		}
+		
+		&:before {
+			border: 10px solid transparent;
+			border-bottom-color: #EAEAEA;
+			content: "";
+			display: block;
+			left: 90px;
+			position: absolute;
+			top: -19px;
+			z-index: 10;
+		}
+
+		&:after {
+			border: 10px solid transparent;
+			border-bottom-color: #CFCFCF;
+			content: "";
+			display: block;
+			left: 90px;
+			position: absolute;
+			top: -20px;
+			z-index: 9;
+		}
+		
+		.selected .grandchild-menu a:hover {
+			border: 0;
+			box-shadow: 0 0 0;
+		}
+		
+		.selected, .selected:hover {
+			background: #878787;
+			box-shadow: #575757 0px 0px 15px 0px inset;
+			height: auto;
+		}
+	}
+
+	.grandchild-menu {
+		display: none;
+		
+		li {
+			width: 140px;
+		}
+		
+		&:before {
+			border: 10px solid transparent;
+			border-right-color: #EAEAEA;
+			content: "";
+			display: block;
+			left: -19px;
+			position: absolute;
+			top: 9px;
+			z-index: 10;
+		}
+		
+		&:after {
+			border: 10px solid transparent;
+			border-right-color: #CFCFCF;
+			content: "";
+			display: block;
+			left: -20px;
+			position: absolute;
+			top: 9px;
+			z-index: 9;
+		}
+	}
+
+	.selected {
+		.child-menu .selected a {
+			color: #FFF;
+			text-shadow: -1px -1px 0px #000;
+		}
+
+		a, .child-menu .selected a, .child-menu .selected a:hover {
+			background: #878787;
+			border: solid 1px #555555;
+			box-shadow: #575757 0px 0px 15px 0px inset;
+			color: #FFF;
+			text-shadow: -1px -1px 0 #000;
+		}
+		
+		.child-menu a, .child-menu .selected .grandchild-menu a {
+			background: #FFF;
+			box-shadow: 0 0 0 0;
+			border: 0;
+			text-shadow: 0 0 0;
+		}
+
+		a:hover, .child-menu .selected a:hover {
+			color: #DFDFDF;
+		}
+		
+		.child-menu a, .child-menu .selected .grandchild-menu a, .child-menu .selected .grandchild-menu a:hover {
+			color: #1A1A1A;
+			text-shadow: none;
+		}
+	}
 }
 
 #navigation li:hover, #sign-in:hover {
 	box-shadow: 1px 0px 0px #FFF;
 }
 
-#navigation .selected, #navigation .selected:hover {
-	background: #878787;
-	border: solid 1px #555555;
-	box-shadow: #575757 0px 0px 15px 0px inset;
-	height: 17px;
-}
-
-#navigation .selected a {
-	color: #FFF;
-	text-shadow: -1px -1px 0 #000;
-}
-
-#navigation .selected a:hover, #navigation .selected .child-menu .selected a:hover {
-	color: #DFDFDF;
-}
-
-#navigation a {
-	color: #1A1A1A;
-	text-decoration: none;
-}
-
-#navigation .child-menu {
-	display: none;
-}
-
-#navigation li:hover .child-menu {
-	background: #EAEAEA;
-	border: solid 1px #CFCFCF;
-	box-shadow: 0px 2px 5px #BFBFBF;
-	display: block;
-	float: none;
-	left: -50px;
-	margin: 5px 0 0 0;
-	position: absolute;
-	top: 100%;
-	width: 200px;
-	z-index: 5;
-}
-
-#navigation .child-menu li a {
-	display: block;
-	padding: 5px;
-	text-align: center;
-}
-
-#navigation .child-menu li {
-	background: #FFF;
-	border-bottom: solid 1px #DFDFDF;
-	border-right: 0;
+#navigation li:last-child:hover {
 	box-shadow: 0 0 0;
-	float: none;
-	margin: 0 auto;
-	padding: 0;
-	width: 190px;
 }
 
-#navigation .child-menu li:first-child {
-	margin-top: 5px;
-}
-
-#navigation .child-menu li:last-child {
-	box-shadow: 0 1px 0 #FFF;
-	margin-bottom: 5px;
-}
-
-#navigation .child-menu:before {
-	border: 10px solid transparent;
-	border-bottom-color: #EAEAEA;
-	content: "";
-	display: block;
-	left: 90px;
-	position: absolute;
-	top: -19px;
-	z-index: 10;
-}
-
-#navigation .child-menu:after {
-	border: 10px solid transparent;
-	border-bottom-color: #CFCFCF;
-	content: "";
-	display: block;
-	left: 90px;
-	position: absolute;
-	top: -20px;
-	z-index: 9;
-}
-
-#navigation .child-menu .selected, #navigation .child-menu .selected:hover {
-	background: #878787;
-	border: solid 1px #555555;
-	box-shadow: #575757 0px 0px 15px 0px inset;
-	height: auto;
-}
-
-#navigation .selected .child-menu a, #navigation .selected .child-menu .selected .grandchild-menu a, #navigation .selected .child-menu .selected .grandchild-menu a:hover {
-	color: #1A1A1A;
-	text-shadow: none;
-}
-
-#navigation .selected .child-menu .selected a {
-	color: #FFF;
-	text-shadow: -1px -1px 0px #000;
-}
-
-#navigation .grandchild-menu {
-	display: none;
-}
-
-#navigation .child-menu li:hover .grandchild-menu {
-	box-shadow: 0px 2px 5px #BFBFBF;
-	position: absolute;
-	left: 175px;
-	top: -13px;
-	width: 150px;
-	z-index: 10;
-	background: #EAEAEA;
-	display: block;
-}
-
-#navigation .grandchild-menu li {
-	width: 140px;
-}
-
-#navigation .grandchild-menu:before {
-	border: 10px solid transparent;
-	border-right-color: #EAEAEA;
-	content: "";
-	display: block;
-	left: -18px;
-	position: absolute;
-	top: 9px;
-	z-index: 10;
-}
-
-#navigation .grandchild-menu:after {
-	border: 10px solid transparent;
-	border-right-color: #CFCFCF;
-	content: "";
-	display: block;
-	left: -19px;
-	position: absolute;
-	top: 9px;
-	z-index: 9;
-}
+/* ---------- PORTLET ---------- */
 
 .portlet-column-content {
 	margin: 7px 5px;
 	padding: 5px 2.5px;
 }
 
-.portlet-column:first-child {
-	padding-left: 8px;
-}
+.portlet-column {
+	&:first-child {
+		padding-left: 8px;
+	}
 
-.portlet-column:last-child {
-	padding-right: 8px;
+	&:last-child {
+		padding-right: 8px;
+	}
 }
 
 .portlet-topper {
@@ -248,19 +279,21 @@ body {
 
 .portlet a {
 	color: #1A1A1A;
+	
+	&:hover {
+		color: #8F8F8F;
+		text-decoration: none;
+	}
 }
 
-.portlet a:hover {
-	color: #8F8F8F;
-	text-decoration: none;
-}
+/* ---------- MISCELLANEOUS ---------- */
 
 .aui-column-content {
 	padding: 0;
 }
 
 .breadcrumbs li {
-		padding: 5px;
+	padding: 5px;
 }
 
 .header-back-to {
@@ -293,48 +326,34 @@ body {
 	@include border-radius(4px);
 }
 
-#navigation .selected:first-child, #navigation .selected:hover:first-child {
+#navigation .selected:first-child a, #navigation .selected:hover:first-child a, #navigation li:first-child:hover {
 	@include border-corner-radius(top, left, 4px);
 	@include border-corner-radius(bottom, left, 4px);
 }
 
-#navigation .selected:last-child, #navigation .selected:hover:last-child {
+#navigation .selected:last-child a, #navigation .selected:hover:last-child a, #navigation li:last-child:hover {
 	@include border-corner-radius(top, right, 4px);
 	@include border-corner-radius(bottom, right, 4px);
+}
+
+#navigation .selected .child-menu li, #navigation .selected .child-menu li, #navigation .selected .child-menu li:hover, #navigation .child-menu li:hover, #navigation .grandchild-menu .selected li a {
+	@include border-radius(0px);
+}
+
+#navigation li:hover, #sign-in:hover, #navigation .child-menu li:hover, #navigation .selected .child-menu a:hover, #navigation .child-menu .selected .grandchild-menu a:hover {
+	@include background(linear-gradient(#EFEFEF, #CFCFCF));
+}
+
+#navigation .child-menu li:first-child, #navigation .child-menu li:hover:first-child, #navigation .selected .child-menu li:first-child a, #navigation .selected .child-menu li:first-child a:hover {
+	@include border-corner-radius(top, right, 4px);
+	@include border-corner-radius(top, left, 4px);
+}
+
+#navigation .child-menu li:last-child, #navigation .child-menu li:hover:last-child, #navigation .selected .child-menu li:last-child a, #navigation .selected .child-menu li:last-child a:hover {
+	@include border-corner-radius(bottom, right, 4px);
+	@include border-corner-radius(bottom, left, 4px);
 }
 
 .lfr-panel-container {
 	@include border-radius(4px);
-}
-
-#navigation li:hover, #sign-in:hover, #navigation .child-menu li:hover {
-	@include background(linear-gradient(#EFEFEF, #CFCFCF));
-}
-
-#navigation .child-menu li:first-child {
-	@include border-corner-radius(top, right, 4px);
-	@include border-corner-radius(top, left, 4px);
-	@include border-corner-radius(bottom, right, 0px);
-	@include border-corner-radius(bottom, left, 0px);
-}
-
-#navigation .child-menu li:last-child {
-	@include border-corner-radius(bottom, right, 4px);
-	@include border-corner-radius(bottom, left, 4px);
-	@include border-corner-radius(top, right, 0px);
-	@include border-corner-radius(top, left, 0px);
-}
-
-#navigation .child-menu li:hover:first-child {
-	@include border-corner-radius(top, left, 4px);
-	@include border-corner-radius(top, right, 4px);
-	@include border-corner-radius(bottom, left, 0px);
-	@include border-corner-radius(bottom, right, 0px);
-}
-
-#navigation .child-menu li:hover:last-child {
-	@include border-corner-radius(top, left, 0px);
-	@include border-corner-radius(top, right, 0px);
-	@include border-corner-radius(bottom, left, 4px);
-	@include border-corner-radius(bottom, right, 4px);
 }

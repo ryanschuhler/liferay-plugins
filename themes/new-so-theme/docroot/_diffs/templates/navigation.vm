@@ -15,12 +15,11 @@
 				#set ($nav_item_class = ${nav_item_class} + " has-children")
 			#end
 
-				<li class="$nav_item_class">
+			<li class="$nav_item_class">
 				<a href="$nav_item.getURL()" $nav_item.getTarget()><span>$nav_item.icon() $nav_item.getName()
 					#if ($navHasChildren)
-						▾
+						&#9662;
 					#end
-
 				</span></a>
 
 				#if ($navHasChildren)

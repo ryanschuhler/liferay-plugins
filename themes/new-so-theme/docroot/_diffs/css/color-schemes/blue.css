@@ -12,20 +12,30 @@ body.new-so-blue {
 		border: solid 1px #878787;	
 	}
 
-	#navigation ul {
+	#navigation {
+		ul {
 		border: solid 1px #878787;	
-	}
+		}
 
-	#navigation li {
-		border-right: solid 1px #878787;
-	}
+		li {
+			border-right: solid 1px #878787;
+			
+			&:last-child {
+				border-right: 0;
+			}
+		}
 
-	#navigation li:last-child {
-		border-right: 0;
-	}
+		.child-menu {
+			background: #DFF4FF;
 
-	#navigation li:hover:last-child {
-		box-shadow: none;
+			li {
+				border: solid 1px #DFDFDF;
+			}
+		}
+
+		.grandchild-menu {
+			border: solid 1px #DFDFDF;
+		}
 	}
 
 	.portlet-topper {
@@ -35,11 +45,11 @@ body.new-so-blue {
 
 	.portlet a {
 		color: #1A1A1A;
-	}
-
-	.portlet a:hover {
-		color: #8F8F8F;
-		text-decoration: none;
+		
+		&:hover {
+			color: #8F8F8F;
+			text-decoration: none;
+		}
 	}
 
 	.portlet-document-library .lfr-app-column-view .lfr-app-column-view-content {

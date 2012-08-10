@@ -10,14 +10,9 @@ AUI().ready(
 
 		navigation.all('li.has-children').each(
 			function (x){
-				var middle = (this.get('clientWidth') / 2);
-				var negMargin = "\-" + (100 - middle) + "px";
-
-				console.log(this.get('clientWidth'));
-
-				console.log(middle);
-
-				console.log(negMargin);
+				var middle = Math.floor((this.get('clientWidth') / 2));
+				
+				var negMargin = (middle - 100) + "px";
 
 				this.one('.child-menu').setStyle('left', negMargin);
 			}
