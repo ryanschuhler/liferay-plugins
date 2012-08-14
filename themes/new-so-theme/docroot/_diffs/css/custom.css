@@ -1,26 +1,44 @@
 @import "compass";
 @import url(color-schemes/blue.css);
 
+$gray-border: #DFDFDF;
+$gray-font: #1A1A1A;
+$hover-color: #EAEAEA;
+
 body {
 	font: 13px/1.5em Helvetica, Arial, sans-serif;
-	color: #1A1A1A;
+	color: $gray-font;
 }
 
-#navigation h1, #skip-to-content, .page-title, .powered-by, .site-breadcrumbs {
+#navigation h1,
+ #skip-to-content,
+ .page-title,
+ .site-breadcrumbs {
 	display: none;
 }
 
+#sign-in,
+#banner,
+#navigation ul,
+#navigation li,
+#navigation li:hover .child-menu,
+#navigation .child-menu li, 
+.portlet-topper {
+	border: 1px solid $gray-border;
+}
+
 #banner {
-	border-bottom: solid 2px #DFDFDF;
-	float: left;
-	height: 43px;
-	width: 100%;
+	border-width: 0 0 1px;
+
+	&:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
 }
 
 #sign-in {
-	border: solid 1px #DFDFDF;
-	box-shadow: 0px 1px 0px #FFF;
-	color: #1A1A1A;
+	color: $gray-font;
 	float: right;
 	margin: 9px 9px;
 	padding: 3px 15px;
@@ -32,8 +50,8 @@ body {
 	margin: 0;
 	
 	img {
-		border-right: solid 1px #DFDFDF;
-		height: 40px;
+		border-right: solid 1px $gray-border;
+		height: 41px;
 		padding: 3px 14px 0px 12px;
 		width: auto;
 	}
@@ -42,10 +60,7 @@ body {
 /* ---------- NAVIGATION ---------- */
 
 #navigation {
-	
 	ul {
-		border: solid 1px #DFDFDF;
-		box-shadow: 0px 1px 0px #FFF;
 		float: left;
 		list-style: none;
 		margin: 9px 25px;
@@ -57,37 +72,40 @@ body {
 	}
 	
 	li {
-		border-right: solid 1px #DFDFDF;
+		border-width: 0 0 0 0;
 		float: left;
-		text-shadow: 0px 1px 0px #FFF;
 		position: relative;
 		
 		&:hover .child-menu {
-			background: #EAEAEA;
-			border: solid 1px #CFCFCF;
-			box-shadow: 0px 2px 5px #BFBFBF;
+			background: $hover-color;
 			display: block;
 			float: none;
 			left: -50px;
 			margin: 5px 0 0 0;
 			position: absolute;
-			top: 100%;
+			top: 26px;
 			width: 200px;
 			z-index: 5;
 		}
 
-		&:last-child {
-			border-right: 0;
+		&:last-child a {
+			border-right-color: transparent;
+		}
+
+		&.has-children:hover {
+			padding-bottom: 5px;
+			margin-bottom: -5px;
 		}
 	}
 
 	a {
 		border: solid 1px transparent;
-		color: #1A1A1A;
+		color: $gray-font;
 		display: block;
 		padding: 3px 20px;
 		text-decoration: none;
 		word-wrap: break-word;
+		border-right-color: $gray-border;
 	}
 
 	.child-menu {
@@ -95,78 +113,66 @@ body {
 
 		li {
 			background: #FFF;
-			border: solid 1px #DFDFDF;
 			border-top: 0;
-			box-shadow: 0 0 0;
 			float: none;
 			margin: 0 auto;
-			padding: 0;
 			width: 190px;
 			
 			a {
 				border: solid 1px transparent;
-				display: block;
-				padding: 5px;
+				padding: 5px 9px;
 				text-align: center;
 			}
 			
 			&:first-child {
-				border-top: solid 1px #DFDFDF;
+				border-top: solid 1px $gray-border;
 				margin-top: 5px;
 			}
 
 			&:last-child {
-				box-shadow: 0 1px 0 #FFF;
 				margin-bottom: 5px;
-			}
-
-			&:last-child:hover {
-				box-shadow: 1px 1px 0 #FFF;
+				border-right: solid 1px $gray-border;
 			}
 				
 			&:hover .grandchild-menu {
-				background: #EAEAEA;
-				box-shadow: 0px 2px 5px #BFBFBF;
+				background: $hover-color;
 				display: block;
 				left: 175px;
 				position: absolute;
 				top: -13px;
 				width: 150px;
-				z-index: 10;
+			}
+
+			#right-triangle {
+				position: absolute;
+				left: 181px;
+				top: 5px;
+				display: block;
+			}
+
+			&:hover #right-triangle {
+				display: none;
 			}
 		}
 		
-		&:before {
+		&:before, &:after {
 			border: 10px solid transparent;
-			border-bottom-color: #EAEAEA;
-			content: "";
-			display: block;
-			left: 90px;
-			position: absolute;
-			top: -19px;
-			z-index: 10;
-		}
-
-		&:after {
-			border: 10px solid transparent;
-			border-bottom-color: #CFCFCF;
+			border-bottom-color: $gray-border;
 			content: "";
 			display: block;
 			left: 90px;
 			position: absolute;
 			top: -20px;
-			z-index: 9;
+		}
+
+		&:after {
+			border-bottom-color: $hover-color;
+			top: -19px;
 		}
 		
-		.selected .grandchild-menu a:hover {
-			border: 0;
-			box-shadow: 0 0 0;
-		}
-		
-		.selected, .selected:hover {
+		.selected a,
+ 		.selected a:hover {
 			background: #878787;
-			box-shadow: #575757 0px 0px 15px 0px inset;
-			height: auto;
 		}
 	}
 
@@ -177,67 +183,65 @@ body {
 			width: 140px;
 		}
 		
-		&:before {
+		&:before, &:after {
 			border: 10px solid transparent;
-			border-right-color: #EAEAEA;
-			content: "";
-			display: block;
-			left: -19px;
-			position: absolute;
-			top: 9px;
-			z-index: 10;
-		}
-		
-		&:after {
-			border: 10px solid transparent;
-			border-right-color: #CFCFCF;
+			border-right-color: $gray-border;
 			content: "";
 			display: block;
 			left: -20px;
 			position: absolute;
 			top: 9px;
-			z-index: 9;
+		}
+		
+		&:after {
+			border-right-color: $hover-color;
+			left: -19px;
+		}
+
+		&:hover {
+			background: $hover-color;
 		}
 	}
 
-	.selected {
+	ul .selected {
 		.child-menu .selected a {
 			color: #FFF;
 			text-shadow: -1px -1px 0px #000;
 		}
 
-		a, .child-menu .selected a, .child-menu .selected a:hover {
+		a,
+ 		.child-menu .selected a,
+ 		.child-menu .selected a:hover, 
+ 		.child-menu .selected .grandchild-menu .selected a,
+ 		.child-menu .selected .grandchild-menu .selected a:hover {
 			background: #878787;
 			border: solid 1px #555555;
-			box-shadow: #575757 0px 0px 15px 0px inset;
 			color: #FFF;
-			text-shadow: -1px -1px 0 #000;
+			text-shadow: -1px -1px 0px #000;
 		}
 		
-		.child-menu a, .child-menu .selected .grandchild-menu a {
+		.child-menu a,
+ 		.child-menu .selected .grandchild-menu a {
 			background: #FFF;
-			box-shadow: 0 0 0 0;
 			border: 0;
 			text-shadow: 0 0 0;
 		}
 
-		a:hover, .child-menu .selected a:hover {
-			color: #DFDFDF;
+		a:hover,
+ 		.child-menu .selected a:hover, 
+ 		.child-menu .selected .grandchild-menu .selected a:hover {
+			color: $gray-border;
 		}
 		
-		.child-menu a, .child-menu .selected .grandchild-menu a, .child-menu .selected .grandchild-menu a:hover {
-			color: #1A1A1A;
-			text-shadow: none;
+		.child-menu a,
+ 		.child-menu .selected .grandchild-menu a {
+			color: $gray-font;
 		}
+
+ 		.child-menu .selected .grandchild-menu a:hover {
+ 			background: $hover-color;
+ 		}
 	}
-}
-
-#navigation li:hover, #sign-in:hover {
-	box-shadow: 1px 0px 0px #FFF;
-}
-
-#navigation li:last-child:hover {
-	box-shadow: 0 0 0;
 }
 
 /* ---------- PORTLET ---------- */
@@ -257,19 +261,13 @@ body {
 	}
 }
 
-.portlet-topper {
-	border: solid 1px #DFDFDF;
-	padding: 3px;
-	text-shadow: 0px 1px 0px #FFF;
-}
-
+.portlet-topper, 
 .portlet-title .icon{
 	padding: 3px;
 }
 
 .portlet-title-text {
 	padding: 3px 80px 3px 3px;
-	text-shadow: 0px 1px 0px #FFF;
 }
 
 .portlet-topper-toolbar {
@@ -278,7 +276,7 @@ body {
 }
 
 .portlet a {
-	color: #1A1A1A;
+	color: $gray-font;
 	
 	&:hover {
 		color: #8F8F8F;
@@ -287,6 +285,15 @@ body {
 }
 
 /* ---------- MISCELLANEOUS ---------- */
+
+#sign-in, 
+#navigation li, 
+#navigation .selected .child-menu a,
+#navigation .selected .child-menu .selected .grandchild-menu a,
+.portlet-topper, 
+.portlet-title-text {
+	text-shadow: 0px 1px 0px #FFF;
+}
 
 .aui-column-content {
 	padding: 0;
@@ -301,9 +308,13 @@ body {
 	margin: 15px;
 }
 
-.lfr-header-row, .portlet-section-header th, .portlet-wiki .child-pages h2, .results-row.alt td, .site-breadcrumbs {
-	border: solid 1px #DFDFDF;
-	color: #1A1A1A;
+.lfr-header-row,
+ .portlet-section-header th,
+ .portlet-wiki .child-pages h2,
+ .results-row.alt td,
+ .site-breadcrumbs {
+	border: 1px solid $gray-border;
+	color: $gray-font;
 }
 
 .lfr-header-row-content {
@@ -311,49 +322,147 @@ body {
 }
 
 .lfr-panel-container {
-	border: solid 1px #DFDFDF;
+	border: 1px solid $gray-border;
 	padding: 5px;
+}
+
+/* ---------- Mobile ---------- */
+
+.mobile {
+
 }
 
 /* ---------- EXTRAS ---------- */
 
-#banner {
-	@include background(linear-gradient(#FFF, #EAEAEA));
+#banner, 
+#navigation ul,
+.portlet-topper,
+#sign-in {
+	@include background(linear-gradient(#FFF, $hover-color));
 }
 
-#navigation ul, .portlet-topper, #sign-in {
-	@include background(linear-gradient(#FFF, #EAEAEA));
-	@include border-radius(4px);
-}
-
-#navigation .selected:first-child a, #navigation .selected:hover:first-child a, #navigation li:first-child:hover {
-	@include border-corner-radius(top, left, 4px);
-	@include border-corner-radius(bottom, left, 4px);
-}
-
-#navigation .selected:last-child a, #navigation .selected:hover:last-child a, #navigation li:last-child:hover {
-	@include border-corner-radius(top, right, 4px);
-	@include border-corner-radius(bottom, right, 4px);
-}
-
-#navigation .selected .child-menu li, #navigation .selected .child-menu li, #navigation .selected .child-menu li:hover, #navigation .child-menu li:hover, #navigation .grandchild-menu .selected li a {
-	@include border-radius(0px);
-}
-
-#navigation li:hover, #sign-in:hover, #navigation .child-menu li:hover, #navigation .selected .child-menu a:hover, #navigation .child-menu .selected .grandchild-menu a:hover {
+#navigation a:hover,
+#sign-in:hover,
+#navigation .child-menu a:hover,
+#navigation .selected .child-menu a:hover,
+#navigation .child-menu .selected .grandchild-menu a:hover {
 	@include background(linear-gradient(#EFEFEF, #CFCFCF));
 }
 
-#navigation .child-menu li:first-child, #navigation .child-menu li:hover:first-child, #navigation .selected .child-menu li:first-child a, #navigation .selected .child-menu li:first-child a:hover {
-	@include border-corner-radius(top, right, 4px);
-	@include border-corner-radius(top, left, 4px);
+#sign-in, 
+#navigation ul, 
+#navigation .child-menu li:last-child, 
+#navigation .child-menu li:last-child:hover {
+	@include box-shadow(#FFF 0px 1px 0px);
 }
 
-#navigation .child-menu li:last-child, #navigation .child-menu li:hover:last-child, #navigation .selected .child-menu li:last-child a, #navigation .selected .child-menu li:last-child a:hover {
-	@include border-corner-radius(bottom, right, 4px);
-	@include border-corner-radius(bottom, left, 4px);
+#sign-in:hover {
+	@include box-shadow(#FFF 1px 0px 0px);
 }
 
-.lfr-panel-container {
+#navigation	li:hover .child-menu, 
+#navigation .child-menu li:hover .grandchild-menu {
+	@include box-shadow(#BFBFBF 0px 2px 5px);
+}
+
+#navigation .child-menu .selected a,
+#navigation .child-menu .selected a:hover,
+#navigation .selected a,
+#navigation .selected .child-menu .selected a,
+#navigation .selected .child-menu .selected a:hover, 
+#navigation .child-menu .selected .grandchild-menu li.selected a,
+#navigation .child-menu .selected .grandchild-menu li.selected a:hover {
+	@include box-shadow(#575757 0px 0px 15px 0px inset);
+}
+
+#navigation .child-menu .selected .grandchild-menu a:hover, 
+#navigation .selected .child-menu a,
+#navigation .selected .child-menu .selected .grandchild-menu a, 
+#navigation li:last-child:hover{
+	@include box-shadow(0px 0px 0px 0px);
+}
+
+#navigation ul,
+.portlet-topper,
+#sign-in, 
+.lfr-panel-container, 
+#navigation li .child-menu li:first-child:last-child, 
+#navigation li .child-menu li:first-child:last-child a,
+#navigation li .child-menu li:first-child:last-child a:hover,
+#navigation li .child-menu .grandchild-menu li:first-child:last-child, 
+#navigation li .child-menu .grandchild-menu li:first-child:last-child a,
+#navigation li .child-menu .grandchild-menu li:first-child:last-child a:hover,
+#navigation li:first-child a,
+#navigation li:last-child a,
+#navigation li:first-child a:hover,
+#navigation li:last-child a:hover,
+#navigation li .child-menu li:first-child,
+#navigation li .child-menu li:last-child,
+#navigation li .child-menu li:first-child a,
+#navigation li .child-menu li:last-child a,
+#navigation li .child-menu li:first-child a:hover,
+#navigation li .child-menu li:last-child a:hover, 
+#navigation li .child-menu li .grandchild-menu li:first-child, 
+#navigation li .child-menu li .grandchild-menu li:last-child, 
+#navigation li .child-menu li .grandchild-menu li:first-child a, 
+#navigation li .child-menu li .grandchild-menu li:last-child a, 
+#navigation li .child-menu li .grandchild-menu li:first-child a:hover, 
+#navigation li .child-menu li .grandchild-menu li:last-child a:hover  {
 	@include border-radius(4px);
+}
+
+#navigation li:first-child li a,
+#navigation li:last-child li a,
+#navigation li:first-child li a:hover,
+#navigation li:last-child li a:hover,
+#navigation li .child-menu li:first-child li,
+#navigation li .child-menu li:last-child li,
+#navigation li .child-menu li:first-child li a,
+#navigation li .child-menu li:last-child li a,
+#navigation li .child-menu li:first-child li a:hover,
+#navigation li .child-menu li:last-child li a:hover, 
+#navigation li .child-menu li .grandchild-menu li:first-child li, 
+#navigation li .child-menu li .grandchild-menu li:last-child li, 
+#navigation li .child-menu li .grandchild-menu li:first-child li a, 
+#navigation li .child-menu li .grandchild-menu li:last-child li a, 
+#navigation li .child-menu li .grandchild-menu li:first-child li a:hover, 
+#navigation li .child-menu li .grandchild-menu li:last-child li a:hover {
+	@include border-radius(0px);
+}
+
+#navigation li:first-child a, 
+#navigation li:first-child a:hover  {
+	@include border-corner-radius(top, right, 0px);
+	@include border-corner-radius(bottom, right, 0px);
+}
+
+#navigation li:last-child a, 
+#navigation li:last-child a:hover  {
+	@include border-corner-radius(top, left, 0px);
+	@include border-corner-radius(bottom, left, 0px);
+}
+
+#navigation li .child-menu li:first-child,
+#navigation li .child-menu li:first-child a,
+#navigation li .child-menu li:first-child a:hover,
+#navigation li .child-menu li .grandchild-menu li:first-child,  
+#navigation li .child-menu li .grandchild-menu li:first-child a, 
+#navigation li .child-menu li .grandchild-menu li:first-child a:hover {
+	@include border-corner-radius(bottom, right, 0px);
+	@include border-corner-radius(bottom, left, 0px);
+}
+
+#navigation li .child-menu li:last-child,
+#navigation li .child-menu li:last-child a,
+#navigation li .child-menu li:last-child a:hover,  
+#navigation li .child-menu li .grandchild-menu li:last-child,  
+#navigation li .child-menu li .grandchild-menu li:last-child a, 
+#navigation li .child-menu li .grandchild-menu li:last-child a:hover {
+	@include border-corner-radius(top, right, 0px);
+	@include border-corner-radius(top, left, 0px);
+}
+
+#navigation a:hover, #navigation .child-menu a:hover {
+	border-top-color: #EFEFEF;
+	border-bottom-color: #CFCFCF;
 }

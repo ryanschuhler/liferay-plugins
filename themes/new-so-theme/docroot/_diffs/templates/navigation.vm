@@ -9,7 +9,7 @@
 			#set ($nav_item_class = "")
 
 			#if ($nav_item.isSelected())
-				#set ($nav_item_class = ${nav_item_class} + "selected")
+				#set ($nav_item_class = "selected")
 			#end
 			#if ($navHasChildren)
 				#set ($nav_item_class = ${nav_item_class} + " has-children")
@@ -25,14 +25,27 @@
 				#if ($navHasChildren)
 					<ul class="child-menu">
 						#foreach ($nav_child in $nav_item.getChildren())
-							#if ($nav_child.isSelected())
-								<li class="selected">
-							#else
-								<li>
-							#end
-								<a href="$nav_child.getURL()" $nav_child.getTarget()>$nav_child.getName()</a>
+							#set ($hasGrandChildren = $nav_child.hasChildren())
+							#set ($grand_child_class = "")
 
-								#if ($nav_child.hasChildren())
+							#if ($nav_child.isSelected())
+								#set ($grand_child_class = "selected")
+							#end
+							#if ($nav_child.isChildSelected())
+								#set ($grand_child_class = "selected")
+							#end
+							#if ($hasGrandChildren)
+								#set ($grand_child_class = ${grand_child_class} + " has-grandchildren")
+							#end
+
+							<li class="$grand_child_class">
+								<a href="$nav_child.getURL()" $nav_child.getTarget()><span>$nav_child.icon() $nav_child.getName()</span>
+									#if ($hasGrandChildren)
+										<span id="right-triangle">&#9656;</span>
+									#end
+								</a>
+
+								#if ($hasGrandChildren)
 									<ul class="grandchild-menu">
 										#foreach ($nav_grandchild in $nav_child.getChildren())
 											#if ($nav_grandchild.isSelected())
