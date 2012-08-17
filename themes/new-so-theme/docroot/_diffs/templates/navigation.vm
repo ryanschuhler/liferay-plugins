@@ -1,4 +1,6 @@
 <nav class="$nav_css_class" id="navigation">
+	<a id="toggle"><span>Toggle Navigation</span></a>
+
 	<h1>
 		<span>#language("navigation")</span>
 	</h1>
@@ -12,13 +14,13 @@
 				#set ($nav_item_class = "selected")
 			#end
 			#if ($navHasChildren)
-				#set ($nav_item_class = ${nav_item_class} + " has-children")
+				#set ($nav_item_class = ${nav_item_class} + " has-children parent-menu")
 			#end
 
 			<li class="$nav_item_class">
 				<a href="$nav_item.getURL()" $nav_item.getTarget()><span>$nav_item.icon() $nav_item.getName()
 					#if ($navHasChildren)
-						&#9662;
+						<span class="triangle">&#9662;</span>
 					#end
 				</span></a>
 
@@ -26,22 +28,22 @@
 					<ul class="child-menu">
 						#foreach ($nav_child in $nav_item.getChildren())
 							#set ($hasGrandChildren = $nav_child.hasChildren())
-							#set ($grand_child_class = "")
+							#set ($nav_child_class = "")
 
 							#if ($nav_child.isSelected())
-								#set ($grand_child_class = "selected")
+								#set ($nav_child_class = "selected")
 							#end
 							#if ($nav_child.isChildSelected())
-								#set ($grand_child_class = "selected")
+								#set ($nav_child_class = "selected")
 							#end
 							#if ($hasGrandChildren)
-								#set ($grand_child_class = ${grand_child_class} + " has-grandchildren")
+								#set ($nav_child_class = ${nav_child_class} + " has-children")
 							#end
 
-							<li class="$grand_child_class">
+							<li class="$nav_child_class">
 								<a href="$nav_child.getURL()" $nav_child.getTarget()><span>$nav_child.icon() $nav_child.getName()</span>
 									#if ($hasGrandChildren)
-										<span id="right-triangle">&#9656;</span>
+										<span id="right-triangle" class="triangle">&#9656;</span>
 									#end
 								</a>
 
