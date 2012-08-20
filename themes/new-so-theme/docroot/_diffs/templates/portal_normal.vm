@@ -8,9 +8,11 @@
 	<title>$the_title - $company_name</title>
 
 	$theme.include($top_head_include)
+
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
 </head>
 
-<body class="$css_class mobile">
+<body class="$css_class">
 
 $theme.include($body_top_include)
 
@@ -22,6 +24,7 @@ $theme.include($body_top_include)
 	<a href="#main-content" id="skip-to-content">#language("skip-to-content")</a>
 
 	<header id="banner" role="banner">
+		<a id="toggle"><span>Toggle Navigation</span></a>
 		<div id="heading">
 			<h1 class="site-title">
 				<a class="$logo_css_class" href="$site_default_url" title="#language("go-to") $site_name">

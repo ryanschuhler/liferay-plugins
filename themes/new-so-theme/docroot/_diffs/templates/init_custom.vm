@@ -1,0 +1,5 @@
+#set ($is_navigation_collapsed = $getterUtil.getBoolean($sessionClicks.get($request, "navigation-collapsed", "false")))
+
+#if ($is_navigation_collapsed == true)
+	#set ($css_class = "${css_class} navigation-collapsed")
+#end

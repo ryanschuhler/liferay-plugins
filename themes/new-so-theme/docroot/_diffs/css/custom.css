@@ -17,27 +17,26 @@ body {
 	display: none;
 }
 
+#dockbar,
 #sign-in,
 #banner,
 #navigation ul,
 #navigation li,
 #navigation li:hover .child-menu,
-#navigation .child-menu li, 
+#navigation .child-menu li,
 .portlet-topper {
 	border: 1px solid $gray-border;
 }
 
 #banner:after, #navigation ul:after {
+	content: "";
 	clear: both;
+	display: block;
 }
 
 #banner {
 	border-width: 0 0 1px;
-
-	&:after {
-		content: "";
-		display: block;
-	}
+	width: 100%;
 }
 
 #sign-in {
@@ -51,18 +50,33 @@ body {
 .site-title {
 	float: left;
 	margin: 0;
-	
+
+	.logo {
+		line-height: 0;
+	}
+
 	img {
 		border-right: solid 1px $gray-border;
 		height: 41px;
-		padding: 3px 14px 0px 12px;
+		padding: 1px 14px 0px 10px;
 		width: auto;
+	}
+
+	.site-name {
+		font-size: .85em;
 	}
 }
 
 #footer {
-	float:right;
 	margin: 5px 10px;
+}
+
+#toggle span {
+	clip: rect(0 0 0 0);
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	text-indent: -9999em;
 }
 
 /* ---------- NAVIGATION ---------- */
@@ -72,17 +86,17 @@ body {
 		float: left;
 		list-style: none;
 		margin: 9px 25px;
-		
+
 		&:after {
 			content: "";
 		}
 	}
-	
+
 	li {
 		border-width: 0 0 0 0;
 		float: left;
 		position: relative;
-		
+
 		&:hover .child-menu {
 			display: block;
 		}
@@ -124,13 +138,13 @@ body {
 			float: none;
 			margin: 0 auto;
 			width: 190px;
-			
+
 			a {
 				border: solid 1px transparent;
 				padding: 5px 9px;
 				text-align: center;
 			}
-			
+
 			&:first-child {
 				border-top: solid 1px $gray-border;
 				margin-top: 5px;
@@ -159,7 +173,7 @@ body {
 
 		.selected {
 			a, a:hover {
-				background: #878787;	
+				background: #878787;
 			}
 		}
 	}
@@ -171,7 +185,7 @@ body {
 		position: absolute;
 		top: -13px;
 		width: 150px;
-		
+
 		li {
 			width: 140px;
 		}
@@ -189,7 +203,7 @@ body {
 
 		a,
  		.child-menu .selected a,
- 		.child-menu .selected a:hover, 
+ 		.child-menu .selected a:hover,
  		.child-menu .selected .grandchild-menu .selected a,
  		.child-menu .selected .grandchild-menu .selected a:hover {
 			background: #878787;
@@ -197,7 +211,7 @@ body {
 			color: #FFF;
 			text-shadow: -1px -1px 0px #000;
 		}
-		
+
 		.child-menu a,
  		.child-menu .selected .grandchild-menu a {
 			background: #FFF;
@@ -206,11 +220,11 @@ body {
 		}
 
 		a:hover,
- 		.child-menu .selected a:hover, 
+ 		.child-menu .selected a:hover,
  		.child-menu .selected .grandchild-menu .selected a:hover {
 			color: $gray-border;
 		}
-		
+
 		.child-menu a,
  		.child-menu .selected .grandchild-menu a {
 			color: $gray-font;
@@ -235,14 +249,14 @@ body {
 		border-bottom-color: $hover-color;
 		top: -19px;
 	}
-	
+
 	.grandchild-menu:before, .grandchild-menu:after {
 		border-right-color: $gray-border;
 		border-bottom-color: transparent;
 		left: -20px;
 		top: 9px;
 	}
-	
+
 	.grandchild-menu:after {
 		border-right-color: $hover-color;
 		left: -19px;
@@ -266,7 +280,7 @@ body {
 	}
 }
 
-.portlet-topper, 
+.portlet-topper,
 .portlet-title .icon {
 	padding: 3px;
 }
@@ -282,7 +296,7 @@ body {
 
 .portlet a {
 	color: $gray-font;
-	
+
 	&:hover {
 		color: #8F8F8F;
 		text-decoration: none;
@@ -291,11 +305,11 @@ body {
 
 /* ---------- MISCELLANEOUS ---------- */
 
-#sign-in, 
-#navigation li, 
+#sign-in,
+#navigation li,
 #navigation .selected .child-menu a,
 #navigation .selected .child-menu .selected .grandchild-menu a,
-.portlet-topper, 
+.portlet-topper,
 .portlet-title-text {
 	text-shadow: 0px 1px 0px #FFF;
 }
@@ -334,71 +348,18 @@ body {
 /* ---------- Mobile ---------- */
 
 .mobile {
-	.portlet-dockbar {
-		height: 39px;
-		position: absolute;
-		top: 2px;
-		right: 5px;
-		width: 39px;
-		background: red;
-
-		&:hover #dockbar {
-			display: block;
-		}
-	}
-	#dockbar {
-		display: none;
-		padding: 0px;
-		position: absolute;
-		right: 0px;
-		height: auto;
-		width: 150px;
-		top: 39px;
-		z-index: 10;
-
-		.aui-toolbar {
-			float: left;
-			clear:both;
-
-			li {
-				display: block;
-
-				&.aui-toolbar-separator, &.pin-dockbar {
-					display: none;
-				}
-			}
-		}
-	}
-
 	#wrapper {
 		padding-left: 225px;
 	}
 
-	#banner {
-		height: 43px;
-	}
-
-	#heading {
-		height: 0;
-	}
-
 	#toggle {
-		background: red;
-		color: transparent;
+		background: url(../images/custom/toggleImage.png) 50% center no-repeat;
+		border-right: 1px solid $gray-border;
+		cursor: pointer;
 		display: block;
-		height: 30px;
-		margin-left: 230px;
-		position: absolute;
-		top: 2px;
-		width: 0px;
-	}
-
-	.site-title {
-		float: none;
-		
-		img {
-			margin-left: 50px;
-		}
+		float: left;
+		height: 44px;
+		width: 50px;
 	}
 
 	.modify-pages .delete-tab {
@@ -416,11 +377,10 @@ body {
 		bottom: 0;
 		height: 100%;
 		left: 0px;
-		overflow-y: scroll;
-		overflow-x: hidden;
+		overflow-y: auto;
 		padding: 0px;
 		position: fixed;
-		top: 0px;
+		top: 0;
 		width: 225px;
 
 		ul, li, ul.child-menu, ul.grandchild-menu, ul.child-menu li, ul.child-menu ul.grandchild-menu li {
@@ -441,7 +401,6 @@ body {
 
 		ul {
 			margin-right: 2px;
-			padding-top: 45px;
 
 			li .nav-expand, &.child-menu ul.grandchild-menu.nav-expand {
 				display: block;
@@ -451,18 +410,18 @@ body {
 				text-align: left;
 			}
 
-			a, 
+			a,
 			a:hover,
-			ul.child-menu a, 
-			ul.child-menu ul.grandchild-menu a,  
-			ul.child-menu li:hover a, 
-			ul.child-menu ul.grandchild-menu li:hover a, 
-			.selected a, 
-			ul.child-menu .selected a, 
-			ul.child-menu ul.grandchild-menu .selected a, 
-			.selected ul.child-menu .selected ul.grandchild-menu a, 
-			ul.child-menu .selected ul.grandchild-menu .selected a, 
-			ul.child-menu .selected:hover a, 
+			ul.child-menu a,
+			ul.child-menu ul.grandchild-menu a,
+			ul.child-menu li:hover a,
+			ul.child-menu ul.grandchild-menu li:hover a,
+			.selected a,
+			ul.child-menu .selected a,
+			ul.child-menu ul.grandchild-menu .selected a,
+			.selected ul.child-menu .selected ul.grandchild-menu a,
+			ul.child-menu .selected ul.grandchild-menu .selected a,
+			ul.child-menu .selected:hover a,
 			ul.child-menu .selected ul.grandchild-menu .selected:hover a {
 				background: transparent;
 				border-width: 0;
@@ -500,18 +459,18 @@ body {
 	}
 }
 
-.sidebar-collapsed {
+.mobile .navigation-collapsed {
 	#navigation {
-		left: -255px;
+		left: -225px;
 	}
 
 	#wrapper {
-		padding-left: 0;
+		margin-left: -225px;
 	}
+}
 
-	#toggle {
-		margin-left: 260px;
-	}
+.dockbar-ready #navigation {
+	top: 33px;
 }
 
 /* ---------- MEDIA QUERY ---------- */
@@ -559,7 +518,8 @@ body {
 
 /* ---------- EXTRAS ---------- */
 
-#banner, 
+#dockbar,
+#banner,
 #navigation ul,
 #sign-in,
 .portlet-topper{
@@ -574,9 +534,9 @@ body {
 	@include background(linear-gradient(#EFEFEF, #CFCFCF));
 }
 
-#sign-in, 
-#navigation ul, 
-#navigation .child-menu li:last-child, 
+#sign-in,
+#navigation ul,
+#navigation .child-menu li:last-child,
 #navigation .child-menu li:last-child:hover {
 	@include box-shadow(#FFF 0px 1px 0px);
 }
@@ -585,12 +545,12 @@ body {
 	@include box-shadow(#FFF 1px 0px 0px);
 }
 
-#navigation	li:hover .child-menu, 
+#navigation	li:hover .child-menu,
 #navigation .child-menu li:hover .grandchild-menu {
 	@include box-shadow(#BFBFBF 0px 2px 5px);
 }
 
-#sign-in, 
+#sign-in,
 .portlet-topper,
 .lfr-panel-container {
 	@include border-radius(4px);
@@ -606,7 +566,7 @@ body {
 	}
 
 	li .child-menu li {
-		&:first-child:last-child, 
+		&:first-child:last-child,
 		&:first-child:last-child a,
 		&:first-child:last-child a:hover,
 		&:first-child,
@@ -616,17 +576,17 @@ body {
 		&:last-child a,
 		&:last-child a:hover {
 			@include border-radius(4px);
-		} 
-		
+		}
+
 		.grandchild-menu li {
-			&:first-child:last-child, 
+			&:first-child:last-child,
 			&:first-child:last-child a,
 			&:first-child:last-child a:hover,
-			&:first-child, 
-			&:first-child a, 
-			&:first-child a:hover, 
-			&:last-child, 
-			&:last-child a, 
+			&:first-child,
+			&:first-child a,
+			&:first-child a:hover,
+			&:last-child,
+			&:last-child a,
 			&:last-child a:hover  {
 				@include border-radius(4px);
 			}
@@ -638,15 +598,15 @@ body {
 	.child-menu .selected a:hover,
 	.selected a,
 	.selected .child-menu .selected a,
-	.selected .child-menu .selected a:hover, 
+	.selected .child-menu .selected a:hover,
 	.child-menu .selected .grandchild-menu li.selected a,
 	.child-menu .selected .grandchild-menu li.selected a:hover {
 		@include box-shadow(#575757 0px 0px 15px 0px inset);
 	}
 
-	.child-menu .selected .grandchild-menu a:hover, 
+	.child-menu .selected .grandchild-menu a:hover,
 	.selected .child-menu a,
-	.selected .child-menu .selected .grandchild-menu a, 
+	.selected .child-menu .selected .grandchild-menu a,
 	li:last-child:hover{
 		@include box-shadow(0px 0px 0px 0px);
 	}
@@ -672,27 +632,27 @@ body {
 			&:first-child li a:hover,
 			&:last-child li a:hover {
 				@include border-radius(0px);
-			} 
+			}
 
 			.grandchild-menu li {
-				&:first-child li, 
-				&:last-child li, 
-				&:first-child li a, 
-				&:last-child li a, 
-				&:first-child li a:hover, 
+				&:first-child li,
+				&:last-child li,
+				&:first-child li a,
+				&:last-child li a,
+				&:first-child li a:hover,
 				&:last-child li a:hover {
 					@include border-radius(0px);
 				}
 			}
 		}
 
-		&:first-child a, 
+		&:first-child a,
 		&:first-child a:hover  {
 			@include border-corner-radius(top, right, 0px);
 			@include border-corner-radius(bottom, right, 0px);
 		}
 
-		&:last-child a, 
+		&:last-child a,
 		&:last-child a:hover  {
 			@include border-corner-radius(top, left, 0px);
 			@include border-corner-radius(bottom, left, 0px);
@@ -702,8 +662,8 @@ body {
 			&:first-child,
 			&:first-child a,
 			&:first-child a:hover,
-			.grandchild-menu li:first-child,  
-			.grandchild-menu li:first-child a, 
+			.grandchild-menu li:first-child,
+			.grandchild-menu li:first-child a,
 			.grandchild-menu li:first-child a:hover {
 				@include border-corner-radius(bottom, right, 0px);
 				@include border-corner-radius(bottom, left, 0px);
@@ -711,9 +671,9 @@ body {
 
 			&:last-child,
 			&:last-child a,
-			&:last-child a:hover,  
-			.grandchild-menu li:last-child,  
-			.grandchild-menu li:last-child a, 
+			&:last-child a:hover,
+			.grandchild-menu li:last-child,
+			.grandchild-menu li:last-child a,
 			.grandchild-menu li:last-child a:hover {
 				@include border-corner-radius(top, right, 0px);
 				@include border-corner-radius(top, left, 0px);
@@ -737,12 +697,12 @@ body {
 	}
 
 	ul {
-		.selected a, 
-		ul.child-menu .selected a, 
-		ul.child-menu ul.grandchild-menu .selected a, 
-		.selected ul.child-menu .selected ul.grandchild-menu a, 
-		ul.child-menu .selected ul.grandchild-menu .selected a, 
-		ul.child-menu .selected:hover a, 
+		.selected a,
+		ul.child-menu .selected a,
+		ul.child-menu ul.grandchild-menu .selected a,
+		.selected ul.child-menu .selected ul.grandchild-menu a,
+		ul.child-menu .selected ul.grandchild-menu .selected a,
+		ul.child-menu .selected:hover a,
 		ul.child-menu .selected ul.grandchild-menu .selected:hover a {
 			@include box-shadow(0 0 0 0);
 		}

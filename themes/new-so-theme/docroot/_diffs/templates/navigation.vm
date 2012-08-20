@@ -1,6 +1,4 @@
 <nav class="$nav_css_class" id="navigation">
-	<a id="toggle"><span>Toggle Navigation</span></a>
-
 	<h1>
 		<span>#language("navigation")</span>
 	</h1>
@@ -18,11 +16,15 @@
 			#end
 
 			<li class="$nav_item_class">
-				<a href="$nav_item.getURL()" $nav_item.getTarget()><span>$nav_item.icon() $nav_item.getName()
-					#if ($navHasChildren)
-						<span class="triangle">&#9662;</span>
-					#end
-				</span></a>
+				<a href="$nav_item.getURL()" $nav_item.getTarget()>
+						<span>
+							$nav_item.icon() $nav_item.getName()
+
+							#if ($navHasChildren)
+								<span class="triangle">&#9662;</span>
+							#end
+						</span>
+					</a>
 
 				#if ($navHasChildren)
 					<ul class="child-menu">

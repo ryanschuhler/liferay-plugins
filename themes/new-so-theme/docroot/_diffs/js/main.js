@@ -1,4 +1,4 @@
-AUI().ready(
+AUI().use('transition').ready(
 
 	/*
 	This function gets loaded when all the HTML, not including the portlets, is
@@ -8,6 +8,7 @@ AUI().ready(
 	function(A) {
 		var body = A.one('body');
 		var mobNav = A.one('.mobile #navigation');
+		var wrapper = body.one('#wrapper');
 		var navigation = A.one('#navigation');
 		var toggle = A.one('#toggle');
 
@@ -17,49 +18,51 @@ AUI().ready(
 			console.log(event.currentTarget);
 		};
 
-		navigation.all('li.has-children').each(
-			function (x){
-				console.log(x.one('a'));
-				var childMenu = x.one('.parent-menu');
-				var middle = Math.floor((x.get('clientWidth') / 2));
+		navigation.all('li.parent-menu').each(
+			function (item, index, collection) {
+				var childMenu = item.one('.child-menu');
+				var middle = Math.floor((item.get('clientWidth') / 2));
 				var negMargin = (middle - 100) + "px";
-				var anchor = x.one('a');
 
-				anchor.delegate(
-					'click',
-					function (e) {
-						menuTrigger(e);
+				childMenu.setStyle('left', negMargin);
+			}
+		);
+
+		if (toggle) {
+			toggle.on(
+				'click',
+				function (e) {
+					if (body.hasClass('navigation-collapsed')) {
+						var leftVal = "0px";
+					} else {
+						var leftVal = "-225px";
 					}
-				);
 
-				// childMenu.setStyle('left', negMargin);
-			}
-		);
+					mobNav.transition({
+						easing: 'ease-out',
+						duration: 0.75, // seconds
+						left: leftVal
+					}, function () {
+						body.toggleClass('navigation-collapsed');
 
-		toggle.on(
-			'click',
-			function (e) {
-				body.toggleClass('sidebar-collapsed');
-			}
-		);
+						A.io.request(
+							themeDisplay.getPathMain() + '/portal/session_click',
+							{
+								data: {
+									'navigation-collapsed': body.hasClass('navigation-collapsed')
+								}
+							}
+						);
+					});
 
-		mobNav.all('li.has-children').each(
-			function (node) {
-			}
-			// triangle.on(
-			// 	'click',
-			// 	function (f) {
-			// 		f.preventDefault();
-			// 		ul.toggleClass('nav-expand');
-					
-			// 		if (triangle.hasClass('nav-expand')) {
-			// 			triangle.replace('&#9656;' ,'&#9662;');
-			// 		} else {
-			// 			triangle.replace('&#9662;', '&#9656;');
-			// 		}
-			// 	}
-			// )
-		);
+					wrapper.transition({
+						easing: 'ease-out',
+						duration: 0.75, // seconds
+						marginLeft: leftVal
+					});
+				}
+			);
+		}
 	}
 );
 
@@ -72,7 +75,7 @@ Liferay.Portlet.ready(
 	node: the Alloy Node object of the current portlet
 	*/
 
-	function(portletId, node) {
+	function (portletId, node) {
 	}
 );
 
@@ -84,6 +87,6 @@ Liferay.on(
 	the page.
 	*/
 
-	function() {
+	function () {
 	}
 );
