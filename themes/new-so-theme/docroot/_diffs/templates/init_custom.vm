@@ -3,3 +3,9 @@
 #if ($is_navigation_collapsed == true)
 	#set ($css_class = "${css_class} navigation-collapsed")
 #end
+
+#set ($is_mobile_enabled = $getterUtil.getBoolean($sessionClicks.get($request, "mobile-enabled", "true")))
+
+#if ($is_mobile_enabled == true)
+	#set ($css_class = "${css_class} mobile-enabled")
+#end

@@ -9,11 +9,12 @@
 
 	$theme.include($top_head_include)
 
-	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+	#if ($is_mobile_enabled)
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+	#end
 </head>
 
 <body class="$css_class">
-
 $theme.include($body_top_include)
 
 #if ($is_signed_in)
@@ -75,6 +76,7 @@ $theme.include($body_top_include)
 	<footer id="footer" role="contentinfo">
 		<p class="powered-by">
 			#language("powered-by") <a href="http://www.liferay.com" rel="external">Liferay</a>
+			<a id="full-site">Click <span id="remove-mobile">here</span> to go to <span id="word">desktop</span> site.</a>
 		</p>
 	</footer>
 </div>

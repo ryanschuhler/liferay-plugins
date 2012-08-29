@@ -58,7 +58,7 @@ body {
 	img {
 		border-right: solid 1px $gray-border;
 		height: 41px;
-		padding: 1px 14px 0px 10px;
+		padding: 2px 14px 1px 10px;
 		width: auto;
 	}
 
@@ -69,6 +69,16 @@ body {
 
 #footer {
 	margin: 5px 10px;
+
+	#full-site {
+		display: block;
+
+		#remove-mobile {
+			text-decoration: underline;
+			color: blue;
+			cursor: pointer;
+		}
+	}
 }
 
 #toggle span {
@@ -82,6 +92,26 @@ body {
 /* ---------- NAVIGATION ---------- */
 
 #navigation {
+	form {
+		float: right;
+		margin: 8px;
+
+		input, select {
+			display: none;
+		}
+
+		input[type="text"] {
+			display: block;
+			width: 185px;
+
+			&:focus {
+				background: #FFF;
+				padding: 5px;
+				width: 176px;
+			}
+		}
+	}
+
 	ul {
 		float: left;
 		list-style: none;
@@ -153,6 +183,10 @@ body {
 			&:last-child {
 				margin-bottom: 5px;
 				border-right: solid 1px $gray-border;
+
+				&:hover {
+					padding-bottom: 0;
+				}
 			}
 
 			&:hover .grandchild-menu {
@@ -286,7 +320,7 @@ body {
 }
 
 .portlet-title-text {
-	padding: 3px 80px 3px 3px;
+	padding: 3px 3px 3px 3px;
 }
 
 .portlet-topper-toolbar {
@@ -348,134 +382,272 @@ body {
 /* ---------- Mobile ---------- */
 
 .mobile {
-	#wrapper {
-		padding-left: 225px;
+	body.mobile-enabled {
+		overflow-x: hidden;
+
+		&.signed-out {
+			#navigation {
+				padding-top: 44px;
+			}
+		}
 	}
 
-	#toggle {
-		background: url(../images/custom/toggleImage.png) 50% center no-repeat;
-		border-right: 1px solid $gray-border;
-		cursor: pointer;
-		display: block;
-		float: left;
-		height: 44px;
-		width: 50px;
-	}
+	.mobile-enabled {
+		#sign-in {
+			position: absolute;
+			right: 225px;
+		}
 
-	.modify-pages .delete-tab {
-		display: inline-block;
-		float: right;
-		margin-top: 0px;
-		padding: 3px;
-		position: relative;
-		right: 4px;
-		top: -4px;
-	}
+		#wrapper {
+			left: 225px;
+			position: relative;
+			right: -225px;
+			width: 100%
+		}
 
-	#navigation {
-		background: $hover-color;
-		bottom: 0;
-		height: 100%;
-		left: 0px;
-		overflow-y: auto;
-		padding: 0px;
-		position: fixed;
-		top: 0;
-		width: 225px;
-
-		ul, li, ul.child-menu, ul.grandchild-menu, ul.child-menu li, ul.child-menu ul.grandchild-menu li {
-			background: transparent;
-			border-width: 0;
+		#toggle {
+			background: url(../images/custom/toggleImage.png) 50% center no-repeat;
+			border-right: 1px solid $gray-border;
+			cursor: pointer;
 			display: block;
-			float: none;
-			margin: 0;
-			padding: 0;
-			position: static;
-			text-shadow: none;
-			width: auto;
+			float: left;
+			height: 44px;
+			width: 50px;
 		}
 
-		li:hover ul, .child-menu li:hover ul, .child-menu li:hover:last-child {
-			border-width: 0;
+		&.lfr-dockbar-pinned {
+			padding-top: 34px;
 		}
 
-		ul {
-			margin-right: 2px;
+		#navigation {
+			background: $hover-color;
+			bottom: 0;
+			height: 100%;
+			left: 0px;
+			overflow-y: auto;
+			padding: 0px;
+			position: fixed;
+			top: 0;
+			width: 225px;
+			-webkit-overflow-scrolling: touch;
+			z-index: 30;
 
-			li .nav-expand, &.child-menu ul.grandchild-menu.nav-expand {
-				display: block;
-			}
-
-			li a {
-				text-align: left;
-			}
-
-			a,
-			a:hover,
-			ul.child-menu a,
-			ul.child-menu ul.grandchild-menu a,
-			ul.child-menu li:hover a,
-			ul.child-menu ul.grandchild-menu li:hover a,
-			.selected a,
-			ul.child-menu .selected a,
-			ul.child-menu ul.grandchild-menu .selected a,
-			.selected ul.child-menu .selected ul.grandchild-menu a,
-			ul.child-menu .selected ul.grandchild-menu .selected a,
-			ul.child-menu .selected:hover a,
-			ul.child-menu .selected ul.grandchild-menu .selected:hover a {
+			ul, li, ul.child-menu, ul.grandchild-menu, ul.child-menu li, ul.child-menu ul.grandchild-menu li {
 				background: transparent;
 				border-width: 0;
-				color: $gray-font;
+				display: block;
+				float: none;
+				margin: 0;
+				padding: 0;
+				position: static;
 				text-shadow: none;
+				width: auto;
+			}
+
+			ul {
+				border: solid 1px $gray-border;
+				border-left-width: 0;
+
+				li a, li a:hover, li.selected a {
+					border-bottom: solid 1px $gray-border;
+					font-family: Arial, sans-serif;
+					padding: 10px 20px;
+					text-align: left;
+				}
+
+				li:last-child a, li:last-child a:hover, li.selected:last-child a {
+					border-bottom-width: 0px;
+				}
+
+				ul.child-menu li a, 
+				ul.child-menu li, 
+				ul.child-menu li a:hover, 
+				.selected .child-menu li a:hover, 
+				ul.grandchild-menu li a, 
+				ul.child-menu li, 
+				ul.grandchild-menu li a:hover, 
+				.selected li:first-child .grandchild-menu li a,
+				.selected li:last-child .grandchild-menu li a,
+				.selected .child-menu .grandchild-menu li.selected a,
+				.selected .child-menu .grandchild-menu li a:hover {
+					border: solid 1px transparent;
+				}
+
+				li ul.child-menu {
+					background: #BDBDBD;
+
+					a {
+						padding: 10px 20px;
+					}
+
+					&:before, &:after, .grandchild-menu:before, .grandchild-menu:after {
+						display: none;
+					}
+				}
+
+				a,
+				a:hover,
+				ul.child-menu a,
+				.selected a,
+				ul.child-menu .selected a,
+				ul.child-menu ul.grandchild-menu .selected a, 
+				ul.child-menu .selected:hover a {
+					background: transparent;
+					border-width: 0;
+					color: $gray-font;
+					text-shadow: none;
+				}
+			}
+
+			form input {
+				position: absolute;
+				left: 17px;
+			}
+
+			.triangle {
+				border: solid 1px transparent;
+				border-left-color: $gray-border;
+				display: inline-block;
+				float: right;
+				font-size: 1em;
+				left: 21px;
+				margin: -11px 0;
+				padding: 9px 15px;
+				position: relative;
+				top: 1px;
+			}
+
+			.child-menu li #right-triangle, .child-menu li:hover #right-triangle {
+				background: #757B80;
+				border-color: $gray-font;
+				color: $hover-color;
+				display: inline-block;
+				font-size: 1em;
+				left: 12px;
+				line-height: 1em;
+				margin: 0;
+				padding: .15em .5em .33em .5em;
+				position: relative;
+				text-shadow: $gray-font 0 1px 2px;
+				top: -3px;
+			}
+
+			li.selected {
+				position: relative;
+
+				a, a:hover {
+					background: #FFF;
+				}
+
+				&:before, &:after {
+					border: 10px solid transparent;
+					border-right-color: $gray-border;
+					content: "";
+					display: block;
+					right: 0;
+					position: absolute;
+					top: 10px;
+				}
+
+				&:after {
+					border-right-color: #FFF;
+					right: -1px;
+				}
+
+				li.selected a, li.selected:hover a, .grandchild-menu li.selected a, ul.child-menu ul.grandchild-menu .selected a  {
+					background: #FFF;
+				}
+
+				li.selected li a, ul.child-menu li.selected:hover li a, .child-menu .selected .grandchild-menu a {
+					background: transparent;
+				}
+			}
+
+			 
+			ul.child-menu li a:hover, 
+			ul.child-menu ul.grandchild-menu li a:hover, 
+			li a:hover, 
+			ul ul.child-menu li a:hover, 
+			ul ul.child-menu li ul.grandchild-menu li a:hover, 
+			.child-menu li:first-child a:hover, 
+			.child-menu li:last-child a:hover {
+				background: transparent;
+			}
+
+			ul.child-menu li a {
+				padding: 10px 0;
+			}
+
+			ul.child-menu ul.grandchild-menu a {
+				padding: 5px 35px;
 			}
 		}
 
-		.triangle {
-			display: inline-block;
-			float: left;
-			padding-right: 5px;
+
+		&.dockbar-ready {
+			#navigation ul {
+				margin-top: 78px;
+
+				ul {
+					margin-top: 0;
+				}
+			}
+		
+			&.lfr-dockbar-pinned {
+				#banner {
+					position: fixed;
+					margin-top: -45px;
+					z-index: 1;
+				}
+
+				#toggle {
+					position: relative;
+					left: 225px;
+				}
+
+				#heading {
+					position: relative;
+					left: 225px;
+				}
+
+				#content {
+					margin-top: 45px;
+				}
+			}
+
+			#navigation form input[type="text"] {
+				margin-top: 34px;
+			}
 		}
 
-		.child-menu li #right-triangle, .child-menu li:hover #right-triangle {
-			display: inline-block;
-			left: 0;
-			position: relative;
-			top: -1px;
-		}
+		&.navigation-collapsed {
+			#navigation {
+				left: -225px;
+			}
 
-		li.selected {
-			background: #FFF;
-		}
+			#wrapper {
+				right: 0;
+				left: 0;
 
-		li, li:hover, li.selected {
-			margin-bottom: 10px;
-			padding: 5px 0px;
-		}
+				#toggle, #heading {
+					left: 0;
+				}
 
-		ul.child-menu, ul.child-menu ul.grandchild-menu {
-			padding-left: 25px;
-			/*display: none;*/
+				#sign-in {
+					right: 0px;
+				}
+			}
 		}
 	}
-}
-
-.mobile .navigation-collapsed {
-	#navigation {
-		left: -225px;
-	}
-
-	#wrapper {
-		margin-left: -225px;
-	}
-}
-
-.dockbar-ready #navigation {
-	top: 33px;
 }
 
 /* ---------- MEDIA QUERY ---------- */
 
-@media screen and (min-width: 750px) and (max-width: 768px) {
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+	.aui-toolbar li {
+		margin-left: 2px;
+	}
+
 	#column-1 {
 		float: left;
 		margin: 0;
@@ -500,6 +672,35 @@ body {
 }
 
 @media screen and (max-width: 750px) {
+	.portlet-dockbar {
+		display: none;
+	}
+
+	.mobile .mobile-enabled.dockbar-ready {
+		#navigation {
+			ul {
+				margin-top: 44px;
+				
+				ul {
+					margin-top: 0;
+				}
+			}
+
+			form input[type="text"] {
+				margin-top: 0px;
+			}
+		}
+
+		&.lfr-dockbar-pinned {
+			padding-top: 0;
+			
+			#banner {
+				margin-top: 0;
+				top: 0;
+			}
+		}
+	}
+
 	#column-1 {
 		display: block;
 		width: 98%;
@@ -522,7 +723,9 @@ body {
 #banner,
 #navigation ul,
 #sign-in,
-.portlet-topper{
+.portlet-topper,
+.mobile .mobile-enabled #navigation ul li a, 
+.mobile .mobile-enabled #navigation ul li a:hover  {
 	@include background(linear-gradient(#FFF, $hover-color));
 }
 
@@ -561,7 +764,8 @@ body {
 	li:first-child a,
 	li:last-child a,
 	li:first-child a:hover,
-	li:last-child a:hover {
+	li:last-child a:hover, 
+	form input[type="text"] {
 		@include border-radius(4px);
 	}
 
@@ -682,26 +886,52 @@ body {
 	}
 }
 
-.mobile #navigation {
-	li.selected {
-		@include box-shadow($hover-color -1px 0px 2px inset);
+.mobile .mobile-enabled #navigation {
+	.child-menu li #right-triangle, 
+	.child-menu li:hover #right-triangle {
+		@include border-radius(20px);
 	}
 
-	ul, li, ul.child-menu, ul.grandchild-menu, ul.child-menu li, ul.child-menu ul.grandchild-menu li {
+	ul, 
+	li, 
+	ul.child-menu, 
+	ul.grandchild-menu, 
+	ul.child-menu li, 
+	ul.child-menu ul.grandchild-menu li, 
+	li:first-child a, li:last-child a, 
+	.child-menu li:first-child:hover a, 
+	.child-menu li:last-child:hover a, 
+	li .child-menu li:first-child:last-child a, 
+	li:first-child a, li:last-child a, 
+	.child-menu li .grandchild-menu li:first-child:hover a, 
+	.child-menu li .grandchild-menu li:last-child:hover a, 
+	li .child-menu li .grandchild-menu li:first-child:last-child a, 
+	ul li:hover li a, 
+	li.selected:first-child a, 
+	li.selected:last-child a, 
+	.grandchild-menu li.selected:first-child a,
+	.grandchild-menu li.selected:last-child a {
 		@include border-radius(0px);
 		@include box-shadow(0 0 0 0);
 	}
 
-	li:hover ul, .child-menu li:hover ul, .child-menu li:hover:last-child {
+	li:hover ul, 
+	.child-menu li:hover ul, 
+	.child-menu li:hover:last-child, 
+	.child-menu li:first-child:hover li a,
+	.child-menu li:last-child:hover li a, 
+	 {
 		@include box-shadow(0 0 0 0);
 	}
 
 	ul {
+		ul.child-menu {
+			@include box-shadow(#555555 0px 0px 6px 0px inset);
+		}
+
 		.selected a,
 		ul.child-menu .selected a,
 		ul.child-menu ul.grandchild-menu .selected a,
-		.selected ul.child-menu .selected ul.grandchild-menu a,
-		ul.child-menu .selected ul.grandchild-menu .selected a,
 		ul.child-menu .selected:hover a,
 		ul.child-menu .selected ul.grandchild-menu .selected:hover a {
 			@include box-shadow(0 0 0 0);

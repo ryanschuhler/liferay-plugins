@@ -3,29 +3,55 @@
 $text-color: #1A1A1A;
 $border-color: #878787;
 $background-color: #DFF4FF;
+$hover-color: #EAEAEA;
 
 body.new-so-blue {
 	color: $text-color;
-	background: #A7CEDF;
+	background: #3C9AD5;
 
 	#banner {
 		border-bottom: solid 1px $border-color;
+	}
+
+	#dockbar {
+		border-color: $background-color;
 	}
 
 	#sign-in, #navigation ul, .portlet-topper, #navigation li:hover .child-menu, #navigation li, #navigation li .child-menu, #navigation .child-menu li:first-child, #navigation .child-menu li:last-child {
 		border-color: $border-color;	
 	}
 
-	#navigation .child-menu:before {
-		border-bottom-color: $border-color;
-	}
+	#navigation {
+		.child-menu, .grandchild-menu {
+			background: $background-color;
+		}
 
-	#navigation .grandchild-menu:before, #navigation li a {
-		border-right-color: $border-color;
-	}
+		.child-menu {
 
-	#navigation li:last-child a {
-		border-right-color: transparent;
+			&:before {
+				border-bottom-color: $border-color;
+			}
+
+			&:after {
+				border-bottom-color: $background-color;
+			}
+
+			li:hover a {
+				border-color: $hover-color;
+			}
+		}
+
+		li:last-child a, .child-menu a {
+			border-right-color: transparent;
+		}
+
+		.grandchild-menu:before, li a {
+			border-right-color: $border-color;
+		}
+
+	 	.grandchild-menu:after {
+	 		border-right-color: $background-color;
+	 	}
 	}
 
 	.portlet-topper {
@@ -51,14 +77,75 @@ body.new-so-blue {
 	}
 }
 
+.mobile body.new-so-blue.mobile-enabled	#toggle, body.new-so-blue .site-title img {
+		border-right-color: $border-color;
+	}
+
+.mobile body.new-so-blue.mobile-enabled {
+	#navigation {
+		background: #0967A2;
+
+		ul {
+			border-color: $border-color;
+
+			li {
+				ul.child-menu {
+					background: $background-color;
+
+					li a {
+						background: transparent;
+					}
+
+					li.selected a {
+						background: #FFF;
+					}
+				}
+
+				a {
+					border-bottom-color: $border-color;
+				}
+			}
+		}
+
+		.child-menu li:first-child, .child-menu li:last-child {
+			border-color: transparent;
+		}
+
+		.triangle {
+			border-left-color: $border-color;
+		}
+
+		.child-menu li:hover .grandchild-menu li a, .child-menu li:hover .grandchild-menu, .child-menu li:hover a {
+			background: transparent;
+			border-color: transparent;
+		}
+
+		li.selected {
+			&:before {
+				border-right-color: $border-color;
+			}
+
+			&:after {
+				border-right-color: #3C9AD5;
+			}
+		}
+	}
+}
+
 /* ---------- EXTRAS ---------- */
 
 body.new-so-blue {
-	#banner, #sign-in, #navigation ul, .portlet-topper {
+	#banner, #sign-in, #navigation ul, .portlet-topper, #navigation form input[type="text"]:focus, .aui-paginator-container, .document-library-breadcrumb, .lfr-header-row, .portlet-section-header th, .portlet-wiki .child-pages h2, .results-row.alt td, .site-breadcrumbs {
 		@include background(linear-gradient($background-color, #FFF));
 	}
 
-	.aui-paginator-container, .document-library-breadcrumb, .lfr-header-row, .portlet-section-header th, .portlet-wiki .child-pages h2, .results-row.alt td, .site-breadcrumbs {
-		@include background(linear-gradient(#FFF, $background-color));
+	#dockbar {
+		@include background(linear-gradient(#3C9AD5, $background-color));
+	}
+}
+
+.mobile body.new-so-blue.mobile-enabled {
+	#navigation ul li a, #navigation ul li a:hover {
+		@include background(linear-gradient($background-color, #FFF));
 	}
 }

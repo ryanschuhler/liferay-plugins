@@ -1,7 +1,11 @@
-<nav class="$nav_css_class" id="navigation">
+<nav id="navigation">
 	<h1>
 		<span>#language("navigation")</span>
 	</h1>
+
+	#if ($is_signed_in)
+		$theme.search()
+	#end
 
 	<ul>
 		#foreach ($nav_item in $nav_items)
