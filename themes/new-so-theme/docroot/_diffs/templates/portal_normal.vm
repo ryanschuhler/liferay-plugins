@@ -2,14 +2,14 @@
 
 #parse ($init)
 
-<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+<html class="#language("lang.dir") $html_class" dir="#language("lang.dir")" lang="$w3c_language_id">
 
 <head>
 	<title>$the_title - $company_name</title>
 
 	$theme.include($top_head_include)
 
-	#if ($is_mobile_enabled)
+	#if ($is_mobile_enabled || $is_mobile)
 		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
 	#end
 </head>

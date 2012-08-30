@@ -25,13 +25,13 @@
 							$nav_item.icon() $nav_item.getName()
 
 							#if ($navHasChildren)
-								<span class="triangle">&#9662;</span>
+								<span class="triangle">&#9660;</span>
 							#end
 						</span>
 					</a>
 
 				#if ($navHasChildren)
-					<ul class="child-menu">
+					<ul class="child-menu aui-helper-hidden">
 						#foreach ($nav_child in $nav_item.getChildren())
 							#set ($hasGrandChildren = $nav_child.hasChildren())
 							#set ($nav_child_class = "")
@@ -49,12 +49,12 @@
 							<li class="$nav_child_class">
 								<a href="$nav_child.getURL()" $nav_child.getTarget()><span>$nav_child.icon() $nav_child.getName()</span>
 									#if ($hasGrandChildren)
-										<span id="right-triangle" class="triangle">&#9656;</span>
+										<span id="right-triangle" class="triangle">&#9658;</span>
 									#end
 								</a>
 
 								#if ($hasGrandChildren)
-									<ul class="grandchild-menu">
+									<ul class="grandchild-menu aui-helper-hidden">
 										#foreach ($nav_grandchild in $nav_child.getChildren())
 											#if ($nav_grandchild.isSelected())
 												<li class="selected">

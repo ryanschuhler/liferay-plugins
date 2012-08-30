@@ -9,11 +9,13 @@ AUI().use('transition').ready(
 		var html = A.one('html');
 		var head = html.one('head');
 		var body = html.one('body');
+		var meta_viewport = html.one('head').one('meta\[name=\"viewport\"\]');
+		var meta_viewport_node = A.Node.create('<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">');
 		var mobNav = A.one('.mobile #navigation');
 		var navigation = A.one('#navigation');
 		var rmMobile = html.one('#remove-mobile');
 		var toggle = A.one('#toggle');
-
+		
 		var menuTrigger = function (event) {
 			event.preventDefault();
 			var ul = event.target.ancestor('li').one('ul');
@@ -22,33 +24,45 @@ AUI().use('transition').ready(
 			ul.toggleClass('aui-helper-hidden');
 
 			if (ul.hasClass('aui-helper-hidden')) {
-				triangle.set('text', '\u25B8');
+				triangle.set('text', '\u25B6');
 			} else {
-				triangle.set('text', '\u25BE');
+				triangle.set('text', '\u25BC');
 			}
 		};
 
-		navigation.all('li.parent-menu').each(
-			function (item, index, collection) {
-				var childMenu = item.one('.child-menu');
-				var middle = Math.floor((item.get('clientWidth') / 2));
-				var negMargin = (middle - 100) + "px";
+		if (!body.hasClass('mobile') || !html.hasClass('mobile-enabled')) {
+			navigation.all('li.parent-menu').each(
+				function (item, index, collection) {
+					var childMenu = item.one('.child-menu');
+					var middle = Math.floor((item.get('clientWidth') / 2));
+					var negMargin = (middle - 100) + "px";
 
-				childMenu.setStyle('left', negMargin);
-			}
-		);
+					childMenu.setStyle('left', negMargin);
+
+					childMenu.removeClass('aui-helper-hidden');
+
+					childMenu.all('li').each(
+						function (e) {
+							if (e.hasClass('has-children')) {
+								e.one('.grandchild-menu').removeClass('aui-helper-hidden');
+							}
+						}
+					);
+				}
+			);
+		}
 
 		if (html.hasClass('mobile') && body.hasClass('mobile-enabled')) {
 			mobNav.all('ul ul').each(
 				function (e) {
 					e.addClass('aui-helper-hidden');
-					e.ancestor('li').all('.triangle').set('text', '\u25B8');
+					e.ancestor('li').all('.triangle').set('text', '\u25B6');
 				
 					e.all('li').each (
 						function (f) {
 								if (f.hasClass('selected')) {
 								e.removeClass('aui-helper-hidden');
-								e.ancestor('li').one('.triangle').set('text', '\u25BE');
+								e.ancestor('li').one('.triangle').set('text', '\u25BC');
 							}
 						}
 					);
@@ -123,9 +137,6 @@ AUI().use('transition').ready(
 				}
 			);
 		}
-
-		var meta_viewport = html.one('head').one('meta\[name=\"viewport\"\]');
-		var meta_viewport_node = A.Node.create('<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">');
 
 		rmMobile.on(
 			'click',

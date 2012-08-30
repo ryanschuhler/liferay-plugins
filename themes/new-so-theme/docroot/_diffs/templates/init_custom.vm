@@ -9,3 +9,15 @@
 #if ($is_mobile_enabled == true)
 	#set ($css_class = "${css_class} mobile-enabled")
 #end
+
+#set ($isIphone = $request.getHeader("User-Agent").toLowerCase().indexOf("iphone") != -1)
+
+#set ($isAndroid = $request.getHeader("User-Agent").toLowerCase().indexOf("android")!= -1)
+
+#set ($is_mobile = $isIphone || $isAndroid)
+
+#set ($html_class = "")
+
+#if ($is_mobile)
+	#set ($html_class = ${html_class} + "mobile")
+#end

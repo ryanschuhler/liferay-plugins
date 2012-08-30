@@ -67,6 +67,10 @@ body {
 	}
 }
 
+body.lfr-dockbar-pinned {
+	padding-top: 34px;
+}
+
 #footer {
 	margin: 5px 10px;
 
@@ -94,7 +98,7 @@ body {
 #navigation {
 	form {
 		float: right;
-		margin: 8px;
+		margin: 11px;
 
 		input, select {
 			display: none;
@@ -102,12 +106,12 @@ body {
 
 		input[type="text"] {
 			display: block;
-			width: 185px;
+			width: 205px;
 
 			&:focus {
 				background: #FFF;
 				padding: 5px;
-				width: 176px;
+				width: 196px;
 			}
 		}
 	}
@@ -195,7 +199,7 @@ body {
 
 			#right-triangle {
 				position: absolute;
-				left: 181px;
+				left: 177px;
 				top: 5px;
 				display: block;
 			}
@@ -272,28 +276,35 @@ body {
 	.child-menu:before, .child-menu:after, .grandchild-menu:before, .grandchild-menu:after {
 		border: 10px solid transparent;
 		border-bottom-color: $gray-border;
+		border-top-width: 0px;
 		content: "";
 		display: block;
 		left: 90px;
 		position: absolute;
-		top: -20px;
+		top: -11px;
 	}
 
 	.child-menu:after {
 		border-bottom-color: $hover-color;
-		top: -19px;
+		top: -10px;
 	}
 
 	.grandchild-menu:before, .grandchild-menu:after {
 		border-right-color: $gray-border;
 		border-bottom-color: transparent;
-		left: -20px;
+		border-top-width: 10px;
+		border-left-width: 0px;
+		left: -11px;
 		top: 9px;
 	}
 
 	.grandchild-menu:after {
 		border-right-color: $hover-color;
-		left: -19px;
+		left: -10px;
+	}
+
+	.triangle {
+		font-size: .5em;
 	}
 }
 
@@ -379,6 +390,11 @@ body {
 	padding: 5px;
 }
 
+form input[type="text"] {
+	background: #FFF;
+	border-color: #BFBFBF;
+}
+
 /* ---------- Mobile ---------- */
 
 .mobile {
@@ -393,9 +409,8 @@ body {
 	}
 
 	.mobile-enabled {
-		#sign-in {
-			position: absolute;
-			right: 225px;
+		&.lfr-dockbar-pinned {
+			padding-top: 34px;
 		}
 
 		#wrapper {
@@ -415,8 +430,9 @@ body {
 			width: 50px;
 		}
 
-		&.lfr-dockbar-pinned {
-			padding-top: 34px;
+		#sign-in {
+			position: absolute;
+			right: 225px;
 		}
 
 		#navigation {
@@ -431,6 +447,22 @@ body {
 			width: 225px;
 			-webkit-overflow-scrolling: touch;
 			z-index: 30;
+
+			form {
+				border-right: solid 1px $gray-border;
+				height: 44px;
+				margin: 0;
+				position: absolute;
+				top: 34px;
+				width: 224px;
+
+
+				input {
+					position: absolute;
+					left: 8px;
+					top: 8px;
+				}
+			}
 
 			ul, li, ul.child-menu, ul.grandchild-menu, ul.child-menu li, ul.child-menu ul.grandchild-menu li {
 				background: transparent;
@@ -459,20 +491,6 @@ body {
 					border-bottom-width: 0px;
 				}
 
-				ul.child-menu li a, 
-				ul.child-menu li, 
-				ul.child-menu li a:hover, 
-				.selected .child-menu li a:hover, 
-				ul.grandchild-menu li a, 
-				ul.child-menu li, 
-				ul.grandchild-menu li a:hover, 
-				.selected li:first-child .grandchild-menu li a,
-				.selected li:last-child .grandchild-menu li a,
-				.selected .child-menu .grandchild-menu li.selected a,
-				.selected .child-menu .grandchild-menu li a:hover {
-					border: solid 1px transparent;
-				}
-
 				li ul.child-menu {
 					background: #BDBDBD;
 
@@ -499,17 +517,12 @@ body {
 				}
 			}
 
-			form input {
-				position: absolute;
-				left: 17px;
-			}
-
 			.triangle {
 				border: solid 1px transparent;
 				border-left-color: $gray-border;
 				display: inline-block;
 				float: right;
-				font-size: 1em;
+				font-size: .85em;
 				left: 21px;
 				margin: -11px 0;
 				padding: 9px 15px;
@@ -519,14 +532,14 @@ body {
 
 			.child-menu li #right-triangle, .child-menu li:hover #right-triangle {
 				background: #757B80;
-				border-color: $gray-font;
+				border-width: 0px;
 				color: $hover-color;
 				display: inline-block;
-				font-size: 1em;
+				font-size: .7em;
 				left: 12px;
 				line-height: 1em;
 				margin: 0;
-				padding: .15em .5em .33em .5em;
+				padding: .7em;
 				position: relative;
 				text-shadow: $gray-font 0 1px 2px;
 				top: -3px;
@@ -542,6 +555,7 @@ body {
 				&:before, &:after {
 					border: 10px solid transparent;
 					border-right-color: $gray-border;
+					border-left-width: 0px;
 					content: "";
 					display: block;
 					right: 0;
@@ -601,22 +615,18 @@ body {
 				}
 
 				#toggle {
-					position: relative;
 					left: 225px;
+					position: relative;
 				}
 
 				#heading {
-					position: relative;
 					left: 225px;
+					position: relative;
 				}
 
 				#content {
 					margin-top: 45px;
 				}
-			}
-
-			#navigation form input[type="text"] {
-				margin-top: 34px;
 			}
 		}
 
@@ -626,8 +636,8 @@ body {
 			}
 
 			#wrapper {
-				right: 0;
 				left: 0;
+				right: 0;
 
 				#toggle, #heading {
 					left: 0;
@@ -686,8 +696,8 @@ body {
 				}
 			}
 
-			form input[type="text"] {
-				margin-top: 0px;
+			form {
+				top: 0;
 			}
 		}
 
@@ -725,7 +735,8 @@ body {
 #sign-in,
 .portlet-topper,
 .mobile .mobile-enabled #navigation ul li a, 
-.mobile .mobile-enabled #navigation ul li a:hover  {
+.mobile .mobile-enabled #navigation ul li a:hover, 
+#navigation form {
 	@include background(linear-gradient(#FFF, $hover-color));
 }
 
@@ -755,8 +766,13 @@ body {
 
 #sign-in,
 .portlet-topper,
-.lfr-panel-container {
+.lfr-panel-container, 
+form input[type="text"] {
 	@include border-radius(4px);
+}
+
+form input[type="text"] {
+	@include box-shadow(#BFBFBF 0px 0px 6px 0px inset);
 }
 
 #navigation {
@@ -764,8 +780,7 @@ body {
 	li:first-child a,
 	li:last-child a,
 	li:first-child a:hover,
-	li:last-child a:hover, 
-	form input[type="text"] {
+	li:last-child a:hover {
 		@include border-radius(4px);
 	}
 
@@ -797,6 +812,7 @@ body {
 		}
 	}
 }
+
 #navigation {
 	.child-menu .selected a,
 	.child-menu .selected a:hover,
