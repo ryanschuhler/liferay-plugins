@@ -1,0 +1,112 @@
+<nav class="$nav_css_class" id="navigation">
+	<div id="nav-container">
+		<div id="nav-content">
+			<h1>
+				<span>#language("main navigation")</span>
+			</h1>
+
+			#if ($is_signed_in)
+				$theme.search()
+			#end
+
+			<ul id="navMain">
+				#foreach ($nav_item in $nav_items)
+				#set ($navHasChildren = $nav_item.hasChildren())
+				#set ($nav_item_class = "")
+
+				#if ($nav_item.isSelected())
+					#set ($nav_item_class = "selected")
+				#end
+				#if ($navHasChildren)
+					#set ($nav_item_class = ${nav_item_class} + " has-children parent-menu")
+				#end
+
+				<li class="$nav_item_class">
+					<a href="$nav_item.getURL()" $nav_item.getTarget()>
+							<span>
+								$nav_item.icon() $nav_item.getName()
+
+								#if ($navHasChildren)
+									<span class="triangle">&#9658;</span>
+								#end
+							</span>
+						</a>
+
+					#if ($navHasChildren)
+						<ul class="child-menu">
+							#foreach ($nav_child in $nav_item.getChildren())
+								#set ($hasGrandChildren = $nav_child.hasChildren())
+								#set ($nav_child_class = "")
+
+								#if ($nav_child.isSelected())
+									#set ($nav_child_class = "selected")
+								#end
+								#if ($nav_child.isChildSelected())
+									#set ($nav_child_class = "selected")
+								#end
+								#if ($hasGrandChildren)
+									#set ($nav_child_class = ${nav_child_class} + " has-children")
+								#end
+
+								<li class="$nav_child_class">
+									<a href="$nav_child.getURL()" $nav_child.getTarget()><span>$nav_child.icon() $nav_child.getName()</span>
+										#if ($hasGrandChildren)
+											<span id="child-triangle" class="triangle">&#9658;</span>
+										#end
+									</a>
+
+									#if ($hasGrandChildren)
+										<ul class="grandchild-menu">
+											#foreach ($nav_grandchild in $nav_child.getChildren())
+												#if ($nav_grandchild.isSelected())
+													<li class="selected">
+												#else
+													<li>
+												#end
+													<a href="$nav_grandchild.getURL()" $nav_grandchild.getTarget()>$nav_grandchild.getName()</a>
+												</li>
+											#end
+										</ul>
+									#end
+								</li>
+							#end
+						</ul>
+					#end
+				</li>
+			#end
+			</ul>
+			
+			<h1>
+				<span>#language("audience navigation")</span>
+			</h1>
+
+			<ul id="navAudience">
+				<li> 
+					<a href=""> Students </a>
+					<ul class="child-menu">
+						<li><a>Prospective Students</a></li>
+						<li><a>Current Students</a></li>
+						<li><a>Parents</a></li>
+					</ul>
+				</li>
+
+				<li> 
+					<a href=""> Alumni </a>
+					<ul class="child-menu">
+						<li><a>Clubs</a></li>
+						<li><a>Homecomings</a></li>
+						<li><a>Giving</a></li>
+					</ul>
+				</li>
+
+				<li> 
+					<a href=""> Faculty </a>
+				</li>
+
+				<li> 
+					<a href=""> Staff </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
