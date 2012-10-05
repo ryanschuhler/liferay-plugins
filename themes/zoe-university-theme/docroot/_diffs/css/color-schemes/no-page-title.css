@@ -1,0 +1,7 @@
+.no-page-title #heading .page-title {
+	display: none;
+}
+
+.no-page-title #content {
+	padding: 0;
+}
