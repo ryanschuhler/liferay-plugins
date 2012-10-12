@@ -1,0 +1,16 @@
+<div class="link-icon-container">
+	#foreach($link-url in $link-icon-url.getSiblings())
+	<div class="link-icon-border">
+		<a class="link-icon-box" href="
+		$link-url.getData()
+		">
+			<img class="link-icon" src="
+			$link-url.link-icon-image.getData()
+			">
+			<span class="link-icon-name">
+			$link-url.link-icon-name.getData()
+			</span>
+		</a>
+	</div>
+	#end
+</div>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<root>
+	<dynamic-element name="duration" type="text" index-type="" repeatable="false"/>
+	<dynamic-element name="banner-width" type="text" index-type="" repeatable="false"/>
+	<dynamic-element name="banner-height" type="text" index-type="" repeatable="false"/>
+	<dynamic-element name="banner-image" type="image" index-type="" repeatable="true">
+		<dynamic-element name="banner-content" type="text" index-type="text" repeatable="false"></dynamic-element>
+		<dynamic-element name="banner-content-alignment" type="list" index-type="text" repeatable="false">
+			<dynamic-element name="bottom-left" type="bottom-left" index-type="" repeatable="false"></dynamic-element>
+			<dynamic-element name="bottom-right" type="bottom-right" index-type="" repeatable="false"></dynamic-element>
+			<dynamic-element name="top-left" type="top-left" index-type="" repeatable="false"></dynamic-element>
+			<dynamic-element name="top-right" type="top-right" index-type="" repeatable="false"/>
+		</dynamic-element>
+		<dynamic-element name="url" type="text" index-type="" repeatable="false"/>
+	</dynamic-element>
+</root>

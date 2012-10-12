@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="aZf6U5IW" name="article-title" type="text" index-type="keyword">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="rpLZn8y9" name="article-content" type="text_area" index-type="text">
+		<dynamic-content><![CDATA[<p>
+	Fall Break<br />
+	October 19</p>
+]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="Ok8EjR8E" name="more-link" type="text" index-type="">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="3Q2tNNDh" name="article-author" type="text" index-type="">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+</root>

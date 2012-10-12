@@ -1,0 +1,38 @@
+<style type="text/css">
+.banner-slide-show {
+height: $banner-height.getData();
+width: $banner-width.getData();
+}
+</style>
+
+<div class="banner-slide-show">
+#foreach($image in $banner-image.getSiblings())
+	<div class="carousel-item $image.banner-content-alignment.getData()">
+		<a class="url" href="
+		$image.url.getData()
+		"><img class="banner-image" src="
+		$image.getData()
+		"></a>
+		<div class="banner-content-box"><p class="banner-content">
+		$image.banner-content.getData()
+		</p></div>
+	</div>
+#end
+</div>
+
+<script type="text/javascript">
+	AUI().ready(
+	'aui-carousel',
+	function(A) {
+		var component = new A.Carousel(
+			{
+				activeIndex: 'rand',
+				contentBox: '.banner-slide-show',
+				height: '$banner-height.getData()',
+				intervalTime: $duration.getData(),
+				width: '$banner-width.getData()'
+			}
+		)
+		.render();
+	});
+</script>

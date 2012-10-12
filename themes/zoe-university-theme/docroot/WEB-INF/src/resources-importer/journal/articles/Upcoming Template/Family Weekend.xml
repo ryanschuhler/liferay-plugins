@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="ISJRvQM8" name="article-title" type="text" index-type="keyword">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="ws2fccA8" name="article-content" type="text_area" index-type="text">
+		<dynamic-content><![CDATA[<p>
+	Family Weekend<br />
+	September 28-30</p>
+]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="PHmoo4rr" name="more-link" type="text" index-type="">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="G793oXub" name="article-author" type="text" index-type="">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+</root>

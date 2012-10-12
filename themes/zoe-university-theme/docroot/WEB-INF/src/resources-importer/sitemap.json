@@ -1,0 +1,1697 @@
+{
+	"layouts": [
+		{ 
+			"name": "Home",
+			"title": "Home",
+			"friendlyURL": "/home",
+			"layoutTemplateId": "1_2_1_columns_iii",
+			"columns": [
+				[
+					{
+						"portletId": "56",
+						"portletPreferences": {
+							"articleId": "Banner Slideshow.xml",
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false"
+						}					
+					}
+				],
+				[
+					{
+						
+						"portletId": "56",
+						"portletPreferences": {
+							"articleId": "News Title.html",
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false",
+							"portletSetupCss": {
+								"wapData":{
+									"title":"",
+									"initialWindowState":"NORMAL"
+								},
+								"hasCssValue":true,
+								"spacingData":{
+									"margin":{
+										"sameForAll":false,
+										"bottom":{"unit":"px","value":"0"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"25"},
+										"top":{"unit":"px","value":"20"}
+									},
+									"padding":{
+										"sameForAll":false,
+										"bottom":{"unit":"px","value":"3"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									}
+								},
+								"borderData":{
+									"borderStyle":{
+										"sameForAll":true,
+										"bottom":"",
+										"left":"",
+										"right":"",
+										"top":"solid"
+									},
+									"borderColor":{
+										"sameForAll":true,
+										"bottom":"",
+										"left":"",
+										"right":"",
+										"top":"#CFCFCF"
+									},
+									"borderWidth":{
+										"sameForAll":false,
+										"bottom":{"unit":"px","value":"2"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									}
+								},
+								"textData":{
+									"fontWeight":"",
+									"lineHeight":"",
+									"textDecoration":"",
+									"letterSpacing":"",
+									"color":"",
+									"textAlign":"",
+									"fontStyle":"",
+									"fontFamily":"",
+									"wordSpacing":"",
+									"fontSize":""
+								},
+								"bgData":{
+									"backgroundPosition":{
+										"left":{"unit":"px","value":""},
+										"top":{"unit":"px","value":""}
+									},
+									"backgroundColor":"",
+									"backgroundRepeat":"",
+									"backgroundImage":"",
+									"useBgImage":false
+								},
+								"advancedData":{
+									"customCSS":"",
+									"customCSSClassName":""
+								}
+							}						
+						}										
+					},
+					{
+						"portletId": "101",
+						"portletPreferences": {
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false",
+							"delta": "3",
+							"assetLinkBehavior": "viewInPortlet",
+							"queryName0":"assettag",
+							"queryValues0": "zoenews"
+						}										
+					}
+				],
+				[
+					{
+						"portletId": "56",
+						"portletPreferences": {
+							"articleId": "Events Title.html",
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false",
+							"portletSetupCss": {
+								"wapData":{
+									"title":"",
+									"initialWindowState":"NORMAL"
+								},
+								"hasCssValue":true,
+								"spacingData":{
+									"margin":{
+										"sameForAll":false,
+										"bottom":{"unit":"px","value":"0"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"20"}
+									},
+									"padding":{
+										"sameForAll":false,
+										"bottom":{"unit":"px","value":"3"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									}
+								},
+								"borderData":{
+									"borderStyle":{
+										"sameForAll":true,
+										"bottom":"",
+										"left":"",
+										"right":"",
+										"top":"solid"
+									},
+									"borderColor":{
+										"sameForAll":true,
+										"bottom":"",
+										"left":"",
+										"right":"",
+										"top":"#CFCFCF"
+									},
+									"borderWidth":{
+										"sameForAll":false,
+										"bottom":{"unit":"px","value":"2"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									}
+								},
+								"textData":{
+									"fontWeight":"",
+									"lineHeight":"",
+									"textDecoration":"",
+									"letterSpacing":"",
+									"color":"",
+									"textAlign":"",
+									"fontStyle":"",
+									"fontFamily":"",
+									"wordSpacing":"",
+									"fontSize":""
+								},
+								"bgData":{
+									"backgroundPosition":{
+										"left":{"unit":"px","value":""},
+										"top":{"unit":"px","value":""}
+									},
+									"backgroundColor":"",
+									"backgroundRepeat":"",
+									"backgroundImage":"",
+									"useBgImage":false
+								},
+								"advancedData":{
+									"customCSS":"",
+									"customCSSClassName":""
+								}
+							}
+						}						
+					},
+					{
+						"portletId": "56",
+						"portletPreferences": {
+							"articleId": "Byrum Welcome.xml",
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false",
+						}						
+					},
+					{
+						"portletId": "56",
+						"portletPreferences": {
+							"articleId": "Upcoming Title.html",
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false",
+						}						
+					},
+					{
+						"portletId": "56",
+						"portletPreferences": {
+							"articleId": "London Entangled.xml",
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false",
+						}						
+					},
+					{
+						"portletId": "56",
+						"portletPreferences": {
+							"articleId": "Calendar Link.html",
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false",
+						}			
+					}
+				],
+				[
+					{
+						"portletId": "56",
+						"portletPreferences": {
+							"articleId": "About the University.html",
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false",
+						}						
+					}
+				]
+			]
+		},
+		{ 
+			"name": "About",
+			"title": "About",
+			"friendlyURL": "/about",
+			"layoutTemplateId": "2_columns",
+			"columns": [
+				[
+					{
+						"portletId": "71",
+						"portletPreferences": {
+							"portletSetupShowBorders": "false",
+							"displayStyle": "from-level-1-to-all-sublevels"
+						}
+					}
+				],
+				[
+					{
+						"portletId": "56",						
+					},
+					{
+						"portletId": "56",						
+					}
+				]
+			],
+			"layouts": [
+				{
+					"name": "Mission & Values",
+					"friendlyURL": "/mission-and-values",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					]
+				},
+				{
+					"name": "Facts & Figures",
+					"friendlyURL": "/facts-and-figures",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					]
+				},
+				{
+					"name": "Awards & Honors",
+					"friendlyURL": "/awards-and-honors",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					]
+				},
+				{
+					"name": "Contact",
+					"friendlyURL": "/contact",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					]
+				}
+			]
+		},
+		{ 
+			"name": "Academics",
+			"title": "Academics",
+			"friendlyURL": "/academics",
+			"layoutTemplateId": "2_columns",
+			"columns": [
+				[
+					{
+						"portletId": "71",
+						"portletPreferences": {
+							"portletSetupShowBorders": "false",
+							"displayStyle": "from-level-1-to-all-sublevels"
+						}
+					},
+					{
+						"portletId": "56",
+						"portletPreferences": {
+							"articleId": "Upcoming at Zoe.html",
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false",
+						}				
+					},
+					{
+						"portletId": "101",
+						"portletPreferences": {
+							"portletSetupShowBorders": "false",
+							"delta": "4",
+							"assetLinkBehavior": "viewInPortlet"
+						}
+					}
+				],
+				[
+					{
+						"portletId": "56",
+						"portletPreferences": {
+							"articleId": "Academics Carousel.xml",
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false",
+						}						
+					},
+					{
+						"portletId": "56",
+						"portletPreferences": {
+							"articleId": "Academic Opportunities.html",
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false",
+							"portletSetupCss": {
+								"wapData":{
+									"title":"",
+									"initialWindowState":"NORMAL"
+								},
+								"hasCssValue":true,
+								"spacingData":{
+									"margin":{
+										"sameForAll":true,
+										"bottom":{"unit":"px","value":"0"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									},
+									"padding":{
+										"sameForAll":true,
+										"bottom":{"unit":"px","value":"0"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									}
+								},
+								"borderData":{
+									"borderStyle":{
+										"sameForAll":true,
+										"bottom":"",
+										"left":"",
+										"right":"",
+										"top":"solid"
+									},
+									"borderColor":{
+										"sameForAll":true,
+										"bottom":"",
+										"left":"",
+										"right":"",
+										"top":"#CFCFCF"
+									},
+									"borderWidth":{
+										"sameForAll":false,
+										"bottom":{"unit":"px","value":"1"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									}
+								},
+								"textData":{
+									"fontWeight":"",
+									"lineHeight":"",
+									"textDecoration":"",
+									"letterSpacing":"",
+									"color":"",
+									"textAlign":"",
+									"fontStyle":"",
+									"fontFamily":"",
+									"wordSpacing":"",
+									"fontSize":""
+								},
+								"bgData":{
+									"backgroundPosition":{
+										"left":{"unit":"px","value":""},
+										"top":{"unit":"px","value":""}
+									},
+									"backgroundColor":"",
+									"backgroundRepeat":"",
+									"backgroundImage":"",
+									"useBgImage":false
+								},
+								"advancedData":{
+									"customCSS":"",
+									"customCSSClassName":""
+								}
+							}
+						}							
+					},
+					{
+						"portletId": "101",
+						"portletPreferences": {
+							"portletSetupShowBorders": "false",
+							"delta": "2",
+							"assetLinkBehavior": "viewInPortlet",
+							"portletSetupCss": {
+								"wapData":{
+									"title":"",
+									"initialWindowState":"NORMAL"
+								},
+								"hasCssValue":true,
+								"spacingData":{
+									"margin":{
+										"sameForAll":true,
+										"bottom":{"unit":"px","value":"0"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									},
+									"padding":{
+										"sameForAll":true,
+										"bottom":{"unit":"px","value":"0"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									}
+								},
+								"borderData":{
+									"borderStyle":{
+										"sameForAll":true,
+										"bottom":"",
+										"left":"",
+										"right":"",
+										"top":"solid"
+									},
+									"borderColor":{
+										"sameForAll":true,
+										"bottom":"",
+										"left":"",
+										"right":"",
+										"top":"#CFCFCF"
+									},
+									"borderWidth":{
+										"sameForAll":false,
+										"bottom":{"unit":"px","value":"1"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									}
+								},
+								"textData":{
+									"fontWeight":"",
+									"lineHeight":"",
+									"textDecoration":"",
+									"letterSpacing":"",
+									"color":"",
+									"textAlign":"",
+									"fontStyle":"",
+									"fontFamily":"",
+									"wordSpacing":"",
+									"fontSize":""
+								},
+								"bgData":{
+									"backgroundPosition":{
+										"left":{"unit":"px","value":""},
+										"top":{"unit":"px","value":""}
+									},
+									"backgroundColor":"",
+									"backgroundRepeat":"",
+									"backgroundImage":"",
+									"useBgImage":false
+								},
+								"advancedData":{
+									"customCSS":"",
+									"customCSSClassName":""
+								}
+							}
+						}						
+					},
+					{
+						"portletId": "56",
+						"portletPreferences": {
+							"articleId": "Schools Images",
+							"groupId": "${groupId}",
+							"portletSetupShowBorders": "false",
+							"portletSetupCss": {
+								"wapData":{
+									"title":"",
+									"initialWindowState":"NORMAL"
+								},
+								"hasCssValue":true,
+								"spacingData":{
+									"margin":{
+										"sameForAll":true,
+										"bottom":{"unit":"px","value":"0"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									},
+									"padding":{
+										"sameForAll":true,
+										"bottom":{"unit":"px","value":"0"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									}
+								},
+								"borderData":{
+									"borderStyle":{
+										"sameForAll":true,
+										"bottom":"",
+										"left":"",
+										"right":"",
+										"top":"solid"
+									},
+									"borderColor":{
+										"sameForAll":true,
+										"bottom":"",
+										"left":"",
+										"right":"",
+										"top":"#CFCFCF"
+									},
+									"borderWidth":{
+										"sameForAll":true,
+										"bottom":{"unit":"px","value":"0"},
+										"left":{"unit":"px","value":"0"},
+										"right":{"unit":"px","value":"0"},
+										"top":{"unit":"px","value":"0"}
+									}
+								},
+								"textData":{
+									"fontWeight":"",
+									"lineHeight":"",
+									"textDecoration":"",
+									"letterSpacing":"",
+									"color":"",
+									"textAlign":"",
+									"fontStyle":"",
+									"fontFamily":"",
+									"wordSpacing":"",
+									"fontSize":""
+								},
+								"bgData":{
+									"backgroundPosition":{
+										"left":{"unit":"px","value":""},
+										"top":{"unit":"px","value":""}
+									},
+									"backgroundColor":"",
+									"backgroundRepeat":"",
+									"backgroundImage":"",
+									"useBgImage":false
+								},
+								"advancedData":{
+									"customCSS": ".school-image-links div {float:left;text-align:center;padding: 10px 14px;}.school-image-links a {color: #000;text-decoration:none;}",
+									"customCSSClassName":"school-image-links"
+								}
+							}
+						}							
+					}
+				]
+			],
+			"layouts": [
+				{
+					"name": "Departments",
+					"friendlyURL": "/departments",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					],
+					"layouts": [
+						{
+							"name": "Anthropology",
+							"friendlyURL": "/anthropology",
+							"columns": [
+								[
+									{
+										"portletId": "71",
+										"portletPreferences": {
+											"portletSetupShowBorders": "false",
+											"displayStyle": "from-level-1-to-all-sublevels"
+										}
+									}
+								],
+								[
+									{
+										"portletId": "56",						
+									},
+									{
+										"portletId": "56",						
+									}
+								]
+							]
+						},
+						{
+							"name": "Biology",
+							"friendlyURL": "/biology",
+							"columns": [
+								[
+									{
+										"portletId": "71",
+										"portletPreferences": {
+											"portletSetupShowBorders": "false",
+											"displayStyle": "from-level-1-to-all-sublevels"
+										}
+									}
+								],
+								[
+									{
+										"portletId": "56",						
+									},
+									{
+										"portletId": "56",						
+									}
+								]
+							]
+						},
+						{
+							"name": "Humanities",
+							"friendlyURL": "/humanities",
+							"columns": [
+								[
+									{
+										"portletId": "71",
+										"portletPreferences": {
+											"portletSetupShowBorders": "false",
+											"displayStyle": "from-level-1-to-all-sublevels"
+										}
+									}
+								],
+								[
+									{
+										"portletId": "56",						
+									},
+									{
+										"portletId": "56",						
+									}
+								]
+							]
+						},
+						{
+							"name": "Philosophy",
+							"friendlyURL": "/philosophy",
+							"columns": [
+								[
+									{
+										"portletId": "71",
+										"portletPreferences": {
+											"portletSetupShowBorders": "false",
+											"displayStyle": "from-level-1-to-all-sublevels"
+										}
+									}
+								],
+								[
+									{
+										"portletId": "56",						
+									},
+									{
+										"portletId": "56",						
+									}
+								]
+							]
+						},
+						{
+							"name": "Theology",
+							"friendlyURL": "/theology",
+							"columns": [
+								[
+									{
+										"portletId": "71",
+										"portletPreferences": {
+											"portletSetupShowBorders": "false",
+											"displayStyle": "from-level-1-to-all-sublevels"
+										}
+									}
+								],
+								[
+									{
+										"portletId": "56",						
+									},
+									{
+										"portletId": "56",						
+									}
+								]
+							]
+						}
+					]
+				},
+				{
+					"name": "Majors & Minors",
+					"friendlyURL": "/majors-and-minors",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					]
+				},
+				{
+					"name": "Calendars",
+					"friendlyURL": "/calendars",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					]
+				},
+				{
+					"name": "Research",
+					"friendlyURL": "/research",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					]
+				},
+				{
+					"name": "Libraries",
+					"friendlyURL": "/libraries",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					],
+					"layouts": [
+						{
+							"name": "North",
+							"friendlyURL": "/north",
+							"columns": [
+								[
+									{
+										"portletId": "71",
+										"portletPreferences": {
+											"portletSetupShowBorders": "false",
+											"displayStyle": "from-level-1-to-all-sublevels"
+										}
+									}
+								],
+								[
+									{
+										"portletId": "56",						
+									},
+									{
+										"portletId": "56",						
+									}
+								]
+							]
+						},
+						{
+							"name": "South",
+							"friendlyURL": "/south",
+							"columns": [
+								[
+									{
+										"portletId": "71",
+										"portletPreferences": {
+											"portletSetupShowBorders": "false",
+											"displayStyle": "from-level-1-to-all-sublevels"
+										}
+									}
+								],
+								[
+									{
+										"portletId": "56",						
+									},
+									{
+										"portletId": "56",						
+									}
+								]
+							]
+						},
+						{
+							"name": "East",
+							"friendlyURL": "/east",
+							"columns": [
+								[
+									{
+										"portletId": "71",
+										"portletPreferences": {
+											"portletSetupShowBorders": "false",
+											"displayStyle": "from-level-1-to-all-sublevels"
+										}
+									}
+								],
+								[
+									{
+										"portletId": "56",						
+									},
+									{
+										"portletId": "56",						
+									}
+								]
+							]
+						},
+						{
+							"name": "West",
+							"friendlyURL": "/west",
+							"columns": [
+								[
+									{
+										"portletId": "71",
+										"portletPreferences": {
+											"portletSetupShowBorders": "false",
+											"displayStyle": "from-level-1-to-all-sublevels"
+										}
+									}
+								],
+								[
+									{
+										"portletId": "56",						
+									},
+									{
+										"portletId": "56",						
+									}
+								]
+							]
+						}
+					]
+				},
+				{
+					"name": "Summer Session",
+					"friendlyURL": "/summer-session",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					]
+				}
+			]
+		},
+		{ 
+			"name": "Admissions",
+			"title": "Admissions",
+			"friendlyURL": "/admissions",
+			"layoutTemplateId": "2_columns",
+			"columns": [
+				[
+					{
+						"portletId": "71",
+						"portletPreferences": {
+							"portletSetupShowBorders": "false",
+							"displayStyle": "from-level-1-to-all-sublevels"
+						}
+					}
+				],
+				[
+					{
+						"portletId": "56",						
+					},
+					{
+						"portletId": "56",						
+					},
+					{
+						"portletId": "56",						
+					}
+				]
+			],
+			"layouts": [
+				{
+					"name": "Undergraduate",
+					"friendlyURL": "/undergraduate",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					]
+				},
+				{
+					"name": "Graduate",
+					"friendlyURL": "/graduate",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					]
+				},
+				{
+					"name": "Financial Aid",
+					"friendlyURL": "/financial-aid",
+					"columns": [
+						[
+							{
+								"portletId": "71",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"displayStyle": "from-level-1-to-all-sublevels"
+								}
+							}
+						],
+						[
+							{
+								"portletId": "56",						
+							},
+							{
+								"portletId": "56",						
+							}
+						]
+					]
+				}
+			]
+		},
+		{ 
+			"name": "Resources",
+			"title": "Resources",
+			"friendlyURL": "/resources",
+			"layoutTemplateId": "2_columns",
+			"columns": [
+				[
+					{
+						"portletId": "71",
+						"portletPreferences": {
+							"portletSetupShowBorders": "false",
+							"displayStyle": "from-level-1-to-all-sublevels"
+						}
+					}
+				],
+				[
+					{
+						"portletId": "56",						
+					},
+					{
+						"portletId": "56",						
+					}
+				]
+			]
+		},
+		{ 
+			"name": "Athletics",
+			"title": "Athletics",
+			"friendlyURL": "/athletics",
+			"layoutTemplateId": "2_columns",
+			"columns": [
+				[
+					{
+						"portletId": "71",
+						"portletPreferences": {
+							"portletSetupShowBorders": "false",
+							"displayStyle": "from-level-1-to-all-sublevels"
+						}
+					}
+				],
+				[
+					{
+						"portletId": "56",						
+					},
+					{
+						"portletId": "56",						
+					}
+				]
+			]
+		},
+		{ 
+			"name": "News",
+			"title": "News",
+			"friendlyURL": "/news",
+			"layoutTemplateId": "2_columns",
+			"columns": [
+				[
+					{
+						"portletId": "71",
+						"portletPreferences": {
+							"portletSetupShowBorders": "false",
+							"displayStyle": "from-level-1-to-all-sublevels"
+						}
+					}
+				],
+				[
+					{
+						"portletId": "56",						
+					},
+					{
+						"portletId": "56",						
+					}
+				]
+			],
+			"layouts": [
+				{
+					"name": "Featured",
+					"friendlyURL": "/featured",
+					"layoutTemplateId": "1_column",
+					"themeId":"zoeuniversity_WAR_zoeuniversitytheme",
+					"colorSchemeId": "noTitle",
+					"columns": [						
+						[
+							{
+								"portletId": "56",	
+								"portletPreferences": {
+									"articleId": "Congress Awards Gold to Palmer.xml",
+									"groupId": "${groupId}",
+									"portletSetupShowBorders": "false",
+								}									
+							},
+							{
+								"portletId": "56",
+								"portletPreferences": {
+									"articleId": "Comments.html",
+									"groupId": "${groupId}",
+									"portletSetupShowBorders": "false",
+									"portletSetupCss": {
+										"wapData":{
+											"title":"",
+											"initialWindowState":"NORMAL"
+										},
+										"hasCssValue":true,
+										"spacingData":{
+											"margin":{
+												"sameForAll":true,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											},
+											"padding":{
+												"sameForAll":true,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											}
+										},
+										"borderData":{
+											"borderStyle":{
+												"sameForAll":true,
+												"bottom":"",
+												"left":"",
+												"right":"",
+												"top":"solid"
+											},
+											"borderColor":{
+												"sameForAll":true,
+												"bottom":"",
+												"left":"",
+												"right":"",
+												"top":"#CFCFCF"
+											},
+											"borderWidth":{
+												"sameForAll":false,
+												"bottom":{"unit":"px","value":"1"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											}
+										},
+										"textData":{
+											"fontWeight":"",
+											"lineHeight":"",
+											"textDecoration":"",
+											"letterSpacing":"",
+											"color":"",
+											"textAlign":"",
+											"fontStyle":"",
+											"fontFamily":"",
+											"wordSpacing":"",
+											"fontSize":""
+										},
+										"bgData":{
+											"backgroundPosition":{
+												"left":{"unit":"px","value":""},
+												"top":{"unit":"px","value":""}
+											},
+											"backgroundColor":"",
+											"backgroundRepeat":"",
+											"backgroundImage":"",
+											"useBgImage":false
+										},
+										"advancedData":{
+											"customCSS":"",
+											"customCSSClassName":""
+										}
+									}
+								}								
+							},
+							{
+								"portletId": "107",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"portletSetupCss": {
+										"wapData":{
+											"title":"",
+											"initialWindowState":"NORMAL"
+										},
+										"hasCssValue":true,
+										"spacingData":{
+											"margin":{
+												"sameForAll":false,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"20"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											},
+											"padding":{
+												"sameForAll":true,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											}
+										},
+										"borderData":{
+											"borderStyle":{
+												"sameForAll":true,
+												"bottom":"",
+												"left":"",
+												"right":"",
+												"top":""
+											},
+											"borderColor":{
+												"sameForAll":true,
+												"bottom":"",
+												"left":"",
+												"right":"",
+												"top":""
+											},
+											"borderWidth":{
+												"sameForAll":true,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											}
+										},
+										"textData":{
+											"fontWeight":"",
+											"lineHeight":"",
+											"textDecoration":"",
+											"letterSpacing":"",
+											"color":"",
+											"textAlign":"",
+											"fontStyle":"",
+											"fontFamily":"",
+											"wordSpacing":"",
+											"fontSize":""
+										},
+										"bgData":{
+											"backgroundPosition":{
+												"left":{"unit":"px","value":""},
+												"top":{"unit":"px","value":""}
+											},
+											"backgroundColor":"",
+											"backgroundRepeat":"",
+											"backgroundImage":"",
+											"useBgImage":false
+										},
+										"advancedData":{
+											"customCSS":"",
+											"customCSSClassName":""
+										}
+									}
+								}		
+							}
+						]
+					]
+				},
+				{
+					"name": "National",
+					"friendlyURL": "/national",
+					"layoutTemplateId": "1_column",
+					"columns": [						
+						[
+							{
+								"portletId": "56",	
+								"portletPreferences": {
+									"articleId": "U.S. News Ranks ZOE 13th in Teaching.xml",
+									"groupId": "${groupId}",
+									"portletSetupShowBorders": "false",
+								}									
+							},
+							{
+								"portletId": "56",
+								"portletPreferences": {
+									"articleId": "Comments.html",
+									"groupId": "${groupId}",
+									"portletSetupShowBorders": "false",
+									"portletSetupCss": {
+										"wapData":{
+											"title":"",
+											"initialWindowState":"NORMAL"
+										},
+										"hasCssValue":true,
+										"spacingData":{
+											"margin":{
+												"sameForAll":true,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											},
+											"padding":{
+												"sameForAll":true,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											}
+										},
+										"borderData":{
+											"borderStyle":{
+												"sameForAll":true,
+												"bottom":"",
+												"left":"",
+												"right":"",
+												"top":"solid"
+											},
+											"borderColor":{
+												"sameForAll":true,
+												"bottom":"",
+												"left":"",
+												"right":"",
+												"top":"#CFCFCF"
+											},
+											"borderWidth":{
+												"sameForAll":false,
+												"bottom":{"unit":"px","value":"1"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											}
+										},
+										"textData":{
+											"fontWeight":"",
+											"lineHeight":"",
+											"textDecoration":"",
+											"letterSpacing":"",
+											"color":"",
+											"textAlign":"",
+											"fontStyle":"",
+											"fontFamily":"",
+											"wordSpacing":"",
+											"fontSize":""
+										},
+										"bgData":{
+											"backgroundPosition":{
+												"left":{"unit":"px","value":""},
+												"top":{"unit":"px","value":""}
+											},
+											"backgroundColor":"",
+											"backgroundRepeat":"",
+											"backgroundImage":"",
+											"useBgImage":false
+										},
+										"advancedData":{
+											"customCSS":"",
+											"customCSSClassName":""
+										}
+									}
+								}								
+							},
+							{
+								"portletId": "107",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"portletSetupCss": {
+										"wapData":{
+											"title":"",
+											"initialWindowState":"NORMAL"
+										},
+										"hasCssValue":true,
+										"spacingData":{
+											"margin":{
+												"sameForAll":false,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"20"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											},
+											"padding":{
+												"sameForAll":true,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											}
+										},
+										"borderData":{
+											"borderStyle":{
+												"sameForAll":true,
+												"bottom":"",
+												"left":"",
+												"right":"",
+												"top":""
+											},
+											"borderColor":{
+												"sameForAll":true,
+												"bottom":"",
+												"left":"",
+												"right":"",
+												"top":""
+											},
+											"borderWidth":{
+												"sameForAll":true,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											}
+										},
+										"textData":{
+											"fontWeight":"",
+											"lineHeight":"",
+											"textDecoration":"",
+											"letterSpacing":"",
+											"color":"",
+											"textAlign":"",
+											"fontStyle":"",
+											"fontFamily":"",
+											"wordSpacing":"",
+											"fontSize":""
+										},
+										"bgData":{
+											"backgroundPosition":{
+												"left":{"unit":"px","value":""},
+												"top":{"unit":"px","value":""}
+											},
+											"backgroundColor":"",
+											"backgroundRepeat":"",
+											"backgroundImage":"",
+											"useBgImage":false
+										},
+										"advancedData":{
+											"customCSS":"",
+											"customCSSClassName":""
+										}
+									}
+								}		
+							}
+						]
+					]
+				},
+				{
+					"name": "Global",
+					"friendlyURL": "/global",
+					"layoutTemplateId": "1_column",
+					"columns": [						
+						[
+							{
+								"portletId": "56",	
+								"portletPreferences": {
+									"articleId": "Telling Stories, Building Bridges.xml",
+									"groupId": "${groupId}",
+									"portletSetupShowBorders": "false",
+								}									
+							},
+							{
+								"portletId": "56",
+								"portletPreferences": {
+									"articleId": "Comments.html",
+									"groupId": "${groupId}",
+									"portletSetupShowBorders": "false",
+									"portletSetupCss": {
+										"wapData":{
+											"title":"",
+											"initialWindowState":"NORMAL"
+										},
+										"hasCssValue":true,
+										"spacingData":{
+											"margin":{
+												"sameForAll":true,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											},
+											"padding":{
+												"sameForAll":true,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											}
+										},
+										"borderData":{
+											"borderStyle":{
+												"sameForAll":true,
+												"bottom":"",
+												"left":"",
+												"right":"",
+												"top":"solid"
+											},
+											"borderColor":{
+												"sameForAll":true,
+												"bottom":"",
+												"left":"",
+												"right":"",
+												"top":"#CFCFCF"
+											},
+											"borderWidth":{
+												"sameForAll":false,
+												"bottom":{"unit":"px","value":"1"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											}
+										},
+										"textData":{
+											"fontWeight":"",
+											"lineHeight":"",
+											"textDecoration":"",
+											"letterSpacing":"",
+											"color":"",
+											"textAlign":"",
+											"fontStyle":"",
+											"fontFamily":"",
+											"wordSpacing":"",
+											"fontSize":""
+										},
+										"bgData":{
+											"backgroundPosition":{
+												"left":{"unit":"px","value":""},
+												"top":{"unit":"px","value":""}
+											},
+											"backgroundColor":"",
+											"backgroundRepeat":"",
+											"backgroundImage":"",
+											"useBgImage":false
+										},
+										"advancedData":{
+											"customCSS":"",
+											"customCSSClassName":""
+										}
+									}
+								}								
+							},
+							{
+								"portletId": "107",
+								"portletPreferences": {
+									"portletSetupShowBorders": "false",
+									"portletSetupCss": {
+										"wapData":{
+											"title":"",
+											"initialWindowState":"NORMAL"
+										},
+										"hasCssValue":true,
+										"spacingData":{
+											"margin":{
+												"sameForAll":false,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"20"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											},
+											"padding":{
+												"sameForAll":true,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											}
+										},
+										"borderData":{
+											"borderStyle":{
+												"sameForAll":true,
+												"bottom":"",
+												"left":"",
+												"right":"",
+												"top":""
+											},
+											"borderColor":{
+												"sameForAll":true,
+												"bottom":"",
+												"left":"",
+												"right":"",
+												"top":""
+											},
+											"borderWidth":{
+												"sameForAll":true,
+												"bottom":{"unit":"px","value":"0"},
+												"left":{"unit":"px","value":"0"},
+												"right":{"unit":"px","value":"0"},
+												"top":{"unit":"px","value":"0"}
+											}
+										},
+										"textData":{
+											"fontWeight":"",
+											"lineHeight":"",
+											"textDecoration":"",
+											"letterSpacing":"",
+											"color":"",
+											"textAlign":"",
+											"fontStyle":"",
+											"fontFamily":"",
+											"wordSpacing":"",
+											"fontSize":""
+										},
+										"bgData":{
+											"backgroundPosition":{
+												"left":{"unit":"px","value":""},
+												"top":{"unit":"px","value":""}
+											},
+											"backgroundColor":"",
+											"backgroundRepeat":"",
+											"backgroundImage":"",
+											"useBgImage":false
+										},
+										"advancedData":{
+											"customCSS":"",
+											"customCSSClassName":""
+										}
+									}
+								}		
+							}
+						]
+					]
+				}
+			]
+		}
+	],
+	"layoutTemplateId": "2_columns"
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="6O0yeSKb" name="ad-image" type="image" index-type="">
+		<dynamic-content><![CDATA[[$FILE=ad2.gif$]]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="JBr25TLM" name="ad-anchor" type="text" index-type="">
+		<dynamic-content><![CDATA[http://thegoodbookblog.com/]]></dynamic-content>
+	</dynamic-element>
+</root>

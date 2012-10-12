@@ -1,0 +1,184 @@
+<nav class="$nav_css_class" id="navigation">
+	<div id="nav-container">
+		<div id="nav-content">
+			<h1>
+				<span>#language("main navigation")</span>
+			</h1>
+
+			#if ($is_signed_in)
+				$theme.search()
+			#end
+
+			<ul id="navMain">
+				#foreach ($nav_item in $guest_layouts)
+					#if ($velocityCount > 1)
+						#if ($nav_item.isRootLayout() && !$nav_item.isHidden() && $permissionChecker.hasPermission($nav_item.getGroupId(), "com.liferay.portal.model.Layout", $nav_item.getPlid(), "VIEW"))
+							#set ($navHasChildren = $nav_item.hasChildren())
+							#set ($nav_item_class = "")
+
+							#foreach ($nav_child in $nav_item.getChildren())
+								#if ($layout.getPlid() == $nav_child.getPlid())
+									#set ($parent_id = $layout.getParentLayoutId())
+								#end
+								#foreach ($nav_grandchild in $nav_child.getChildren())
+									#if ($layout.getPlid() == $nav_grandchild.getPlid())
+										#set ($grandparent_id = $nav_child.getParentLayoutId())
+									#end
+								#end
+							#end							
+							#if ($layout.getPlid() == $nav_item.getPlid() || $nav_item.getLayoutId() == $parent_id || $nav_item.getLayoutId() == $grandparent_id)
+								#set ($nav_item_class = "selected")
+							#end
+							#if ($navHasChildren)
+								#set ($nav_item_class = ${nav_item_class} + " has-children parent-menu")
+							#end
+
+							<li class="$nav_item_class">
+								<a href="$nav_item.getRegularURL($request)" $nav_item.getTarget()>
+									<span>
+										$nav_item.getName()
+
+										#if ($navHasChildren)
+											<span class="triangle">&#9658;</span>
+										#end
+									</span>
+								</a>
+
+								#if ($navHasChildren)
+									<ul class="child-menu">
+										#foreach ($nav_child in $nav_item.getChildren())
+											#set ($hasGrandChildren = $nav_child.hasChildren())
+											#set ($nav_child_class = "")
+
+											#foreach ($nav_grandchild in $nav_child.getChildren())
+												#if ($layout.getPlid() == $nav_grandchild.getPlid())
+													#set ($parent_id = $layout.getParentLayoutId())
+												#end
+											#end
+
+											#if ($layout.getPlid() == $nav_child.getPlid() || $nav_child.getLayoutId() == $parent_id)
+												#set ($nav_child_class = "selected")
+											#end
+											
+											#if ($hasGrandChildren)
+												#set ($nav_child_class = ${nav_child_class} + " has-children")
+											#end
+
+											<li class="$nav_child_class">
+												<a href="$nav_child.getRegularURL($request)" $nav_child.getTarget()><span>$nav_child.getName()</span>
+													#if ($hasGrandChildren)
+														<span id="child-triangle" class="triangle">&#9658;</span>
+													#end
+												</a>
+
+												#if ($hasGrandChildren)
+													<ul class="grandchild-menu">
+														#foreach ($nav_grandchild in $nav_child.getChildren())
+															#if ($layout.getPlid() == $nav_grandchild.getPlid())
+																<li class="selected">
+															#else
+																<li>
+															#end
+																<a href="$nav_grandchild.getRegularURL($request)" $nav_grandchild.getTarget()>$nav_grandchild.getName()</a>
+															</li>
+														#end
+													</ul>
+												#end
+											</li>
+										#end
+									</ul>
+								#end
+							</li>
+						#end
+					#end
+				#end
+			</ul>
+			
+			<h1>
+				<span>#language("audience navigation")</span>
+			</h1>
+
+			<ul id="navAudience">
+				#if($groupList && $groupList.size() > 0)
+					#foreach($nav_item in $groupList)
+						#if($nav_item.isCommunity() && $nav_item.getGroupId()!= $guest_group_id && $nav_item.getName()!="Guest" && $nav_item.getTypeLabel()=="open" &&  $nav_item.hasPublicLayouts())	
+							#set ($group_id = $nav_item.getGroupId())
+							#set ($this_group = $groupLocalService.getGroup($group_id))
+							#set ($group_layouts = $layoutLocalService.getLayouts($this_group.getGroupId(), false))
+							#set ($nav_item_class = "")
+							#if ($layout.getGroupId() == $nav_item.getGroupId() || $nav_item.getGroupId() == $parent_id || $nav_item.getGroupId() == $grandparent_id)
+								#set ($nav_item_class = "selected")
+							#end
+
+							#foreach($nav_child in $group_layouts)
+								#if($nav_child.hasChildren())
+									#set($hasChildren = true)
+									#set($nav_item_class =${nav_item_class} + " has-children")
+								#end
+							#end
+
+							<li class="$nav_item_class">
+								<a href="${page_group_url}$nav_item.getFriendlyURL()" $nav_item.getTarget()>
+									<span>
+										$nav_item.getName()
+
+										#if ($navHasChildren)
+											<span class="triangle">&#9658;</span>
+										#end
+									</span>
+								</a>
+
+								#if($hasChildren)
+									<ul class="child-menu">
+										#foreach($nav_child in $group_layouts)
+											#if($nav_child.getParentLayoutId() == 0)
+												#set ($hasGrandChildren = $nav_child.hasChildren())
+												#set ($nav_child_class = "")
+
+												#foreach ($nav_grandchild in $nav_child.getChildren())
+													#if ($layout.getPlid() == $nav_grandchild.getPlid())
+														#set ($parent_id = $layout.getParentLayoutId())
+													#end
+												#end
+
+												#if ($layout.getPlid() == $nav_child.getPlid() || $nav_child.getLayoutId() == $parent_id)
+													#set ($nav_child_class = "selected")
+												#end
+												
+												#if ($hasGrandChildren)
+													#set ($nav_child_class = ${nav_child_class} + " has-children")
+												#end
+
+												<li class="$nav_child_class">
+													<a href="$nav_child.getRegularURL($request)" $nav_child.getTarget()><span>$nav_child.getName()</span>
+														#if ($hasGrandChildren)
+															<span id="child-triangle" class="triangle">&#9658;</span>
+														#end
+													</a>
+
+													#if ($hasGrandChildren)
+														<ul class="grandchild-menu">
+															#foreach ($nav_grandchild in $nav_child.getChildren())
+																#if ($layout.getPlid() == $nav_grandchild.getPlid())
+																	<li class="selected">
+																#else
+																	<li>
+																#end
+																	<a href="$nav_grandchild.getRegularURL($request)" $nav_grandchild.getTarget()>$nav_grandchild.getName()</a>
+																</li>
+															#end
+														</ul>
+													#end
+												</li>
+											#end
+										#end
+									</ul>
+								#end
+							</li>
+						#end
+					#end
+				#end
+			</ul>
+		</div>
+	</div>
+</nav>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="m0YyhEMo" name="duration" type="text" index-type="">
+		<dynamic-content><![CDATA[8]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="ISDwTJj6" name="banner-width" type="text" index-type="">
+		<dynamic-content><![CDATA[100%]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="Afrdmn7Q" name="banner-height" type="text" index-type="">
+		<dynamic-content><![CDATA[325px]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="za9700Ep" name="banner-image" type="image" index-type="">
+		<dynamic-element instance-id="QFKOdq50" name="banner-content" type="text" index-type="text">
+			<dynamic-content><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque turpis turpis, aliquam sit amet dapibus et, dapibus quis turpis. Praesent in feugiat mi. Nunc vel neque ut enim suscipit interdum quis in elit.]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="vUV4WH3O" name="banner-content-alignment" type="list" index-type="text">
+			<dynamic-content><![CDATA[top-left]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="zUzO6A4O" name="url" type="text" index-type="">
+			<dynamic-content><![CDATA[www.google.com]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[[$FILE=classroom1.gif$]]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="hqPo1LDG" name="banner-image" type="image" index-type="">
+		<dynamic-element instance-id="8tYj7xxK" name="banner-content" type="text" index-type="text">
+			<dynamic-content><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in feugiat mi. Nunc vel neque ut enim suscipit interdum quis in elit.]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="fdYxM4GR" name="banner-content-alignment" type="list" index-type="text">
+			<dynamic-content><![CDATA[bottom-left]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="7MoNhWqr" name="url" type="text" index-type="">
+			<dynamic-content><![CDATA[www.liferay.com]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[[$FILE=classroom2.gif$]]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="dOZSSx2v" name="banner-image" type="image" index-type="">
+		<dynamic-element instance-id="GMJGmqgG" name="banner-content" type="text" index-type="text">
+			<dynamic-content><![CDATA[Etiam vel purus non felis consequat lobortis. Nunc auctor ultrices lorem sit amet rutrum.]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="OPGeKjRF" name="banner-content-alignment" type="list" index-type="text">
+			<dynamic-content><![CDATA[bottom-right]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="iVfRfmya" name="url" type="text" index-type="">
+			<dynamic-content><![CDATA[www.liferay.com]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[[$FILE=classroom3.gif$]]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="fGd0GoyV" name="banner-image" type="image" index-type="">
+		<dynamic-element instance-id="stnatQiR" name="banner-content" type="text" index-type="text">
+			<dynamic-content><![CDATA[Morbi fringilla felis eget velit accumsan tempus at sit amet nisl.]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="aMqYPWBG" name="banner-content-alignment" type="list" index-type="text">
+			<dynamic-content><![CDATA[top-right]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="Y4T0yKXF" name="url" type="text" index-type="">
+			<dynamic-content><![CDATA[www.liferay.com]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[[$FILE=classroom4.gif$]]]></dynamic-content>
+	</dynamic-element>
+</root>

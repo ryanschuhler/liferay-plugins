@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="VXwdQT3i" name="article-title" type="text" index-type="keyword">
+		<dynamic-content><![CDATA[U.S. News ranks WFU 13th in teaching]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="7sGkjeNA" name="article-content" type="text_area" index-type="text">
+		<dynamic-content><![CDATA[<p>
+	<img alt="" src="[$FILE=pbb_classroom.jpg$]" style="width: 600px; height: 350px; " /></p>
+<p style="text-align: justify; font-size: 11px; line-height: 14px; margin-bottom: 14px; font-family: Arial, Helvetica, sans; ">
+	The small class shown here is ideal for students to learn.</p>
+<p style="text-align: justify; font-size: 11px; line-height: 14px; margin-bottom: 14px; font-family: Arial, Helvetica, sans; ">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id eleifend nibh. Donec in tellus nunc, nec ornare dui. Mauris ac urna orci, ut molestie orci. Proin vitae nibh tortor, vitae fermentum nisi. Nam mi libero, eleifend et luctus eget, iaculis in elit. Integer nibh nunc, scelerisque non semper a, tincidunt sed sapien. Curabitur eu nulla id quam adipiscing venenatis. Nunc pharetra luctus dictum.</p>
+<p style="text-align: justify; font-size: 11px; line-height: 14px; margin-bottom: 14px; font-family: Arial, Helvetica, sans; ">
+	Donec semper, magna et viverra eleifend, elit ipsum elementum lectus, sed pretium libero orci in orci. In ultricies neque sit amet turpis pharetra tempor euismod leo imperdiet. Donec eget lectus sit amet lectus mattis feugiat. Suspendisse potenti. Etiam vehicula tempor vulputate. Curabitur vestibulum consectetur mi. Sed eget lectus ipsum, vel condimentum justo. Aliquam urna lectus, vestibulum quis posuere eget, vulputate ut quam. Curabitur est nibh, tempor vel lobortis condimentum, cursus ac velit. Nulla sed tincidunt purus. Proin ornare egestas elit, nec ornare leo convallis non. In hac habitasse platea dictumst. Pellentesque fringilla arcu id libero venenatis blandit. Nunc pharetra elit et est varius porttitor. Morbi ultrices accumsan lorem, id rhoncus odio porttitor sit amet.</p>
+<p style="text-align: justify; font-size: 11px; line-height: 14px; margin-bottom: 14px; font-family: Arial, Helvetica, sans; ">
+	<span class="story-highlight">Integer ac lacus posuere tortor rutrum cursus ac vel ipsum.</span> Aenean elementum, turpis sed pellentesque consectetur, risus purus placerat mi, sed faucibus nibh nisi quis diam. Quisque non elit eu ante placerat fermentum. Vestibulum eget ipsum purus. Maecenas quis enim in metus venenatis dictum. Fusce sit amet erat non velit dictum pharetra. Ut molestie euismod massa eget tempor. Phasellus ut feugiat libero. Integer sit amet velit nibh. Donec sem quam, tempus quis malesuada quis, varius sed est. Aliquam tincidunt massa pulvinar orci placerat pulvinar. Nam nec placerat arcu. Integer nunc urna, eleifend vitae varius vitae, euismod ut lectus.</p>
+]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="WRSqK4np" name="more-link" type="text" index-type="">
+		<dynamic-content><![CDATA[http://www.liferay.com/ray]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="4SfnncRz" name="article-author" type="text" index-type="">
+		<dynamic-content><![CDATA[Jane Bloggs]]></dynamic-content>
+	</dynamic-element>
+</root>

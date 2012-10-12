@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="SSfRhKL8" name="link-icon-url" type="text" index-type="">
+		<dynamic-element instance-id="G72l0ZP6" name="link-icon-name" type="text" index-type="">
+			<dynamic-content><![CDATA[Academic Bulletins]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="afu8h8Vf" name="link-icon" type="image" index-type="">
+			<dynamic-content><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[liferay.com]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="MJyMFiGA" name="link-icon-url" type="text" index-type="">
+		<dynamic-element instance-id="bcC7qcjg" name="link-icon-name" type="text" index-type="">
+			<dynamic-content><![CDATA[Search Course Catalogue]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="vV6Q06UU" name="link-icon" type="image" index-type="">
+			<dynamic-content><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[liferay.com]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="L5lsLjk6" name="link-icon-url" type="text" index-type="">
+		<dynamic-element instance-id="Zuyy0AKY" name="link-icon-name" type="text" index-type="">
+			<dynamic-content><![CDATA[Registration Information]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="tIxeDbj0" name="link-icon" type="image" index-type="">
+			<dynamic-content><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[liferay.com]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="gm2KKUhB" name="link-icon-url" type="text" index-type="">
+		<dynamic-element instance-id="kU5k7Nuk" name="link-icon-name" type="text" index-type="">
+			<dynamic-content><![CDATA[Student Health Services]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="GQAiRJ3H" name="link-icon" type="image" index-type="">
+			<dynamic-content><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[liferay.com]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="3Wbpkdud" name="link-icon-url" type="text" index-type="">
+		<dynamic-element instance-id="FtRQV6Yq" name="link-icon-name" type="text" index-type="">
+			<dynamic-content><![CDATA[Libraries]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="Gmvf4kDG" name="link-icon" type="image" index-type="">
+			<dynamic-content><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[liferay.com]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="XqZn98k6" name="link-icon-url" type="text" index-type="">
+		<dynamic-element instance-id="J7hSgqFO" name="link-icon-name" type="text" index-type="">
+			<dynamic-content><![CDATA[Student Union]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="65MGTB1r" name="link-icon" type="image" index-type="">
+			<dynamic-content><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[liferay.com]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="rsymC9hF" name="link-icon-url" type="text" index-type="">
+		<dynamic-element instance-id="cTGFJNZK" name="link-icon-name" type="text" index-type="">
+			<dynamic-content><![CDATA[Zoe Maps]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="xhehHm88" name="link-icon" type="image" index-type="">
+			<dynamic-content><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[liferay.com]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="KIrGFVpG" name="link-icon-url" type="text" index-type="">
+		<dynamic-element instance-id="rnxo08QX" name="link-icon-name" type="text" index-type="">
+			<dynamic-content><![CDATA[Student Link]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="6W1wvOK0" name="link-icon" type="image" index-type="">
+			<dynamic-content><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[liferay.com]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="LHTKIOsx" name="link-icon-url" type="text" index-type="">
+		<dynamic-element instance-id="rkzyUwI6" name="link-icon-name" type="text" index-type="">
+			<dynamic-content><![CDATA[Blackboard]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="lvKtj7uE" name="link-icon" type="image" index-type="">
+			<dynamic-content><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[liferay.com]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="OjCcTWfb" name="link-icon-url" type="text" index-type="">
+		<dynamic-element instance-id="5CThyE6A" name="link-icon-name" type="text" index-type="">
+			<dynamic-content><![CDATA[Bookstore]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="rMxocWN2" name="link-icon" type="image" index-type="">
+			<dynamic-content><![CDATA[]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[liferay.com]]></dynamic-content>
+	</dynamic-element>
+</root>
