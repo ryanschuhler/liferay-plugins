@@ -7,12 +7,13 @@ AUI().use('transition').ready(
 
 	function (A) {
 		var html = A.one('html');
-		var head = html.one('head');
 		var body = html.one('body');
+		var head = html.one('head');
 		var meta_viewport = html.one('head').one('meta\[name=\"viewport\"\]');
 		var meta_viewport_node = A.Node.create('<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">');
 		var mobNav = A.one('.mobile #navigation');
 		var navigation = A.one('#navigation');
+		var navWidth = 	navigation.one('ul').get('clientWidth')
 		var rmMobile = html.one('#remove-mobile');
 		var toggle = A.one('#toggle');
 		
@@ -50,6 +51,8 @@ AUI().use('transition').ready(
 					);
 				}
 			);
+
+			html.setStyle('min-width', navWidth + 442 + "px");
 		}
 
 		if (html.hasClass('mobile') && body.hasClass('mobile-enabled')) {

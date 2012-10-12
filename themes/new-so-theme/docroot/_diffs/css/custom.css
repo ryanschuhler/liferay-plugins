@@ -24,11 +24,17 @@ body {
 #navigation li,
 #navigation li:hover .child-menu,
 #navigation .child-menu li,
-.portlet-topper {
+.portlet-topper,
+.lfr-header-row,
+.portlet-section-header th,
+.portlet-wiki .child-pages h2,
+.results-row.alt td,
+.site-breadcrumbs,
+.lfr-panel-container {
 	border: 1px solid $gray-border;
 }
 
-#banner:after, #navigation ul:after {
+#banner:after {
 	content: "";
 	clear: both;
 	display: block;
@@ -57,7 +63,7 @@ body {
 
 	img {
 		border-right: solid 1px $gray-border;
-		height: 41px;
+		height: 47px;
 		padding: 2px 14px 1px 10px;
 		width: auto;
 	}
@@ -68,11 +74,12 @@ body {
 }
 
 body.lfr-dockbar-pinned {
-	padding-top: 34px;
+	padding-top: 33px;
 }
 
 #footer {
 	margin: 5px 10px;
+	text-align: right;
 
 	#full-site {
 		display: block;
@@ -120,16 +127,17 @@ body.lfr-dockbar-pinned {
 		float: left;
 		list-style: none;
 		margin: 9px 25px;
-
-		&:after {
-			content: "";
-		}
 	}
 
 	li {
 		border-width: 0 0 0 0;
 		float: left;
 		position: relative;
+
+		&.has-children:hover {
+			padding-bottom: 5px;
+			margin-bottom: -5px;
+		}
 
 		&:hover .child-menu {
 			display: block;
@@ -138,26 +146,21 @@ body.lfr-dockbar-pinned {
 		&:last-child a {
 			border-right-color: transparent;
 		}
-
-		&.has-children:hover {
-			padding-bottom: 5px;
-			margin-bottom: -5px;
-		}
 	}
 
 	a {
 		border: solid 1px transparent;
+		border-right-color: $gray-border;
 		color: $gray-font;
 		display: block;
 		padding: 3px 20px;
 		text-decoration: none;
 		word-wrap: break-word;
-		border-right-color: $gray-border;
 	}
 
 	.child-menu {
-		display: none;
 		background: $hover-color;
+		display: none;
 		float: none;
 		left: -50px;
 		margin: 5px 0 0 0;
@@ -174,9 +177,25 @@ body.lfr-dockbar-pinned {
 			width: 190px;
 
 			a {
-				border: solid 1px transparent;
+				border-width: 0;
 				padding: 5px 9px;
 				text-align: center;
+			}
+
+			#right-triangle {
+				position: absolute;
+				left: 177px;
+				top: 13px;
+				display: block;
+			}
+
+			&.has-children:hover {
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+
+			&.has-children:last-child:hover {
+				margin-bottom: 5px;
 			}
 
 			&:first-child {
@@ -197,13 +216,6 @@ body.lfr-dockbar-pinned {
 				display: block;
 			}
 
-			#right-triangle {
-				position: absolute;
-				left: 177px;
-				top: 5px;
-				display: block;
-			}
-
 			&:hover #right-triangle {
 				display: none;
 			}
@@ -217,8 +229,8 @@ body.lfr-dockbar-pinned {
 	}
 
 	.grandchild-menu {
-		display: none;
 		background: $hover-color;
+		display: none;
 		left: 175px;
 		position: absolute;
 		top: -13px;
@@ -305,6 +317,9 @@ body.lfr-dockbar-pinned {
 
 	.triangle {
 		font-size: .5em;
+		line-height: 1em;
+		position: relative;
+		top: -2px;
 	}
 }
 
@@ -325,6 +340,11 @@ body.lfr-dockbar-pinned {
 	}
 }
 
+.portlet-topper-toolbar {
+	float: right;
+	padding: 0;
+}
+
 .portlet-topper,
 .portlet-title .icon {
 	padding: 3px;
@@ -332,11 +352,6 @@ body.lfr-dockbar-pinned {
 
 .portlet-title-text {
 	padding: 3px 3px 3px 3px;
-}
-
-.portlet-topper-toolbar {
-	float: right;
-	padding: 0;
 }
 
 .portlet a {
@@ -372,22 +387,8 @@ body.lfr-dockbar-pinned {
 	margin: 15px;
 }
 
-.lfr-header-row,
-.portlet-section-header th,
-.portlet-wiki .child-pages h2,
-.results-row.alt td,
-.site-breadcrumbs {
-	border: 1px solid $gray-border;
-	color: $gray-font;
-}
-
 .lfr-header-row-content {
 	padding: 7px;
-}
-
-.lfr-panel-container {
-	border: 1px solid $gray-border;
-	padding: 5px;
 }
 
 form input[type="text"] {
@@ -403,14 +404,14 @@ form input[type="text"] {
 
 		&.signed-out {
 			#navigation {
-				padding-top: 44px;
+				padding-top: 50px;
 			}
 		}
 	}
 
 	.mobile-enabled {
 		&.lfr-dockbar-pinned {
-			padding-top: 34px;
+			padding-top: 33px;
 		}
 
 		#wrapper {
@@ -426,7 +427,7 @@ form input[type="text"] {
 			cursor: pointer;
 			display: block;
 			float: left;
-			height: 44px;
+			height: 50px;
 			width: 50px;
 		}
 
@@ -450,21 +451,21 @@ form input[type="text"] {
 
 			form {
 				border-right: solid 1px $gray-border;
-				height: 44px;
+				height: 50px;
 				margin: 0;
 				position: absolute;
-				top: 34px;
+				top: 33px;
 				width: 224px;
 
 
 				input {
 					position: absolute;
 					left: 8px;
-					top: 8px;
+					top: 12px;
 				}
 			}
 
-			ul, li, ul.child-menu, ul.grandchild-menu, ul.child-menu li, ul.child-menu ul.grandchild-menu li {
+			ul, li, ul.child-menu, ul.grandchild-menu, ul.child-menu li, ul.child-menu ul.grandchild-menu li, .child-menu li.has-children:last-child:hover {
 				background: transparent;
 				border-width: 0;
 				display: block;
@@ -560,7 +561,7 @@ form input[type="text"] {
 					display: block;
 					right: 0;
 					position: absolute;
-					top: 10px;
+					top: 8px;
 				}
 
 				&:after {
@@ -600,7 +601,7 @@ form input[type="text"] {
 
 		&.dockbar-ready {
 			#navigation ul {
-				margin-top: 78px;
+				margin-top: 83px;
 
 				ul {
 					margin-top: 0;
@@ -610,7 +611,7 @@ form input[type="text"] {
 			&.lfr-dockbar-pinned {
 				#banner {
 					position: fixed;
-					margin-top: -45px;
+					margin-top: -51px;
 					z-index: 1;
 				}
 
@@ -625,7 +626,7 @@ form input[type="text"] {
 				}
 
 				#content {
-					margin-top: 45px;
+					margin-top: 51px;
 				}
 			}
 		}
@@ -658,25 +659,23 @@ form input[type="text"] {
 		margin-left: 2px;
 	}
 
-	#column-1 {
-		float: left;
+	#column-1, #column-2, #column-3 {
 		margin: 0;
 		padding: 0;
 		width: 50%;
 	}
+	
+	#column-1 {
+		float: left;
+	}
 
 	#column-2 {
 		float: right;
-		margin: 0;
-		padding: 0;
-		width: 50%;
 	}
 
 	#column-3 {
 		clear: both;
 		display: block;
-		margin: 0;
-		padding: 0;
 		width: 100%;
 	}
 }
@@ -689,7 +688,7 @@ form input[type="text"] {
 	.mobile .mobile-enabled.dockbar-ready {
 		#navigation {
 			ul {
-				margin-top: 44px;
+				margin-top: 50px;
 				
 				ul {
 					margin-top: 0;
