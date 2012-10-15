@@ -111,10 +111,8 @@
 							#end
 
 							#foreach($nav_child in $group_layouts)
-								#if($nav_child.hasChildren())
 									#set($hasChildren = true)
 									#set($nav_item_class =${nav_item_class} + " has-children")
-								#end
 							#end
 
 							<li class="$nav_item_class">

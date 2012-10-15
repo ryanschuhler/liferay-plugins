@@ -75,8 +75,8 @@ $theme.include($body_top_include)
 	<footer id="footer" role="contentinfo">
 		<div id="footer-content">
 			<div class="info">
-				<img src="$images_folder/zoe_logo_white.gif">
-				<p>1234 Awesome Ave<br>Amazing, CA 77777</br></p>
+				<a href="$site_default_url"><img src="$images_folder/custom/footer-logo-white.png"></a>
+				<p>$address</p>
 			</div>
 
 			<div class="foot-nav">
@@ -115,12 +115,12 @@ $theme.include($body_top_include)
 			</div>
 
 			<div class="contact">
-				<a href=""><img src=""></a>
-				<a href=""><img src=""></a>
-				<a href=""><img src=""></a>
-				<a href=""><img src=""></a>
+				<a href=""><img src="${images_folder}/custom/facebook-logo.png"></a>
+				<a href=""><img src="${images_folder}/custom/twitter-logo.png"></a>
+				<a href=""><img src="${images_folder}/custom/linkedin-logo.png"></a>
+				<a href=""><img src="${images_folder}/custom/rss-icon.png"></a>
 
-				<a class="contact-page-link" href="">Contact Us</a>
+				<a class="contact-page-link" href="/contact">Contact Us</a>
 			</div>
 
 			<p class="powered-by">

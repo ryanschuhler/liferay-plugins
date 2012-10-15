@@ -434,8 +434,10 @@ h1, h2, h3 {
 	display: none;
 }
 
-.portlet-journal-content .portlet-content, .portlet-column-content, .portlet-content {
-	padding: 0;
+.aui-w20, .aui-w80 {
+	.portlet-journal-content .portlet-content, .portlet-column-content, .portlet-content {
+		padding: 0;
+	}
 }
 
 .aui-w80 {
@@ -482,24 +484,6 @@ h1, h2, h3 {
 		top: -10px;
 	}
 
-	.contact {
-		text-align: right;
-		top: -25px;
-
-		img {
-			background: #FFF;
-			display: inline-block;
-			height: 25px;
-			width: 25px;
-		}
-	}
-
-	.contact-page-link {
-		display: block;
-		text-align: center;
-		text-decoration: none;
-	}
-
 	.foot-nav {
 		text-align: center;
 		width: 60%;
@@ -525,14 +509,37 @@ h1, h2, h3 {
 			display: none;
 		}
 	}
+
+	.contact {
+		text-align: right;
+		top: -25px;
+
+		img {
+			display: inline-block;
+			padding: 1px;
+			height: 25px;
+			width: 25px;
+		}
+	}
+
+	.contact-page-link:-webkit-any-link {
+		color: $white;
+		display: block;
+		text-decoration: none;
+	}
+
+	.powered-by {
+		bottom: 5px;
+		margin: 0;
+		position: absolute;
+		right: 5px;
+
+		a:-webkit-any-link {
+			color: $white;
+		}
+	}
 }
 
-.powered-by {
-	bottom: 5px;
-	margin: 0;
-	position: absolute;
-	right: 5px;
-}
 
 
 /* ---------- Media Queries ---------- */
