@@ -34,15 +34,15 @@ body {
 	border: 1px solid $gray-border;
 }
 
-#banner:after {
-	content: "";
-	clear: both;
-	display: block;
-}
-
 #banner {
 	border-width: 0 0 1px;
 	width: 100%;
+
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+	}
 }
 
 #sign-in {
@@ -85,9 +85,9 @@ body.lfr-dockbar-pinned {
 		display: block;
 
 		#remove-mobile {
-			text-decoration: underline;
 			color: blue;
 			cursor: pointer;
+			text-decoration: underline;
 		}
 	}
 }
@@ -135,8 +135,8 @@ body.lfr-dockbar-pinned {
 		position: relative;
 
 		&.has-children:hover {
-			padding-bottom: 5px;
 			margin-bottom: -5px;
+			padding-bottom: 5px;
 		}
 
 		&:hover .child-menu {
@@ -183,10 +183,10 @@ body.lfr-dockbar-pinned {
 			}
 
 			#right-triangle {
-				position: absolute;
-				left: 177px;
-				top: 13px;
 				display: block;
+				left: 177px;
+				position: absolute;
+				top: 13px;
 			}
 
 			&.has-children:hover {
@@ -325,9 +325,17 @@ body.lfr-dockbar-pinned {
 
 /* ---------- PORTLET ---------- */
 
+.portlet-layout {
+	hyphens: auto;
+	word-break: break-all;
+	-moz-hyphens: auto;
+	-ms-word-break: break-all;
+	-webkit-hyphens: auto;
+}
+
 .portlet-column-content {
 	margin: 7px 5px;
-	padding: 5px 2.5px;
+	padding: 5px 3px;
 }
 
 .portlet-column {
@@ -446,8 +454,8 @@ form input[type="text"] {
 			position: fixed;
 			top: 0;
 			width: 225px;
-			-webkit-overflow-scrolling: touch;
 			z-index: 30;
+			-webkit-overflow-scrolling: touch;
 
 			form {
 				border-right: solid 1px $gray-border;
@@ -555,8 +563,8 @@ form input[type="text"] {
 
 				&:before, &:after {
 					border: 10px solid transparent;
-					border-right-color: $gray-border;
 					border-left-width: 0px;
+					border-right-color: $gray-border;
 					content: "";
 					display: block;
 					right: 0;
@@ -610,8 +618,8 @@ form input[type="text"] {
 		
 			&.lfr-dockbar-pinned {
 				#banner {
-					position: fixed;
 					margin-top: -51px;
+					position: fixed;
 					z-index: 1;
 				}
 

@@ -6,8 +6,8 @@ $background-color: #DFF4FF;
 $hover-color: #EAEAEA;
 
 body.new-so-blue {
-	color: $text-color;
 	background: #3C9AD5;
+	color: $text-color;
 
 	#banner {
 		border-bottom: solid 1px $border-color;
@@ -107,18 +107,21 @@ body.new-so-blue {
 			}
 		}
 
-		.child-menu li:first-child, .child-menu li:last-child {
-			border-color: transparent;
+		.child-menu li {
+			&:first-child, &:last-child {
+				border-color: transparent;
+			}
+			
+			&:hover .grandchild-menu li a, &:hover .grandchild-menu, &:hover a {
+				background: transparent;
+				border-color: transparent;
+			}
 		}
 
 		.triangle {
 			border-left-color: $border-color;
 		}
 
-		.child-menu li:hover .grandchild-menu li a, .child-menu li:hover .grandchild-menu, .child-menu li:hover a {
-			background: transparent;
-			border-color: transparent;
-		}
 
 		li.selected {
 			&:before {
