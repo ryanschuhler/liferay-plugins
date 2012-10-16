@@ -6,8 +6,8 @@ $gray-font: #1A1A1A;
 $hover-color: #EAEAEA;
 
 body {
-	font: 13px/1.5em Helvetica, Arial, sans-serif;
 	color: $gray-font;
+	font: 13px/1.5em Helvetica, Arial, sans-serif;
 }
 
 #navigation h1,
