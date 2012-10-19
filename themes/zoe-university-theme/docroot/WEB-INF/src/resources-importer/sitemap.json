@@ -104,9 +104,7 @@
 							"groupId": "${groupId}",
 							"portletSetupShowBorders": "false",
 							"delta": "3",
-							"assetLinkBehavior": "viewInPortlet",
-							"queryName0":"assettag",
-							"queryValues0": "zoenews"
+							"assetLinkBehavior": "viewInPortlet"
 						}										
 					}
 				],
