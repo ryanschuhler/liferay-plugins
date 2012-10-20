@@ -13,8 +13,9 @@ AUI().use('transition').ready(
 		var meta_viewport_node = A.Node.create('<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">');
 		var mobNav = A.one('.mobile #navigation');
 		var navigation = A.one('#navigation');
-		var navWidth = 	navigation.one('ul').get('clientWidth')
+		var navWidth = 	navigation.one('ul').get('clientWidth');
 		var rmMobile = html.one('#remove-mobile');
+		var titleWidth = A.one('.site-title').get('clientWidth');
 		var toggle = A.one('#toggle');
 		
 		var menuTrigger = function (event) {
@@ -52,7 +53,7 @@ AUI().use('transition').ready(
 				}
 			);
 
-			html.setStyle('min-width', navWidth + 442 + "px");
+			html.setStyle('min-width', navWidth + titleWidth + 285 + "px");				
 		}
 
 		if (html.hasClass('mobile') && body.hasClass('mobile-enabled')) {
