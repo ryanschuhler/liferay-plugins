@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="npAp2VRF" name="duration" type="text" index-type="">
+		<dynamic-content><![CDATA[8]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="QV1XEqYi" name="banner-width" type="text" index-type="">
+		<dynamic-content><![CDATA[100%]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="f04Hs68f" name="banner-height" type="text" index-type="">
+		<dynamic-content><![CDATA[230px]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="Cm4wn2Ua" name="banner-image" type="image" index-type="">
+		<dynamic-element instance-id="RdI8nCBM" name="banner-content" type="text" index-type="text">
+			<dynamic-content><![CDATA['When your not bound by history you're free to make it'...check out the new history buildings.]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="EcbdFR4C" name="banner-content-alignment" type="list" index-type="text">
+			<dynamic-content><![CDATA[bottom-left]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="EWgCldu8" name="url" type="text" index-type="">
+			<dynamic-content><![CDATA[www.liferay.com]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[[$FILE=banner3.gif$]]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="pjUDy1sy" name="banner-image" type="image" index-type="">
+		<dynamic-element instance-id="nrzE4DeG" name="banner-content" type="text" index-type="text">
+			<dynamic-content><![CDATA[Zoe University takes pride in its beautiful campus and the places for its diverse students to study.]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="qR6rvSM8" name="banner-content-alignment" type="list" index-type="text">
+			<dynamic-content><![CDATA[bottom-right]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="o4EPfsBS" name="url" type="text" index-type="">
+			<dynamic-content><![CDATA[www.liferay.com]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[[$FILE=banner2.gif$]]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="UnT7p0QS" name="banner-image" type="image" index-type="">
+		<dynamic-element instance-id="Ngvcx3ep" name="banner-content" type="text" index-type="text">
+			<dynamic-content><![CDATA[Zoe University is the highest ranked university in the nation, and the campus is just one of the reasons why.]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="CWGtXTAB" name="banner-content-alignment" type="list" index-type="text">
+			<dynamic-content><![CDATA[top-right]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-element instance-id="kNqNkpvF" name="url" type="text" index-type="">
+			<dynamic-content><![CDATA[www.liferay.com]]></dynamic-content>
+		</dynamic-element>
+		<dynamic-content><![CDATA[[$FILE=banner1.gif$]]]></dynamic-content>
+	</dynamic-element>
+</root>

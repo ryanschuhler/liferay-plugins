@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="EzPuxm1E" name="article-title" type="text" index-type="keyword">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="2pEkSCrs" name="article-content" type="text_area" index-type="text">
+		<dynamic-content><![CDATA[<p>
+	<strong>London Entangled</strong><br />
+	5:30-6:30 p.m. - MONDAY, SEPT. 17<br />
+	Auditorium 404, ZSR Library<br />
+	History Department's "Global Cities" Lecture Series</p>
+]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="vKw7Opn6" name="more-link" type="text" index-type="">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="v43MYz0k" name="article-author" type="text" index-type="">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+</root>

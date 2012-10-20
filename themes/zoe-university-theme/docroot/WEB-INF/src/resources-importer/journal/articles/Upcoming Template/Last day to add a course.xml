@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="qh445Cut" name="article-title" type="text" index-type="keyword">
+		<dynamic-content><![CDATA[Last day to add a course]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="0Qr5LJnY" name="article-content" type="text_area" index-type="text">
+		<dynamic-content><![CDATA[<p>
+	Last day to add a course<br />
+	September 21</p>
+]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="rhn87SBJ" name="more-link" type="text" index-type="">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="EC6Gv9Nv" name="article-author" type="text" index-type="">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+</root>

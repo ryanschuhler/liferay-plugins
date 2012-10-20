@@ -1,0 +1,809 @@
+@import "compass";
+@import url(color-schemes/no-page-title.css);
+@import url(content.css);
+
+$black: #000;
+$dark-gray: #3D3D3D;
+$hover-gray: #DFDFDF;
+$line-gray: #999;
+$orange: #C65000;
+$white: #FFF;
+$yellow: #CD980D;
+
+#skip-to-content, #breadcrumbs, #heading .site-name, #navigation h1, .child-menu, #toggle {
+	display: none;
+}
+
+/* ---------- Base ---------- */
+
+html .lfr-dockbar-pinned {
+	padding-top: 31px;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	line-height: 1em;
+}
+
+#wrapper {
+	color: $black;
+	font-family: 'Adobe Garamond Pro', Arial, sans-serif;
+
+	a:-webkit-any-link {
+		color: $yellow;
+	}
+}
+
+#nav-content, #heading, #content, #footer-content, .page-title {
+	margin: auto;
+	position: relative;
+	width: 800px;
+}
+
+#toggle span {
+	clip: rect(0 0 0 0);
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	text-indent: -9999em;
+}
+
+/* ---------- Banner ---------- */
+
+#heading {
+	height: 95px;
+}
+
+#sign-in {
+	padding: 10px;
+	position: absolute;
+	right: 0;
+	top: 70px;
+	z-index: 2;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.site-title img {
+	height: 50px;
+	margin-top: 25px;
+	width: auto;
+}
+
+.page-title {
+	border-bottom: solid 2px $line-gray;
+	font-size: 4em;
+	font-weight: normal;
+	top: 80px;
+	width: 100%;
+
+	span {
+		padding-left: 10px;
+	}
+}
+
+#wrapper #navMain {
+	a {
+		color: $white;
+	}
+
+	.child-menu a:hover {
+		color: $orange;
+	}
+}
+
+#wrapper #navMain .selected .child-menu a:hover {
+	color: $yellow;
+}
+
+#navigation {
+	background: $dark-gray;
+	height: 40px;
+	width: 100%;
+	z-index: 1;
+
+	form {
+		position: absolute;
+		top: -40px;
+		right: 0;
+
+		select {
+			display: none;
+		}
+
+		input.focus, textarea.focus {
+			border-color: $yellow;
+		}
+
+		input[type="image"] {
+			left: 6px;
+			position: relative;
+			top: -20px;
+		}
+
+		input[type="text"] {
+			display: block;
+			width: 205px;
+
+			&:focus {
+				background: #FFF;
+				padding: 5px 5px 5px 25px;
+				width: 176px;
+			}
+		}
+	}
+
+	.triangle {
+		display: none;
+	}
+
+	#navMain {
+		height: 40px;
+		margin: 0;
+		position: relative;
+	}
+
+	#navAudience {
+		margin: 0;
+		position: absolute;
+		right: 0;
+		top: -95px;
+
+		li {
+			margin: 0 1px;
+			padding: 18px 0 0 0;
+
+			&:hover a {
+				border-color: transparent;
+				color: $white;
+			}
+
+			&:last-child .child-menu li, &:nth-last-child(2) .child-menu li, &.selected:last-child .child-menu li, &.selected:nth-last-child(2) .child-menu li {
+				float: right;
+			}
+
+			&:last-child a {
+				border-right-width: 0;
+			}
+
+			.child-menu {
+				top: 35px;
+			}
+		}
+
+		a {
+			border-right: solid 1px $black;
+			color: $black;
+			font-size: 1.8em;
+			margin-right: -3px;
+			padding: 0 10px;
+		}
+
+		.selected {
+			ul {
+				border-width: 0;
+				left: -20px;
+				margin: 10px 10px 10px 20px;
+
+				li:hover a {
+					color: $yellow;
+				}
+			}
+
+			a {
+				border-color: transparent;
+				color: $white;
+			}
+			
+			&:after {
+				display: none;
+			}
+		}
+
+		.child-menu {
+			top: 17px;
+
+			li {
+				margin: -5px 0;
+				padding:15px 3px;
+			}
+
+			a {
+				border-width: 0;
+				font-size: 1.5em;
+				padding: 10px 10px 10px 0;
+
+				&:hover {
+					color: $orange;
+				}
+			}
+		}
+
+	}
+
+	li {
+		float: left;
+		list-style: none;
+		margin: 8px 1px 0 1px;
+		padding: 4px 0 0 0;
+		position: static;
+
+		&:hover {
+			background: $yellow;
+		}
+
+		&:hover .child-menu {
+			display: block;
+		}
+
+		&:nth-child(n+6) .child-menu li {
+			float:right;
+		}
+	}
+
+	a {
+		font-size: 2em;
+		padding: 8px 10px;
+		text-decoration: none;
+	}
+
+	.selected {
+		background: $orange;
+		position: static;
+
+		&:hover {
+			background: $orange;
+		}
+		
+		&:after {
+			background: $orange;
+			bottom: -4px;
+			content: "";
+			height: 4px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+		}
+
+		.child-menu {
+			background: $orange;
+		}
+
+		.selected {
+			background: transparent;
+		}
+	}
+
+	.child-menu {
+		background: $yellow;
+		left: -20px;
+		position: absolute;
+		top: 30px;
+		width: 100%;
+		z-index: 4;
+
+		li {
+			margin: 4px 0;
+			padding: 4px;
+
+			&:hover {
+				background: transparent;
+			}
+		}
+
+		a {
+			font-size: 1.5em;
+		}
+	}
+
+	.grandchild-menu {
+		display: none;
+	}
+}
+
+/* ---------- Content ---------- */
+
+#content {
+	font-size: 14px;
+	padding: 85px 0 20px 0;
+}
+
+#wrapper .portlet-navigation {
+	.portlet-body {
+		.layouts {
+			border-bottom: double $line-gray;
+			margin: 0px 0 10px 0;
+			padding: 0 0 20px 0;
+
+			li {
+				border-bottom: solid 1px $line-gray;
+				list-style: none;
+				margin: 0 0 0 3px;
+				padding: 1px 0;
+				position: relative;
+
+				&:last-child {
+					border-bottom-color: transparent;
+				}
+
+				&:hover {
+					a {
+						background: $hover-gray;
+					}
+
+					ul {
+						display: block;
+					}
+				}
+
+				&.has-children:after {
+					background: transparent url(../images/arrows/zoe_arrow.gif);
+					background-size: 12px;
+					content: "";
+					height: 12px;
+					left: 125px;
+					position: absolute;
+					top: 15px;
+					width: 12px;
+				}
+
+				&.selected {
+					background: $hover-gray;
+
+					a {
+						font-weight: normal;
+					}
+				}
+			}
+
+			a {
+				color: $black;
+				display: block;
+				font-size: 16px;
+				padding: 9px 5px;
+				text-decoration: none;
+			}
+
+			ul {
+				background: $hover-gray;
+				border: solid 1px $line-gray;
+				display: none;
+				left: 152px;
+				padding: 5px;
+				position: absolute;
+				top: 0px;
+				width: 125px;
+				z-index: 10;
+
+				li {
+					border: 0;
+					margin-left: -27px;
+					padding: 0 0 0 30px;
+					width: 95%;
+
+					&:last-child a {
+						border-width: 0;
+					}
+
+					&.selected {
+						background: transparent;
+
+						a {
+							background: $white;
+						}
+
+						&:after {
+							display: none;
+						}
+					}
+				}
+
+				a {
+					border-bottom: solid 1px $line-gray;
+					padding: 5px;
+
+					&:hover {
+						background: $white;
+					}
+				}
+
+				&:after, &:before {
+					border: solid 10px transparent;
+					border-right-color: $line-gray;
+					border-left-width: 0;
+					content: "";
+					height: 0;
+					top: 9px;
+					left: -11px;
+					position: absolute;
+					width: 0;
+				}
+
+				&:after {
+					border-right-color: $hover-gray;
+					left: -10px;
+				}
+			}
+		}
+	}
+}
+
+.portlet-title .icon {
+	display: none;
+}
+
+.aui-w20, .aui-w80 {
+	.portlet-journal-content .portlet-content, .portlet-column-content, .portlet-content {
+		padding: 0;
+	}
+}
+
+.aui-w80 {
+	border-left: 1px solid $line-gray;
+
+	.portlet-column-content {
+		padding-left: 15px;
+	}
+}
+
+.aui-w20 .portlet-column-content {
+	padding-right: 10px;
+}
+
+
+/* ---------- Footer ---------- */
+
+#footer {
+	background: $orange;
+	color: $white;
+	font-size: 1.2em;
+
+	#footer-content {
+		display: block;
+		margin: 0 auto;
+		padding: 40px 0;
+		width: 800px;
+	}
+
+	img {
+		width: 140px;
+	}
+
+	div {
+		display: inline-block;
+		position: relative;
+	}
+
+	.info, .contact {
+		width: 19.5%;
+	}
+
+	.info {
+		top: -10px;
+	}
+
+	.foot-nav {
+		text-align: center;
+		width: 60%;
+		
+		div {
+			display: block;
+			padding: 5px 0;
+		}
+		
+		a {
+			border-right: 1px solid #FFF;
+			color: $white;
+			font-size: 14px;
+			padding: 0 5px;
+			text-decoration: none;
+			
+			&:last-child {
+				border-width: 0;
+			}
+		}
+
+		.foot-child {
+			display: none;
+		}
+	}
+
+	.contact {
+		text-align: right;
+		top: -25px;
+
+		img {
+			display: inline-block;
+			padding: 1px;
+			height: 25px;
+			width: 25px;
+		}
+	}
+
+	.contact-page-link:-webkit-any-link {
+		color: $white;
+		display: block;
+		text-decoration: none;
+	}
+
+	.powered-by {
+		bottom: 5px;
+		margin: 0;
+		position: absolute;
+		right: 5px;
+
+		a:-webkit-any-link {
+			color: $white;
+		}
+	}
+}
+
+
+
+/* ---------- Media Queries ---------- */
+
+@media screen and (max-width: 799px) {
+	html .lfr-dockbar-pinned {
+		padding-top: 30px;
+	}
+
+	#nav-content, #heading, #content, #footer-content, .page-title {
+		width: 100%;
+	}
+
+	#column-1, #column-2, #column-3, #column-4, #column-5, #column-6 {
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	#wrapper .portlet-navigation .portlet-body .layouts li:hover ul {
+		display: none;
+	}
+
+	#wrapper #navMain .selected .child-menu a {
+		color: $white;
+	}
+
+	#dockbar {
+		font-size: 1em;
+	}
+
+	#heading {
+		height: 0;
+
+		.logo {
+			position: absolute;
+			right: 12px;
+		}
+
+		.site-title img {
+			height: 35px;
+			margin-top: 1px;
+		}
+
+		.page-title {
+			top: 50px;
+		}
+	}
+
+	#toggle {
+		background: url(../images/custom/toggleImage.gif) 50% center no-repeat;
+		cursor: pointer;
+		display: block;
+		height: 44px;
+		position: absolute;
+		width: 50px;
+		z-index: 3;
+	}
+
+	#nav-container {
+		background: $dark-gray;
+		height: 100%;
+		left: -260px;
+		overflow-x: auto;
+		position: fixed;
+		top: 0;
+		width: 260px;
+		z-index: 6;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	#wrapper #navMain .selected .child-menu a:hover {
+		color: $white;
+	}
+
+	#nav-content {
+		padding: 71px 0px 5px 0px;
+
+		form {
+			top: 38px;
+			left: 22px;
+		}
+
+		#navMain .selected:after, #navMain .selected .selected:after {
+			width: 0;
+		}
+
+		#navMain .selected .selected a {
+			background: transparent;
+		}
+
+		#navMain, #navAudience, .child-menu, .selected ul, #navAudience .selected ul {
+			border-width: 0;
+			display: block;
+			margin: 0;
+			padding: 0;
+			position: static;
+			width: auto;
+
+			li, .child-menu li {
+				background: transparent;
+				border-width: 0;
+				clear: both;
+				display: block;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+
+				&:hover, &:hover a {
+					color: $white;
+				}
+			}
+
+			a, .selected a {
+				border: solid 1px $hover-gray;
+				border-width: 1px 0 1px 0;
+				color: $white;
+				display: block;
+				font-size: 20px;
+				margin: 0;
+				padding: .8em .5em .8em 25px;
+				position: relative;
+				@include background-image(linear-gradient(#696969, $dark-gray));
+			}
+		}
+
+		.grandchild-menu {
+			display: block;
+		}
+
+		#navMain, #navAudience {
+			li:hover a {
+				border: solid 1px $hover-gray;
+				border-width: 1px 0 1px 0;
+			}
+
+			.child-menu a, .child-menu a:hover, .selected ul a, .selected .selected a, li:hover li a, .selected ul .selected a {
+				background: transparent;
+				border-width: 0;
+				color: $white;
+				font-size: 16px;
+				padding: .5em .5em .5em 25px;
+			}
+
+			.child-menu .grandchild-menu a, .child-menu .selected .grandchild-menu a {
+				padding-left: 50px;
+			}
+
+			.selected a, .selected ul .selected a, .selected ul .selected a:hover {
+				@include background-image(linear-gradient($white, #696969));
+			}
+
+			.selected, .selected:hover {
+				background: $line-gray;
+			}
+
+			.selected .selected .selected a, .selected .selected .selected a:hover {
+				background: $white;
+				color: $black;
+			}
+
+			.selected .selected li a, .selected ul .selected li a:hover {
+				background: transparent;
+			}
+		}
+
+		.triangle {
+			border-left: solid 1px $line-gray;
+			display: block;
+			padding: 10px 20px;
+			position: absolute;
+			right: 0;
+			top: 7px;
+		}
+
+		#child-triangle {
+			font-size: 16px;
+			padding: 5px 22px;
+			top: 3px;
+		}
+	}
+
+	#content {
+		padding-top: 60px;
+
+		.aui-carousel {
+			margin: auto;
+		}
+
+		.carousel-item {
+			max-width: 100%;
+		}
+
+		.ad-image {
+			max-width: 20%
+		}
+
+		.about p {
+			float: none;
+			width: 100%;
+		}
+
+		.article-highlights {
+			margin: 5px 0;
+		}
+
+		.link-icon-container {
+			width: 333px;
+
+			.link-icon-border {
+				border-right-width: 1px;
+			}
+
+			.link-icon-border:nth-child(3n+3) {
+				border-right-width: 0;
+			}
+
+			.link-icon-border:nth-child(n+4) .link-icon-box {
+				border: 1px solid #FFF;
+				border-width: 1px 0;
+				margin: -10.5px 0;
+				padding: 10px 0;
+			}
+		}
+
+		.news-image-asset .asset-small-image {
+			position: relative;
+		}
+
+		.news-image-asset .asset-summary, .news-image-asset .asset-title {
+			padding: 0;
+		}
+
+		.portlet-site-map {
+			text-align: left;
+		}
+	}
+
+	.portlet-layout .portlet-column-content {
+		padding: 10px;
+		text-align: center;
+	}
+
+	#footer {
+		.info, .contact, .foot-nav {
+			margin: 10px 0;
+			text-align: center;
+			top: 0;
+			width: 100%;
+		}
+
+		#footer-content {
+			width: 100%;
+		}
+	}
+}
+
+/* ---------- Extras ---------- */
+
+#wrapper:before {
+ 	@include background-image(linear-gradient($dark-gray, $black));
+}
+
+#dockbar {
+	@include background-image(linear-gradient($hover-gray, $line-gray));
+}

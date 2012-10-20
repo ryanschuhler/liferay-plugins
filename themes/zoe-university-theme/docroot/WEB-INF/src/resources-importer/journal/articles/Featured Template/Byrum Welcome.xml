@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="3MUF95Ry" name="article-title" type="text" index-type="keyword">
+		<dynamic-content><![CDATA[Byrum Welome Center]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="BAB0N7jr" name="article-content" type="text_area" index-type="text">
+		<dynamic-content><![CDATA[<p>
+	<span style="font-family: 'Adobe Garamond Pro', Arial, sans-serif; font-size: 14px; line-height: 19px; ">6:30pm - THURSDAY, OCT. 1</span> <img alt="" src="[$FILE=4.gif$]" style="width: 253px; height: 109px; " /> Co-author of Nicaragua: Living in the Shadow of the Eagle; lecture is part of the Nicaragua Symposium: Dialogue and Perspectives Among Partners and Scholars.</p>
+]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="L8TmOa30" name="more-link" type="text" index-type="">
+		<dynamic-content><![CDATA[http://www.liferay.com/ray]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="Q3QNxuk8" name="article-author" type="text" index-type="">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+</root>

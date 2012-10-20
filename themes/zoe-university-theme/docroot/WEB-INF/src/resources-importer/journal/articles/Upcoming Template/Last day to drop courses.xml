@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="zlK96zKv" name="article-title" type="text" index-type="keyword">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="6nEgWuWj" name="article-content" type="text_area" index-type="text">
+		<dynamic-content><![CDATA[<p>
+	Last day to drop a course<br />
+	October 3</p>
+]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="kLNey2PB" name="more-link" type="text" index-type="">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="aM0xOyPL" name="article-author" type="text" index-type="">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+</root>

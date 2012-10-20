@@ -1,0 +1,5 @@
+<article class="upcoming">
+	<p class="article-content">
+	$article-content.getData()
+	</p>
+</article>

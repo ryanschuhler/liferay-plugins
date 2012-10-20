@@ -1,0 +1,26 @@
+#*
+This file allows you to override and define new Velocity variables.
+*#
+
+#set ($groupLocalService = $serviceLocator.findService("com.liferay.portal.service.GroupLocalService"))
+#set ($company_id = $company.getCompanyId())
+#set ($guest_group_id = $groupLocalService.fetchGroup($company_id, "Guest").getGroupId())
+#set ($guest_group = $groupLocalService.getGroup($guest_group_id))
+
+#set ($layoutLocalService = $serviceLocator.findService("com.liferay.portal.service.LayoutLocalService"))
+#set ($guest_layouts = $layoutLocalService.getLayouts($guest_group.getGroupId(), false))
+
+#set($groupList = $groupLocalService.getGroups(-1, -1))
+#set($page_group = $layout.getGroup())
+#set($page_group_url = $page_group.getPathFriendlyURL($layout.isPrivateLayout(), $theme_display))
+
+#set ($site_default_plid = $layoutLocalService.getDefaultPlid($guest_group_id))
+#set ($site_default_url = $layoutLocalService.getLayout($site_default_plid).getRegularURL($request))
+
+## --------- Logo --------- ##
+
+#if (($company.getLogoId() == 0) && $use_company_logo)
+	#set ($site_logo = "${images_folder}/custom/theme-logo.png")
+#end
+
+#set ($address = "1234 Awesome Ave<br>Amazing, CA 77777")

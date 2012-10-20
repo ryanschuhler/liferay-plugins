@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="yfMl4xsj" name="article-title" type="text" index-type="keyword">
+		<dynamic-content><![CDATA[Constitution Day 2012: Honoring the Founder's Legacy]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="NG6ULsgm" name="article-content" type="text_area" index-type="text">
+		<dynamic-content><![CDATA[<p>
+	&nbsp;</p>
+<p style="text-align: justify; font-size: 11px; line-height: 14px; margin-bottom: 14px; font-family: Arial, Helvetica, sans; ">
+	Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris vulputate mollis magna, ut dignissim massa varius vel. Ut malesuada quam non nunc sagittis interdum. Nullam ut mi augue. Aenean nec sodales mi. Mauris congue pulvinar magna. Curabitur nibh justo, tincidunt et pellentesque vitae, placerat ut leo. In at metus a ante dictum ornare vel quis sem. Curabitur et felis eget mauris aliquet pretium. Mauris et sem eget lectus ullamcorper aliquet eget sed sapien. Phasellus a rhoncus lacus. Pellentesque venenatis, felis vitae euismod ornare, mauris nibh varius risus, ut pharetra lorem metus eget tortor. Ut et nunc eros, sit amet aliquam magna.</p>
+<p style="text-align: justify; font-size: 11px; line-height: 14px; margin-bottom: 14px; font-family: Arial, Helvetica, sans; ">
+	Maecenas ut elit odio. Nullam viverra sapien eget nulla varius fringilla id nec nibh. Etiam vel purus non felis consequat lobortis. Nunc auctor ultrices lorem sit amet rutrum. Nulla quis nisi quis justo semper tempor. Pellentesque pulvinar massa id purus pharetra ac sagittis justo gravida. Vestibulum quis justo quis orci iaculis molestie a nec lectus. Aliquam erat volutpat. Nam accumsan consectetur nibh, non varius velit volutpat ac.</p>
+<p style="text-align: justify; font-size: 11px; line-height: 14px; margin-bottom: 14px; font-family: Arial, Helvetica, sans; ">
+	Nulla facilisi. Nulla fermentum posuere velit, non tincidunt urna volutpat ut. Nam suscipit nunc et ante ullamcorper vel aliquet risus tristique. Morbi vitae ultricies ante. Morbi fringilla felis eget velit accumsan tempus at sit amet nisl. Vestibulum non odio eget augue aliquam porttitor. Etiam venenatis pulvinar tellus, at pulvinar quam tincidunt in. Curabitur sapien velit, consequat vel posuere ac, aliquet et quam.</p>
+<p style="text-align: justify; font-size: 11px; line-height: 14px; margin-bottom: 14px; font-family: Arial, Helvetica, sans; ">
+	Nulla sagittis fermentum dui sed pharetra. Sed ac nisi diam. Fusce laoreet odio nec quam vestibulum et bibendum risus sodales. Nulla et est a dui convallis bibendum. Quisque sit amet tellus arcu, ac imperdiet sapien. Maecenas placerat orci nisl. Pellentesque mattis aliquet semper. Duis lacinia, metus eget cursus consectetur, lectus velit tempus nisi, nec placerat tortor massa sed arcu. Phasellus ac arcu est, non mollis lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris egestas iaculis sagittis. Ut in mattis nisi. Sed in sapien ac risus tristique imperdiet a vitae orci. Ut luctus risus id massa sollicitudin adipiscing. In ullamcorper nisi vitae ligula aliquet adipiscing.</p>
+]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="sefUtzF5" name="more-link" type="text" index-type="">
+		<dynamic-content><![CDATA[]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="KWy9WwmY" name="article-author" type="text" index-type="">
+		<dynamic-content><![CDATA[Jack Bloggs]]></dynamic-content>
+	</dynamic-element>
+</root>

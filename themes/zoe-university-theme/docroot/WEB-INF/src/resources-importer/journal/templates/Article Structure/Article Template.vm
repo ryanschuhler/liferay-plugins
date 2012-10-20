@@ -1,0 +1,36 @@
+<div class="article">
+	<h1 class="article-title">
+	$article-title.getData()
+	</h1>
+
+	<div class="article-sidebar">
+		<div class="article-info">
+			<span class="article-author">By: 
+			$article-author.getData()
+			</span>
+
+			<span class="time-date">Updated on 
+                        $reserved-article-modified-date.getData()
+			</span>
+		</div>
+
+		<div class="story-highlights">
+			<h2>Story Highlights</h2>
+			
+			<ul class="article-highlights">
+			
+			</ul>
+		</div>
+	</div>
+
+	<div class="article-body">
+		<div class="article-summary">
+		$reserved-article-description.getData()
+		</div>
+
+
+		<div class="article-content">
+		$article-content.getData()
+		</div>
+	</div>
+</div>
