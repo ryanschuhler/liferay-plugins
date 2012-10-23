@@ -186,8 +186,7 @@ input[type=button], input[type=reset], input[type=submit], #sign-in:hover, .aui-
 
 				a {
 					display: block;
-					padding: 2px;
-					white-space: pre;
+					padding: 2px 4px;
 
 					&:hover {
 						background-color: #FFF;
