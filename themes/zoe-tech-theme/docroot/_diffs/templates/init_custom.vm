@@ -31,3 +31,28 @@
 #else
 	#set ($footer_section_4 = $journalContentUtil.getContent($group_id, "FOOTER-SOCIAL", null, "$locale", $theme_display))
 #end
+
+## ---------- Mobile ---------- ##
+
+#set ($is_mobile_enabled = $getterUtil.getBoolean($sessionClicks.get($request, "mobile-enabled", "true")))
+
+#set ($meta_data_mobile = '')
+
+#set ($isIphone = $request.getHeader("User-Agent").toLowerCase().indexOf("iphone") != -1)
+
+#set ($isIpad = $request.getHeader("User-Agent").toLowerCase().indexOf("ipad") != -1)
+
+#set ($isAndroid = $request.getHeader("User-Agent").toLowerCase().indexOf("android")!= -1)
+
+#set ($is_mobile = $isIphone || $isAndroid || $isIpad)
+
+#set ($html_class = "")
+
+#if ($is_mobile_enabled == true)
+	#set ($css_class = "${css_class} mobile-enabled")
+	#set ($meta_data_mobile = '<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">')
+#end
+
+#if ($is_mobile)
+	#set ($html_class = ${html_class} + "mobile")
+#end
