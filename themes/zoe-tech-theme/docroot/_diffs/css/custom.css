@@ -605,7 +605,7 @@ ul.arrow {
 				left: 0;
 			} 
 
-			#heading, #wrapper, #footerWrapper {
+			#footerWrapper, #heading, #wrapper {
 				left: 260px;
 			}
 		}
@@ -635,7 +635,6 @@ ul.arrow {
 				span {
 					display: none;
 				}
-
 			}
 
 			.site-title {
@@ -666,7 +665,7 @@ ul.arrow {
 		}
 
 		#navigation{
-			&, #mobile-buttons div, li {
+			&, li, #mobile-buttons div {
 				border: 1px solid #FFF;
 			}
 		}
@@ -700,15 +699,14 @@ ul.arrow {
 						right: 2px;
 						text-align: center;
 
-						span {
-							position: relative;
-						}
-
 						img {
 							left: -25px;
 							position: absolute;
 							top: -2px;
+						}
 
+						span {
+							position: relative;
 						}
 					}
 				}
@@ -725,7 +723,7 @@ ul.arrow {
 					border: 15px solid transparent;
 					border-left-color: white;
 					content: "";
-					left: 0px;
+					left: 0;
 					position: absolute;
 					top: 14px;
 				}
@@ -737,7 +735,7 @@ ul.arrow {
 			}
 		}
 
-		 #content, #footerWrapper #footerContent, #navigation ul, .pod, .column-text, .column-text img, img.main-content-image {
+		img.main-content-image, #content, #footerWrapper #footerContent, #navigation ul, .column-text, .column-text img, .pod {
 			height: auto;
 			width: 100%;
 		}
@@ -797,7 +795,7 @@ ul.arrow {
 					}
 				}
 				
-				.title, .tagline, .divider {
+				.divider, .tagline, .title {
 					display: none;
 				}
 			}
@@ -842,10 +840,6 @@ ul.arrow {
 				p {
 					padding: 5px;
 				}
-			}
-
-			.aui-w25 {
-				width: 25%;
 			}
 		}
 
@@ -895,7 +889,7 @@ ul.arrow {
 
 #sign-in {
 	@include border-bottom-radius(3px);
-	@include box-shadow(1px 2px 3px 0px #999);
+	@include box-shadow(1px 2px 3px 0 #999);
 }
 
 .carousel-container #carousel .aui-carousel-item {

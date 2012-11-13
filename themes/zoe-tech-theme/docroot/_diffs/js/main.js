@@ -1,5 +1,9 @@
-AUI().use('aui-io', 'event-move', 'node-base', 'node-event-delegate', 'transition').ready(
-
+AUI().ready(
+	'aui-io',
+	'event-move',
+	'node-base',
+	'node-event-delegate',
+	'transition',
 	/*
 	This function gets loaded when all the HTML, not including the portlets, is
 	loaded.

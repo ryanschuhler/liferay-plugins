@@ -30,24 +30,22 @@
 
 		<div id="mobile-buttons">
 			#if ($is_signed_in)
-				#set ($signInButton = "$sign_out_url")
-				#set ($signInText = "Sign Out")
-				<div id="myAccountButton"><a href="$my_account_url"><span><img src="/html/icons/my_account.png"/>My Account</span></a></div>
+				#set ($sign_in_button = "$sign_out_url")
+				#set ($sign_in_text = "Sign Out")
+				<div id="my-account-button"><a href="$my_account_url"><span><img src="/html/icons/my_account.png"/>My Account</span></a></div>
 			#else
-				#set ($signInButton = "$sign_in_url")
-				#set ($signInText = "Sign In")
+				#set ($sign_in_button = "$sign_in_url")
+				#set ($sign_in_text = "Sign In")
 			#end
 
 			<div id="mobile-sign-out">
-				<a href="$signInButton">
-					<span><img src="${images_folder}/common/user_icon.png"/>$signInText</span>
+				<a href="$sign_in_button">
+					<span><img src="${images_folder}/common/user_icon.png"/>$sign_in_text</span>
 				</a>
 			</div>
 
 			<div class="desktop-link">
-				<a href="">
 					<span><img src="${images_folder}/common/desktop.png"/>Go To Desktop View</span>
-				</a>
 			</div>
 		</div>
 	</ul>
