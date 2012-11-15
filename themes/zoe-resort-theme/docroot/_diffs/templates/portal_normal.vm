@@ -8,6 +8,8 @@
 	<title>$the_title - $company_name</title>
 
 	$theme.include($top_head_include)
+
+	$meta_data_mobile
 </head>
 
 <body class="$css_class">
@@ -78,6 +80,10 @@ $theme.include($body_top_include)
 </div>
 
 $theme.include($body_bottom_include)
+
+#if ($is_mobile)
+	<a id="desktop-link">$desktop_text</a>
+#end
 
 </body>
 
