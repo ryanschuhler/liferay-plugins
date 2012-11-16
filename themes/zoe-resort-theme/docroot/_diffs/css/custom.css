@@ -467,6 +467,10 @@ img.center {
 			float: none;
 			display: inline-block;
 		}
+
+		#sign-in {
+			display: none;
+		}
 	}
 }
 
@@ -477,10 +481,6 @@ img.center {
 			width: 100% !important;
 		}
 	}
-}
-
-#sign-in {
-	display: none;
 }
 
 #desktop-link {
