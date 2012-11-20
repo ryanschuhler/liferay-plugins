@@ -74,6 +74,18 @@ AUI().ready(
 					)					
 				}
 			)
+
+			navigation.all('.has-children-marker').each(
+				function (e) {
+					e.on(
+						'click',
+						function (event) {
+							event.preventDefault();
+							e.ancestor('li').toggleClass('show-child-menu');
+						}
+					);
+				}
+			);
 		}
 	}
 );

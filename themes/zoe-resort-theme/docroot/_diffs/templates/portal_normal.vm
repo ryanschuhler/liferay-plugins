@@ -50,6 +50,11 @@ $theme.include($body_top_include)
 			</h2>
 		</div>
 
+		#if ($is_mobile)
+			<div class="scroll-arrow" id="scroll-left"></div>
+			<div class="scroll-arrow" id="scroll-right"></div>
+		#end
+
 		#if ($has_navigation || $is_signed_in)
 			#parse ("$full_templates_path/navigation.vm")
 		#end
