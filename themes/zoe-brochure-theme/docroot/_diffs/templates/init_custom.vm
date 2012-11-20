@@ -33,5 +33,5 @@
 #end
 
 #if ($is_mobile)
-	#set ($html_class = ${html_class} + "mobile")
+	#set ($css_class = "${css_class} mobile")
 #end

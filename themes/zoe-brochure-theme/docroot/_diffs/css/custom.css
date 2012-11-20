@@ -667,7 +667,7 @@ ul.aui-tabview-list {
 /* ------- Mobile ------ */
 
 @media screen and (max-width: 999px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		.portlet-dockbar, #sign-in {
 			display: none;
 		}
@@ -782,11 +782,16 @@ ul.aui-tabview-list {
 				}
 			}
 		}
+
+		.aui-carousel {
+			height: 225px !important;
+			overflow: hidden;
+		}
 	}
 }
 
 @media screen and (max-width: 599px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		#content {
 			background-position: 0 225px;
 		}
@@ -808,6 +813,15 @@ ul.aui-tabview-list {
 		
 		.columns-2-1-2 #column-1 #layout-column_column-1 {
 			height: 165px;
+		}
+	}
+}
+
+@media screen and (max-height: 300px) {
+	.mobile.mobile-enabled {
+		.nav-content {
+			height: 150px;
+			overflow: auto;
 		}
 	}
 }
@@ -853,10 +867,19 @@ a, a:link, a:visited, p, #navigation ul, .columns-max .portlet-topper-toolbar, .
 }
 
 @media screen and (max-width: 999px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		#navigation .nav-content {
 			@include background(linear-gradient(#C9C9C9, #FAFAFA));
 			@include border-radius(4px);
+		}
+	}
+}
+
+@media screen and (max-height: 300px) {
+	.mobile.mobile-enabled {
+		.nav-content {
+			@include box-shadow(inset 0 5px 20px -5px #000, inset 0 -5px 20px -5px #000);
+			-webkit-overflow-scrolling: touch;
 		}
 	}
 }

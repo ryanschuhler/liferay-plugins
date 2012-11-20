@@ -176,10 +176,6 @@ body {
 	min-height: 350px;
 }
 
-#mobile-buttons {
-	display: none;
-}
-
 /* -------- Content Layout -------- */
 
 .columns-1-2-3 #layout-column_column-1, .columns-2-1-4 #layout-column_column-1 {
@@ -450,10 +446,10 @@ h1.appointment {
 /* ------- Mobile ------ */
 
 @media screen and (max-width: 999px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		overflow-x: hidden;
 
-		.portlet-dockbar {
+		.portlet-dockbar, #navigation {
 			display: none;
 		}
 
@@ -462,23 +458,26 @@ h1.appointment {
 				left: 0;
 			} 
 
-			#footer, #heading, #wrapper {
+			#heading, #wrapper, #footer {
 				left: 260px;
 			}
 		}
 
-		#footer #footerContent, #heading, #main-content, #navigation ul, .journal-content-article img, .portlet-column {
+		#heading, #main-content, #footer #footerContent, .journal-content-article img, #navigation ul, .portlet-column {
 			height: auto;
 			width: 100%;
 		}
 
-		#wrapper {
-			background: #F5F5F5;
-			padding-top: 72px;
+		#content, #footerContent .aui-layout-content {
+			padding: 0 10px;
 		}
 
-		#loggedInUsername, #signIn {
-			display: none;
+		.portlet-column {
+			display: block;
+
+			.portlet-column {
+				display: table-cell;
+			}
 		}
 
 		#banner {
@@ -488,8 +487,7 @@ h1.appointment {
 
 			#heading {
 				background: #A5C769 url(../images/custom/banner-bg.png) repeat-x center;
-				border: 1px solid #202020;
-				border-width: 10px 0 6px 0;
+				border-top: 10px solid #202020;
 				height: 45px;
 				padding: 0;
 				position: fixed;
@@ -532,8 +530,8 @@ h1.appointment {
 					width: 0;
 
 					&.focus {
-						background-position: 5px 5px;
 						color: #FFF;
+						background-position: 5px 5px;
 						padding: 10px 0;
 						right: 25px;
 						width: 100%;
@@ -549,6 +547,10 @@ h1.appointment {
 					padding: 0;
 				}
 			}
+		}
+
+		#loggedInUsername, #signIn {
+			display: none;
 		}
 
 		#navigation {
@@ -568,9 +570,9 @@ h1.appointment {
 			}
 
 			li, #mobile-buttons div {
-				border-bottom: 1px solid #CCC;
 				float: none;
 				margin: 0 20px;
+				border-bottom: 1px solid #CCC;
 
 				&:first-child {
 					margin-top: 30px;
@@ -583,10 +585,46 @@ h1.appointment {
 
 			a {
 				font-size: 1.5em;
-				
-				&:hover {
+				position: relative;
+			}
+
+			.child-menu {
+				clip: auto;
+				display: none;
+				position: relative;
+
+				li {
+					border-width: 0;
+					font-size: .8em;
+					margin: 0 0 0 20px;
+
+					&.selected a {
+						font-weight: bold;
+					}
+				}
+
+				a {
 					background: transparent;
 				}
+			}
+
+			li.show-child-menu {
+				.child-menu {
+					display: block;
+				}
+
+				.has-children-marker:after {
+					content: "\25BC";
+				}
+			}
+
+			.has-children-marker:after {
+				border-left: 1px solid #FFF;
+				content: "\25BA";
+				padding: 15px;
+				position: absolute;
+				right: 5px;
+				top: 4px;
 			}
 		}
 
@@ -606,8 +644,13 @@ h1.appointment {
 			}
 		}
 
-		#content, #footerContent .aui-layout-content {
-			padding: 0 10px;
+		#wrapper {
+			background: #F5F5F5;
+			padding-top: 72px;
+		}
+
+		.portlet-column-content {
+			padding-left: 0;
 		}
 
 		.aui-w33 {
@@ -619,22 +662,18 @@ h1.appointment {
 				display: table-cell; 
 				width: auto;
 
+				&.aui-w75 {
+					width: 100%;
+				}
+
 				&.aui-w25 {
 					width: 25%;
 				}
 			}
 		}
 
-		.portlet-column-content {
-			padding-left: 0;
-		}
-
-		.portlet-column {
-			display: block;
-
-			.portlet-column {
-				display: table-cell;
-			}
+		.portlet-navigation {
+			display: none;
 		}
 
 		.web-form-portlet.make-appointment {
@@ -659,7 +698,7 @@ h1.appointment {
 }
 
 @media screen and (max-width: 599px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		.portlet-column, .aui-column {
 			display: block !important;
 			width: 100% !important;
@@ -676,10 +715,12 @@ h1.appointment {
 }
 
 #desktop-view-link {
-	color: #8FA46A;
-	display: block;
-	font-size: 2.5em;
-	text-align: center;
+	float: right;
+	padding: 5px;
+}
+
+#mobile-buttons {
+	display: none;
 }
 
 /* -------- Extras -------- */
@@ -723,7 +764,7 @@ input[type="submit"], input[type="submit"]:hover, input[type="reset"], input[typ
 }
 
 @media screen and (max-width: 999px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		#heading {
 			@include box-shadow(#383837 0 1px 8px);
 		}

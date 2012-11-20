@@ -8,11 +8,10 @@ AUI().ready(
 
 	function(A) {
 		var body = A.one('body');
-		var html = A.one('html');
 		var navContent = A.one('.nav-content');
 		var navMenuButton = A.one('#nav-menu-button');
 
-		if (html.hasClass('mobile')) {
+		if (body.hasClass('mobile')) {
 			body.one('#desktop-link').on(
 				'click',
 				function (e) {

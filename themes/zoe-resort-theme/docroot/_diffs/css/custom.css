@@ -394,7 +394,7 @@ img.center {
 /* ------- Mobile ------ */
 
 @media screen and (max-width: 999px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		.portlet-dockbar {
 			display: none;
 		}
@@ -403,6 +403,10 @@ img.center {
 			background-color: #3D7899;
 			background-position-x: center;
 			background-size: auto 455px;
+
+			#navigation {
+				bottom: -1px;
+			}
 		}
 		
 		#wrapper {
@@ -410,17 +414,60 @@ img.center {
 			width: 96%;
 		}
 
-		#banner #navigation {
-			overflow-x: auto;
-			overflow-y: hidden;
+		#banner { 
+			height: 270px;
 
-			a:hover {
-				background: transparent;
-				color: #3D7899;
+			#navigation {
+				overflow-x: auto;
+				overflow-y: hidden;
+				z-index: 5;
+
+				a:hover {
+					background: transparent;
+					color: #3D7899;
+				}
+
+				.last a {
+					background: transparent;
+				}
 			}
 
-			.last a {
-				background: transparent;
+			&.fixed-nav {
+				#navigation, .scroll-arrow {
+					position: fixed;
+					top: 0;
+				}
+			}
+
+			.scroll-arrow {
+				height: 46px;
+				opacity: 0;
+				padding: 10px;
+				position: absolute;
+				top: 224px;
+				width: 20px;
+				z-index: 6;
+			}
+			
+			#scroll-left {
+				background: url(../images/custom/left_scroll_white.gif) no-repeat -1px 5px;
+				background-size: 20px 35px;
+				left: 0;
+			}
+
+			#scroll-right {
+				background: url(../images/custom/right_scroll_white.gif) no-repeat -1px 5px;
+				background-position-x: 100%; 
+				background-size: 20px 35px;
+				right: 0;
+			}
+
+			&.leftArrow #scroll-left {
+				opacity: .8;
+			}
+
+			&.rightArrow #scroll-right {
+				opacity: .8;
 			}
 		}
 
@@ -467,20 +514,20 @@ img.center {
 			float: none;
 			display: inline-block;
 		}
-
-		#sign-in {
-			display: none;
-		}
 	}
 }
 
 @media screen and (max-width: 599px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		.portlet-column {
 			display: block;
 			width: 100% !important;
 		}
 	}
+}
+
+#sign-in {
+	display: none;
 }
 
 #desktop-link {
@@ -514,10 +561,15 @@ img.center {
 }
 
 @media screen and (max-width: 999px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		#banner #navigation {
-			@include box-shadow(inset 5px 0 10px -5px #000, inset -5px 0 10px -5px #000);
+			@include box-shadow(inset 5px 0 10px -5px #000, inset -5px 0 10px -5px #000, 0 6px 6px -6px #000);
 			-webkit-overflow-scrolling: touch;
+		}
+
+		.scroll-arrow, #scroll-right, #scroll-left {
+			@include transition-duration(1s);
+			@include transition-property(opacity);
 		}
 	}
 }

@@ -105,5 +105,4 @@ Liferay.on(
 
 	function() {
 	}
->>>>>>> a9f0b11... LPS-18477 Zoe Healthcare Mobile
 );
