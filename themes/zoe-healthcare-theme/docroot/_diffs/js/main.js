@@ -14,11 +14,10 @@ AUI().ready(
 		A.all('#keywords').attr('title', 'Press Enter to Search');
 
 		var body = A.one('body');
-		var html = A.one('html');
 		var navigation = A.one('#navigation')
 		var toggle = A.one('#toggle');
 
-		if (html.hasClass('mobile')) {
+		if (body.hasClass('mobile')) {
 			navigation.removeClass('sort-pages modify-pages');
 
 			if(toggle) {

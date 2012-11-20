@@ -584,7 +584,7 @@ ul.arrow {
 /* ------- Mobile ------ */
 
 @media screen and (max-width: 961px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		border-width: 0;
 		overflow-x: hidden !important; 
 
@@ -842,7 +842,7 @@ ul.arrow {
 }
 
 @media screen and (max-width: 599px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		#column-1, #column-2, #column-3, #column-4, #footerWrapper .aui-w25 {
 			display: block;
 			width: 100% !important;
@@ -909,7 +909,7 @@ ul.arrow {
 }
 
 @media screen and (max-width: 961px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		#heading {
 			@include box-shadow(#383837 0 1px 8px);
 		}

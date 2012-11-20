@@ -446,7 +446,7 @@ h1.appointment {
 /* ------- Mobile ------ */
 
 @media screen and (max-width: 999px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		overflow-x: hidden;
 
 		.portlet-dockbar, #navigation {
@@ -698,7 +698,7 @@ h1.appointment {
 }
 
 @media screen and (max-width: 599px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		.portlet-column, .aui-column {
 			display: block !important;
 			width: 100% !important;
@@ -764,7 +764,7 @@ input[type="submit"], input[type="submit"]:hover, input[type="reset"], input[typ
 }
 
 @media screen and (max-width: 999px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		#heading {
 			@include box-shadow(#383837 0 1px 8px);
 		}

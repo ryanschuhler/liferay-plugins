@@ -394,7 +394,7 @@ img.center {
 /* ------- Mobile ------ */
 
 @media screen and (max-width: 999px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		.portlet-dockbar {
 			display: none;
 		}
@@ -518,7 +518,7 @@ img.center {
 }
 
 @media screen and (max-width: 599px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		.portlet-column {
 			display: block;
 			width: 100% !important;
@@ -561,7 +561,7 @@ img.center {
 }
 
 @media screen and (max-width: 999px) {
-	.mobile body.mobile-enabled {
+	.mobile.mobile-enabled {
 		#banner #navigation {
 			@include box-shadow(inset 5px 0 10px -5px #000, inset -5px 0 10px -5px #000, 0 6px 6px -6px #000);
 			-webkit-overflow-scrolling: touch;

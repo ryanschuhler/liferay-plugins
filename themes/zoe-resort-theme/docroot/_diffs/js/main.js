@@ -10,13 +10,12 @@ AUI().ready(
 	function(A) {
 		var body = A.one('body');
 		var banner	= A.one('#banner');
-		var html = A.one('html');
 		var navigation = A.one('#navigation');
 		var li = navigation.all('li').get('clientWidth');
 		var ul = navigation.one('ul');
 		var width  = 0;
 
-		if (html.hasClass('mobile')) {
+		if (body.hasClass('mobile')) {
 			for (x in li) {
 				width = width + li[x];
 			}
