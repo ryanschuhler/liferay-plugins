@@ -4,7 +4,7 @@
 	</h1>
 
 	#if ($is_mobile && $is_mobile_enabled)
-		<a id="nav-menu-button">Menu</a>
+		<a id="nav-menu-button">#language ("menu")</a>
 	#end
 
 	<div class="nav-content">

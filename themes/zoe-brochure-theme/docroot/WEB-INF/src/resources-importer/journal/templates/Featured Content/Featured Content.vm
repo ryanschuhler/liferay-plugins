@@ -10,7 +10,9 @@
 			</h5>
 		#end
 
-		$description.data
+		#if ($description.data != "")
+			$description.data
+		#end
 	</div>
 
 	<div class="divider"></div>

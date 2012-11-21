@@ -18,7 +18,7 @@
 			<dynamic-content><![CDATA[[$FILE=carousel_1.jpg$]]]></dynamic-content>
 		</dynamic-element>
 		<dynamic-element instance-id="4KukClgG" name="url-link" type="text" index-type="">
-			<dynamic-content><![CDATA[./reservations]]></dynamic-content>
+			<dynamic-content><![CDATA[reservations]]></dynamic-content>
 		</dynamic-element>
 		<dynamic-content><![CDATA[Reservations]]></dynamic-content>
 	</dynamic-element>
@@ -27,7 +27,7 @@
 			<dynamic-content><![CDATA[[$FILE=carousel_2.jpg$]]]></dynamic-content>
 		</dynamic-element>
 		<dynamic-element instance-id="tbUtGhA9" name="url-link" type="text" index-type="">
-			<dynamic-content><![CDATA[./about-us]]></dynamic-content>
+			<dynamic-content><![CDATA[about-us]]></dynamic-content>
 		</dynamic-element>
 		<dynamic-content><![CDATA[About Us]]></dynamic-content>
 	</dynamic-element>

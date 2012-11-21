@@ -1,22 +1,16 @@
 AUI().ready(
 	'aui-io',
-
-	/*
-	This function gets loaded when all the HTML, not including the portlets, is
-	loaded.
-	*/
-
 	function(A) {
-		var body = A.one('body');
-		var navContent = A.one('.nav-content');
-		var navMenuButton = A.one('#nav-menu-button');
+		var body = A.one('body'),
+			navContent = A.one('.nav-content'),
+			navMenuButton = A.one('#nav-menu-button');
 
 		if (body.hasClass('mobile')) {
 			body.one('#desktop-link').on(
 				'click',
 				function (e) {
 					body.toggleClass('mobile-enabled')
-					
+
 					A.io.request(
 						themeDisplay.getPathMain() + '/portal/session_click',
 						{
@@ -25,10 +19,10 @@ AUI().ready(
 							}
 						}
 					);
-					window.location.reload(true);		
+					window.location.reload(true);
 				}
 			);
-			
+
 			if (body.hasClass('mobile-enabled')) {
 				navMenuButton.on(
 					'click',

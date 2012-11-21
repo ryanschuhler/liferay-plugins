@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 
 <root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="aSeO2TZv" name="display-footer" type="boolean" index-type="">
+		<dynamic-content><![CDATA[true]]></dynamic-content>
+	</dynamic-element>
 	<dynamic-element instance-id="7YC53vDS" name="socials" type="text" index-type="">
 		<dynamic-element instance-id="tcwXHEw5" name="icon" type="document_library" index-type="">
 			<dynamic-content><![CDATA[[$FILE=facebook.png$]]]></dynamic-content>

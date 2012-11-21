@@ -46,7 +46,7 @@
 				</div>
 
 				<div class="desktop-link">
-						<span><img src="${images_folder}/common/desktop.png"/>Go To Desktop View</span>
+						<span><img src="${images_folder}/common/desktop.png"/>#language("go-to") #language("desktop-view")</span>
 				</div>
 			</div>
 		#end

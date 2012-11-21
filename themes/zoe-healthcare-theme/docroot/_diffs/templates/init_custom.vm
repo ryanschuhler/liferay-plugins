@@ -8,6 +8,13 @@
 
 ## ---------- Footer Web Content ---------- ##
 
+#set ($nav-keyword = "FOOTER-NAV")
+#set ($display_footer_nav = false)
+
+#if ($theme_settings.display-footer == true)
+	#set ($css_class = $css_class + " show-footer")
+#end
+
 #if ($theme_settings.footer-section-1-article-id)
 	#set ($footer_section_1 = $journalContentUtil.getContent($group_id, $theme_settings.footer-section-1-article-id, null, "$locale", $theme_display))
 #else
@@ -16,12 +23,48 @@
 
 #if ($theme_settings.footer-section-2-article-id)
 	#set ($footer_section_2 = $journalContentUtil.getContent($group_id, $theme_settings.footer-section-2-article-id, null, "$locale", $theme_display))
+#else
+	#set ($display_footer_nav = true)
 #end
 
 #if ($theme_settings.footer-section-3-article-id)
 	#set ($footer_section_3 = $journalContentUtil.getContent($group_id, $theme_settings.footer-section-3-article-id, null, "$locale", $theme_display))
 #else
 	#set ($footer_section_3 = $journalContentUtil.getContent($group_id, "FOOTER-CONTACT", null, "$locale", $theme_display))
+#end
+
+#macro(footerNav $nav_items)
+	<div id="footerNavigation">
+		<h3>$theme_settings.footer-nav-title</h3>
+
+		<ul>
+			#foreach ($nav_item in $nav_items)
+				#set ($navItemClass = "item-" + $velocityCount)
+
+				#set ($selected_attr = "")
+
+				#if ($velocityCount == 1)
+					#set ($navItemClass = $navItemClass + " first")
+				#end
+
+				#if (!$velocityHasNext)
+					#set ($navItemClass = $navItemClass + " last")
+				#end
+
+				#if ($nav_item.isSelected())
+					#set ($navItemClass = $navItemClass + " selected")
+
+					#set ($selected_attr = "aria-selected=\"true\"")
+				#end
+
+				<li $selected_attr class="$navItemClass">
+					<a href="$nav_item.getURL()" $nav_item.getTarget()>
+						<span>$nav_item.icon() $nav_item.getName()</span>
+					</a>
+				</li>
+			#end
+		</ul>
+	</div>
 #end
 
 ## ---------- Mobile ---------- ##
@@ -40,11 +83,14 @@
 
 #set ($is_mobile = $is_android || $is_ipad || $is_iphone)
 
+#set ($desktop_text = $languageUtil.get($locale, "go-to") + " " + $languageUtil.get($locale, "mobile-view"))
+
 #set ($html_class = "")
 
 #if ($is_mobile_enabled == true)
 	#set ($css_class = "${css_class} mobile-enabled")
 	#set ($meta_data_mobile = '<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">')
+	#set ($desktop_text = $languageUtil.get($locale, "go-to") + " " + $languageUtil.get($locale, "desktop-view"))
 #end
 
 #if ($is_mobile)

@@ -1,0 +1,41 @@
+<footer id="footer" role="contentinfo">
+	<div id="footerContent">
+		<div class="aui-layout-content">
+			<div class="aui-column aui-column-first aui-w50" id="footerSection1">
+				<div class="aui-column-content aui-column-content-first">
+					#if ($theme_settings.footer-section-1-article-id == $nav-keyword)
+						#footerNav($nav_items)
+					#else
+						#if ($footer_section_1)
+							$footer_section_1
+						#end
+					#end
+				</div>
+			</div>
+
+			<div class="aui-column aui-w25" id="footerSection2">
+				<div class="aui-column-content">
+					#if ($display_footer_nav)
+						#footerNav($nav_items)
+					#else
+						#if ($footer_section_2)
+							$footer_section_2
+						#end
+					#end
+				</div>
+			</div>
+
+			<div class="aui-column aui-column-last aui-w25" id="footerSection3">
+				<div class="aui-column-content aui-column-content-last">
+					#if ($theme_settings.footer-section-3-article-id == $nav-keyword)
+						#footerNav($nav_items)
+					#else
+						#if ($footer_section_3)
+							$footer_section_3
+						#end
+					#end
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

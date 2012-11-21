@@ -123,7 +123,7 @@ body {
 	}
 }
 
-.ie #keywords {
+.ie #page-search #keywords {
 	background: transparent;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#20000000,endColorstr=#20000000);
 	zoom: 1;
@@ -190,16 +190,6 @@ body {
 }
 
 /* -------- Content -------- */
-
-.left {
-	float: left;
-	padding-left: 0;
-}
-
-.right {
-	float: right;
-	padding-right: 0;
-}
 
 img.center {
 	display: block;
@@ -408,13 +398,13 @@ img.center {
 				bottom: -1px;
 			}
 		}
-		
+
 		#wrapper {
 			margin: 5px auto;
 			width: 96%;
 		}
 
-		#banner { 
+		#banner {
 			height: 270px;
 
 			#navigation {
@@ -448,7 +438,7 @@ img.center {
 				width: 20px;
 				z-index: 6;
 			}
-			
+
 			#scroll-left {
 				background: url(../images/custom/left_scroll_white.gif) no-repeat -1px 5px;
 				background-size: 20px 35px;
@@ -457,7 +447,7 @@ img.center {
 
 			#scroll-right {
 				background: url(../images/custom/right_scroll_white.gif) no-repeat -1px 5px;
-				background-position-x: 100%; 
+				background-position-x: 100%;
 				background-size: 20px 35px;
 				right: 0;
 			}
@@ -472,11 +462,11 @@ img.center {
 		}
 
 		#main-content, #navigation, .aui-carousel, .aui-carousel-content, .carousel-item, .carousel-item img {
-			width: 100% !important;	
+			width: 100% !important;
 		}
 
 		#content #main-content {
-			padding: 0;	
+			padding: 0;
 			text-align: center;
 
 			.portlet-layout {

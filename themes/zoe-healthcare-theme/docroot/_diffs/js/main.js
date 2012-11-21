@@ -5,13 +5,7 @@ AUI().ready(
 	'node-base',
 	'node-event-delegate',
 	'transition',
-	/*
-	This function gets loaded when all the HTML, not including the portlets, is
-	loaded.
-	*/
-
 	function (A) {
-
 		var keywords = A.all('#keywords');
 
 		if (keywords) {
@@ -30,7 +24,7 @@ AUI().ready(
 				toggle.on(
 					'click',
 					function (e) {
-						body.toggleClass('show-nav');			
+						body.toggleClass('show-nav');
 					}
 				);
 			};
@@ -48,12 +42,12 @@ AUI().ready(
 							}
 						}
 					);
-					window.location.reload(true);		
+					window.location.reload(true);
 				}
 			);
 
 			body.on(
-				"gesturemovestart", 
+				"gesturemovestart",
 				function (e) {
 					var item = e.currentTarget;
 					var MIN_SWIPE = 20;
@@ -76,7 +70,7 @@ AUI().ready(
 								body.toggleClass('show-nav');
 							}
 						}
-					)					
+					)
 				}
 			)
 		}

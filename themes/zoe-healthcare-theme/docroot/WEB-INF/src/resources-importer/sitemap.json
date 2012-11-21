@@ -58,7 +58,114 @@
 							"fieldType3": "textarea",
 							"fieldValue": "Write your short description here",
 							"portletSetupCss": {
+								"wapData": {
+									"title": "",
+									"initialWindowState": "NORMAL"
+								},
+								"spacingData": {
+									"margin":{
+										"sameForAll": true,
+										"bottom": {
+											"unit": "px",
+											"value": ""
+										},
+										"left": {
+											"unit": "px",
+											"value": ""
+										},
+										"right": {
+											"unit": "px",
+											"value": ""
+										},
+										"top": {
+											"unit": "px",
+											"value": ""
+										}
+								},
+								"padding": {
+									"sameForAll": true,
+									"bottom": {
+										"unit": "px",
+										"value": ""
+									},
+									"left": {
+										"unit": "px",
+										"value": ""
+									},
+									"right": {
+										"unit": "px",
+										"value": ""},
+										"top": {
+											"unit": "px",
+											"value": ""
+										}
+									}
+								},
+								"borderData": {
+									"borderStyle": {
+										"sameForAll": true,
+										"bottom": "",
+										"left": "",
+										"right": "",
+										"top": ""
+									},
+									"borderColor": {
+										"sameForAll": true,
+										"bottom": "",
+										"left": "",
+										"right": "",
+										"top": ""
+									},
+									"borderWidth": {
+										"sameForAll": true,
+										"bottom": {
+											"unit": "px",
+											"value": ""
+										},
+										"left": {
+											"unit": "px",
+											"value": ""
+										},
+										"right": {
+											"unit": "px",
+											"value": ""
+										},
+										"top": {
+											"unit": "px",
+											"value": ""
+										}
+									}
+								},
+								"textData": {
+									"fontWeight": "",
+									"lineHeight": "",
+									"textDecoration": "",
+									"letterSpacing": "",
+									"color": "",
+									"textAlign": "",
+									"fontStyle": "",
+									"fontFamily": "",
+									"wordSpacing": "",
+									"fontSize": ""
+								},
+								"bgData": {
+									"backgroundPosition": {
+										"left": {
+											"unit": "px",
+											"value": ""
+										},
+										"top": {
+											"unit": "px",
+											"value": ""
+										}
+									},
+									"backgroundColor": "",
+									"backgroundRepeat": "",
+									"backgroundImage": "",
+									"useBgImage": false
+								},
 								"advancedData": {
+									"customCSS": "",
 									"customCSSClassName": "make-appointment"
 								}
 							},

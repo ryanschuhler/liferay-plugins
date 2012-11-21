@@ -16,19 +16,23 @@
 		width: ${width.getData()}px;
 	}
 
-	#if ($controls.data)
-		#${content_class} menu {
-			display: none;
-		}
-	#end
+	#${content_class}.hide-controls menu {
+		display: none;
+	}
 </style>
 
-<div id="$content_class">
+#if ($controls.data == "true")
+    #set ($controls_class = "display-controls")
+#else
+    #set ($controls_class = "hide-controls")
+#end
+
+<div id="$content_class" class="$controls_class">
 	#foreach ($item in $image.getSiblings())
 		<div class="carousel-item">
 			#if ($item.getData())
 				#if ($item.link.url-location.data != "")
-					<a href="$item.link.url-location.data">
+					<a href="$item.link.url-location.getFriendlyUrl()">
 				#end
 
 				<img alt="$item.link.data" src="$item.getData()" title="$item.link.data" />

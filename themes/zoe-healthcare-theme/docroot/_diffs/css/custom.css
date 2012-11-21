@@ -30,7 +30,7 @@ body {
 /* -------- Wrapper / Sign-in -------- */
 
 #wrapper {
-	background: #FFF url(../images/custom/header-bg.png) repeat-x 0 0;
+	background: #FFF url(../images/custom/header_bg.png) repeat-x 0 0;
 	margin: 0 auto;
 	padding-bottom: 15px;
 	position: relative;
@@ -57,7 +57,7 @@ body {
 /* -------- Banner -------- */
 
 #banner {
-	background: url(../images/custom/banner-bg.png) repeat-x 0 50px;
+	background: url(../images/custom/banner_bg.png) repeat-x 0 50px;
 	margin: 0 auto 25px;
 	padding: 50px 0 0;
 	position: relative;
@@ -145,7 +145,7 @@ body {
 			list-style: none;
 
 			&.selected a {
-				background: url(../images/custom/selected-bg.png) repeat-x 0 0;
+				background: url(../images/custom/selected_bg.png) repeat-x 0 0;
 			}
 		}
 	}
@@ -196,14 +196,6 @@ body {
 }
 
 /* -------- Content -------- */
-
-.left {
-	float: left;
-}
-
-.right {
-	float: right;
-}
 
 .clear {
 	clear: both;
@@ -456,7 +448,7 @@ h1.appointment {
 		&.show-nav {
 			#navigation {
 				left: 0;
-			} 
+			}
 
 			#heading, #wrapper, #footer {
 				left: 260px;
@@ -486,7 +478,7 @@ h1.appointment {
 			padding: 0;
 
 			#heading {
-				background: #A5C769 url(../images/custom/banner-bg.png) repeat-x center;
+				background: #A5C769 url(../images/custom/banner_bg.png) repeat-x center;
 				border-top: 10px solid #202020;
 				height: 45px;
 				padding: 0;
@@ -659,7 +651,7 @@ h1.appointment {
 
 		.columns-2-1-2-4 {
 			.portlet-column {
-				display: table-cell; 
+				display: table-cell;
 				width: auto;
 
 				&.aui-w75 {

@@ -15,28 +15,28 @@
 	</dynamic-element>
 	<dynamic-element instance-id="G4uAO5yJ" name="image" type="document_library" index-type="">
 		<dynamic-element instance-id="YROro1ov" name="link" type="text" index-type="">
-			<dynamic-element instance-id="5XDcRwj2" name="url-location" type="text" index-type="">
-				<dynamic-content><![CDATA[]]></dynamic-content>
+			<dynamic-element instance-id="gpsuBF9G" name="url-location" type="link_to_layout" index-type="">
+				<dynamic-content><![CDATA[2@public]]></dynamic-content>
 			</dynamic-element>
-			<dynamic-content><![CDATA[]]></dynamic-content>
+			<dynamic-content><![CDATA[About]]></dynamic-content>
 		</dynamic-element>
 		<dynamic-content><![CDATA[[$FILE=image1.png$]]]></dynamic-content>
 	</dynamic-element>
 	<dynamic-element instance-id="KvW92QWJ" name="image" type="document_library" index-type="">
 		<dynamic-element instance-id="mUJqXMFs" name="link" type="text" index-type="">
-			<dynamic-element instance-id="sWvozbm7" name="url-location" type="text" index-type="">
-				<dynamic-content><![CDATA[]]></dynamic-content>
+			<dynamic-element instance-id="jpNwD0uu" name="url-location" type="link_to_layout" index-type="">
+				<dynamic-content><![CDATA[3@public]]></dynamic-content>
 			</dynamic-element>
-			<dynamic-content><![CDATA[]]></dynamic-content>
+			<dynamic-content><![CDATA[Pricing]]></dynamic-content>
 		</dynamic-element>
 		<dynamic-content><![CDATA[[$FILE=image2.png$]]]></dynamic-content>
 	</dynamic-element>
 	<dynamic-element instance-id="ZkHbi2dD" name="image" type="document_library" index-type="">
 		<dynamic-element instance-id="RIt6U99s" name="link" type="text" index-type="">
-			<dynamic-element instance-id="0BPNPTkc" name="url-location" type="text" index-type="">
-				<dynamic-content><![CDATA[]]></dynamic-content>
+			<dynamic-element instance-id="CnucG5e8" name="url-location" type="link_to_layout" index-type="">
+				<dynamic-content><![CDATA[5@public]]></dynamic-content>
 			</dynamic-element>
-			<dynamic-content><![CDATA[]]></dynamic-content>
+			<dynamic-content><![CDATA[Contact]]></dynamic-content>
 		</dynamic-element>
 		<dynamic-content><![CDATA[[$FILE=image3.png$]]]></dynamic-content>
 	</dynamic-element>

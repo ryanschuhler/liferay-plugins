@@ -45,7 +45,7 @@
 		function(A) {
 			new A.Carousel(
 				{
-					activeIndex: 'rand',
+					//activeIndex: 'rand',
 					contentBox: '#${content_class}',
 					height: ${height.data},
 					intervalTime: ${duration.data},
