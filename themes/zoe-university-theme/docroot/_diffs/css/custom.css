@@ -650,7 +650,7 @@ h1, h2, h3 {
 
 			form {
 				top: 10px;
-				left: 15px;
+				left: 31px;
 			}
 
 			#nav-content {
@@ -838,7 +838,7 @@ h1, h2, h3 {
 }
 
 .no-scroll {
-	overflow: hidden;
+	position: fixed;
 }
 
 #mobile-buttons {
