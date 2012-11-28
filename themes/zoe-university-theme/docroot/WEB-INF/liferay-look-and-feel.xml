@@ -14,5 +14,19 @@
 		<color-scheme id="noTitle" name="No Page Title">
 			<css-class>no-page-title</css-class>
 		</color-scheme>
+		<layout-templates>
+			<custom>
+				<layout-template id="1_2_1_columns_iii" name="1-2-1 Columns (70/30)">
+					<template-path>/layouttpl/custom/1-2-1-columns-iii-layouttpl/1_2_1_columns_iii.tpl</template-path>
+					<wap-template-path>/layouttpl/custom/1-2-1-columns-iii-layouttpl/1_2_1_columns_iii.wap.tpl</wap-template-path>
+					<thumbnail-path>/layouttpl/custom/1-2-1-columns-iii-layouttpl/1_2_1_columns_iii.png</thumbnail-path>
+				</layout-template>
+				<layout-template id="2_columns" name="2 Columns (20/80)">
+					<template-path>/layouttpl/custom/2-columns-layouttpl/2_columns.tpl</template-path>
+					<wap-template-path>/layouttpl/custom/2-columns-layouttpl/2_columns.wap.tpl</wap-template-path>
+					<thumbnail-path>/layouttpl/custom/2-columns-layouttpl/2_columns.png</thumbnail-path>
+				</layout-template>
+			</custom>
+		</layout-templates>
 	</theme>
 </look-and-feel>

@@ -101,10 +101,15 @@
 					{
 						"portletId": "101",
 						"portletPreferences": {
+							"abstractLength": "400",
+							"assetLinkBehavior": "viewInPortlet",
+							"delta": "3",
 							"groupId": "${groupId}",
 							"portletSetupShowBorders": "false",
-							"delta": "3",
-							"assetLinkBehavior": "viewInPortlet"
+							"queryAndOperator0": "false",
+							"queryContains0": "true",
+							"queryName0": "assetTags",
+							"queryValues0": "Zoe News"
 						}										
 					}
 				],
@@ -378,9 +383,13 @@
 					{
 						"portletId": "101",
 						"portletPreferences": {
-							"portletSetupShowBorders": "false",
+							"assetLinkBehavior": "viewInPortlet",
 							"delta": "4",
-							"assetLinkBehavior": "viewInPortlet"
+							"portletSetupShowBorders": "false",
+							"queryAndOperator0": "false",
+							"queryContains0": "true",
+							"queryName0": "assetTags",
+							"queryValues0": "Academics Upcoming"
 						}
 					}
 				],
@@ -476,9 +485,14 @@
 					{
 						"portletId": "101",
 						"portletPreferences": {
-							"portletSetupShowBorders": "false",
-							"delta": "2",
+							"abstractLength": "400",
 							"assetLinkBehavior": "viewInPortlet",
+							"delta": "2",
+							"portletSetupShowBorders": "false",
+							"queryAndOperator0": "false",
+							"queryContains0": "true",
+							"queryName0": "assetTags",
+							"queryValues0": "Academic News",
 							"portletSetupCss": {
 								"wapData":{
 									"title":"",

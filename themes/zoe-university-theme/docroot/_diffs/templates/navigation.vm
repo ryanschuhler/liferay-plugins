@@ -5,9 +5,7 @@
 				<span>#language("main navigation")</span>
 			</h1>
 
-			#if ($is_signed_in)
-				$theme.search()
-			#end
+			$theme.search()
 
 			<ul id="navMain">
 				#foreach ($nav_item in $guest_layouts)
@@ -30,7 +28,7 @@
 								#set ($nav_item_class = "selected")
 							#end
 							#if ($navHasChildren)
-								#set ($nav_item_class = ${nav_item_class} + " has-children parent-menu")
+								#set ($nav_item_class = "${nav_item_class} has-children parent-menu")
 							#end
 
 							<li class="$nav_item_class">
@@ -39,7 +37,7 @@
 										$nav_item.getName()
 
 										#if ($navHasChildren)
-											<span class="triangle">&#9658;</span>
+											<span class="has-child-marker"></span>
 										#end
 									</span>
 								</a>
@@ -61,13 +59,13 @@
 											#end
 											
 											#if ($hasGrandChildren)
-												#set ($nav_child_class = ${nav_child_class} + " has-children")
+												#set ($nav_child_class = "${nav_child_class} has-children")
 											#end
 
 											<li class="$nav_child_class">
 												<a href="$nav_child.getRegularURL($request)" $nav_child.getTarget()><span>$nav_child.getName()</span>
 													#if ($hasGrandChildren)
-														<span id="child-triangle" class="triangle">&#9658;</span>
+														<span class="has-child-marker has-grandchild-marker"></span>
 													#end
 												</a>
 
@@ -106,13 +104,14 @@
 							#set ($this_group = $groupLocalService.getGroup($group_id))
 							#set ($group_layouts = $layoutLocalService.getLayouts($this_group.getGroupId(), false))
 							#set ($nav_item_class = "")
-							#if ($layout.getGroupId() == $nav_item.getGroupId() || $nav_item.getGroupId() == $parent_id || $nav_item.getGroupId() == $grandparent_id)
-								#set ($nav_item_class = "selected")
-							#end
 
 							#foreach($nav_child in $group_layouts)
 									#set($hasChildren = true)
-									#set($nav_item_class =${nav_item_class} + " has-children")
+									#set($nav_item_class = "has-children")
+							#end
+							
+							#if ($layout.getGroupId() == $nav_item.getGroupId() || $nav_item.getGroupId() == $parent_id || $nav_item.getGroupId() == $grandparent_id)
+								#set ($nav_item_class = "${nav_item_class} selected")
 							#end
 
 							<li class="$nav_item_class">
@@ -120,8 +119,8 @@
 									<span>
 										$nav_item.getName()
 
-										#if ($navHasChildren)
-											<span class="triangle">&#9658;</span>
+										#if ($hasChildren)
+											<span class="has-child-marker"></span>
 										#end
 									</span>
 								</a>
@@ -144,13 +143,13 @@
 												#end
 												
 												#if ($hasGrandChildren)
-													#set ($nav_child_class = ${nav_child_class} + " has-children")
+													#set ($nav_child_class = "${nav_child_class} has-children")
 												#end
 
 												<li class="$nav_child_class">
 													<a href="$nav_child.getRegularURL($request)" $nav_child.getTarget()><span>$nav_child.getName()</span>
 														#if ($hasGrandChildren)
-															<span id="child-triangle" class="triangle">&#9658;</span>
+															<span class="has-child-marker has-grandchild-marker"></span>
 														#end
 													</a>
 
@@ -177,6 +176,31 @@
 					#end
 				#end
 			</ul>
+
+			#if ($is_mobile)
+				<div id="mobile-buttons">
+					#if ($is_signed_in)
+						#set ($sign_in_button = "$sign_out_url")
+						#set ($sign_in_text = "Sign Out")
+						<div id="my-account-button"><a href="$my_account_url"><img src="/html/icons/my_account.png"/>My Account</a></div>
+					#else
+						#set ($sign_in_button = "$sign_in_url")
+						#set ($sign_in_text = "Sign In")
+					#end
+
+					<div id="mobile-sign-out">
+						<a href="$sign_in_button">
+							<img src="${images_folder}/common/user_icon.png"/>$sign_in_text
+						</a>
+					</div>
+
+					<div class="desktop-link">
+						<a href="">
+							<img src="${images_folder}/common/desktop.png"/>Go To Desktop View
+						</a>
+					</div>
+				</div>
+			#end
 		</div>
 	</div>
 </nav>
