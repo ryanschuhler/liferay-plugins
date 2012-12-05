@@ -68,6 +68,7 @@
 
 		<!-- Other fields -->
 
+		<column name="lastClear" type="long" />
 		<column name="online" type="boolean" />
 		<column name="awake" type="boolean" />
 		<column name="activePanelId" type="String" />
