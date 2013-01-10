@@ -1,4 +1,9 @@
-AUI().use('transition').ready(
+AUI().ready(
+	'aui-base',
+	'aui-io',
+	'event-move',
+	'node-base',
+	'node-event-delegate',
 
 	/*
 	This function gets loaded when all the HTML, not including the portlets, is
@@ -6,96 +11,118 @@ AUI().use('transition').ready(
 	*/
 
 	function(A) {
+		var html = A.one('html');
+		var body = A.one('body');
 		var content = A.one('#content');
 		var navContent = A.one('#nav-container');
 		var selected = A.one('.selected ul');
 		var toggle = A.one('#toggle');
 
-		var childMenu = function (e) {
-			A.all('ul').each(
-				function (f) {
-					if (f.hasClass('child-menu') || f.hasClass('grandchild-menu')) {
-						f.toggleClass('aui-helper-hidden');
-					}
-				}
-			);
-		};
-
 		var menuTrigger = function (event) {
 			event.preventDefault();
 			var ul = event.target.ancestor('li').one('ul');
-			var triangle = event.target;
+			var marker = event.target;
 
 			ul.toggleClass('aui-helper-hidden');
 
-			if (ul.hasClass('aui-helper-hidden')) {
-				triangle.set('text', '\u25B6');
+			if (ul.hasClass('aui-helper-hidden') && marker.hasClass('child-show')) {
+				marker.removeClass('child-show');
 			} else {
-				triangle.set('text', '\u25BC');
+				marker.addClass('child-show');
 			}
 		};
 
-		if(toggle) {
-			toggle.on(
-				'click',
+		var toggleAction = function (event) {
+			body.toggleClass('nav-show');
+
+			html.toggleClass('no-scroll');
+
+			navContent.all('ul ul .selected').each(
 				function (e) {
-					navContent.toggleClass('nav-show');
-					if(navContent.hasClass('nav-show')) {
-						childMenu()
-						toggle.transition({
-							easing: 'ease',
-							duration: 0.75, // seconds
-							left: '252px'
-						});
+					e.ancestor('ul').removeClass('aui-helper-hidden');
+					e.ancestor('.selected').one('.has-child-marker').addClass('child-show');
+				}
+			);
+		};
 
-						navContent.transition({
-							easing: 'ease',
-							duration: 0.75, // seconds
-							left: '0px'
-						});
-					} else {
-						toggle.transition({
-							easing: 'ease',
-							duration: 0.75, // seconds
-							left: '0px'
-						});
+		if (body.hasClass('mobile')) {
+			if (body.hasClass('mobile-enabled')) {
+				A.all('ul').each(
+					function (f) {
+						if (f.hasClass('child-menu') || f.hasClass('grandchild-menu') && !f.hasClass('aui-helper-hidden')) {
+							f.addClass('aui-helper-hidden');
+						}
+					}
+				);
 
-						navContent.transition({
-							easing: 'ease',
-							duration: 0.75, // seconds
-							left: '-260px'
-						}); 
-
-						childMenu();
-					}					
-
-					navContent.all('ul ul').each(
+				if(toggle) {
+					toggle.on(
+						'click',
 						function (e) {
-							e.all('li').each (
-								function (f) {
-									if (f.hasClass('selected')) {
-										e.removeClass('aui-helper-hidden');
-										f.ancestor('.selected').one('.triangle').set('text', '\u25BC');
-									}
-								}
-							);
+							toggleAction();
 						}
 					);
 				}
-			);
-		}
 
-		navContent.all('.triangle').each(
-			function (e) {
-				e.on(
-					'click',
-					function (event) {
-						menuTrigger(event);
+				navContent.all('.has-child-marker').each(
+					function (e) {
+						e.on(
+							'click',
+							function (event) {
+								menuTrigger(event);
+							}
+						);
+					}
+				);
+
+
+				body.on(
+					"gesturemovestart", 
+					function (e) {
+						var item = e.currentTarget;
+						var MIN_SWIPE = 20;
+						var target = e.target;
+
+						item.setData("swipeStart", e.pageX);
+
+						item.once(
+							"gesturemoveend",
+							function (e) {
+								var swipeStart = item.getData("swipeStart");
+								var swipeEnd = e.pageX;
+								var isSwipeLeft = (swipeStart-swipeEnd) > MIN_SWIPE;
+								var isSwipeRight = (swipeEnd-swipeStart) > MIN_SWIPE;
+								var navOut = body.hasClass('nav-show');
+								var swipeLeft = isSwipeLeft && navOut;
+								var swipeRight = isSwipeRight && !navOut;
+
+								if (swipeLeft || swipeRight) {
+									toggleAction();
+								}
+							}
+						)					
 					}
 				);
 			}
-		);
 
+			body.all('.desktop-link').on(
+				'click',
+				function (e) {
+					body.toggleClass('mobile-enabled')
+					
+					A.io.request(
+						themeDisplay.getPathMain() + '/portal/session_click',
+						{
+							data: {
+								'mobile-enabled': body.hasClass('mobile-enabled')
+							}
+						}
+					);
+					window.location.reload(true);		
+				}
+			);
+		}
+		
 		//two possibilities for the story highlight, first is make a special class called .story highlight and figure out how to get desired text in that class, second is let it grab a certain background color span and add it it (results in flicker)
 
 		// content.all('.story-highlight').each(

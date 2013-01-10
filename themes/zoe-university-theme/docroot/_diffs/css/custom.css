@@ -135,7 +135,7 @@ h1, h2, h3 {
 		}
 	}
 
-	.triangle {
+	.has-children-marker {
 		display: none;
 	}
 
@@ -542,260 +542,316 @@ h1, h2, h3 {
 
 
 
-/* ---------- Media Queries ---------- */
+/* ---------- Mobile ---------- */
 
-@media screen and (max-width: 799px) {
-	html .lfr-dockbar-pinned {
-		padding-top: 30px;
-	}
+@media screen and (max-width: 999px) {
+	.mobile.mobile-enabled {
+		overflow-x: hidden;
+		position: relative;
 
-	#nav-content, #heading, #content, #footer-content, .page-title {
-		width: 100%;
-	}
-
-	#column-1, #column-2, #column-3, #column-4, #column-5, #column-6 {
-		display: block;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-
-	#wrapper .portlet-navigation .portlet-body .layouts li:hover ul {
-		display: none;
-	}
-
-	#wrapper #navMain .selected .child-menu a {
-		color: $white;
-	}
-
-	#dockbar {
-		font-size: 1em;
-	}
-
-	#heading {
-		height: 0;
-
-		.logo {
-			position: absolute;
-			right: 12px;
+		#content, #footer #footer-content, #heading, #nav-content, .page-title, .site-title {
+			width: 100%;
 		}
 
-		.site-title img {
-			height: 35px;
-			margin-top: 1px;
+		#wrapper .portlet-navigation .portlet-body .layouts li:hover ul, .dockbar {
+			display: none;
 		}
 
-		.page-title {
-			top: 50px;
-		}
-	}
-
-	#toggle {
-		background: url(../images/custom/toggleImage.gif) 50% center no-repeat;
-		cursor: pointer;
-		display: block;
-		height: 44px;
-		position: absolute;
-		width: 50px;
-		z-index: 3;
-	}
-
-	#nav-container {
-		background: $dark-gray;
-		height: 100%;
-		left: -260px;
-		overflow-x: auto;
-		position: fixed;
-		top: 0;
-		width: 260px;
-		z-index: 6;
-		-webkit-overflow-scrolling: touch;
-	}
-
-	#wrapper #navMain .selected .child-menu a:hover {
-		color: $white;
-	}
-
-	#nav-content {
-		padding: 71px 0px 5px 0px;
-
-		form {
-			top: 38px;
-			left: 22px;
+		.site-title {
+			position: fixed;
+			z-index: 4;
 		}
 
-		#navMain .selected:after, #navMain .selected .selected:after {
-			width: 0;
+		#heading {
+			height: 0;
+
+			.logo {
+				position: absolute;
+				right: 12px;
+			}
+
+			.site-title {
+				background: $dark-gray;
+				height: 45px;
+				z-index: 5;
+
+				img {
+					height: 35px;
+					margin-top: 5px;
+				}
+			} 
+
+			.page-title {
+				top: 50px;
+			}
 		}
 
-		#navMain .selected .selected a {
-			background: transparent;
-		}
-
-		#navMain, #navAudience, .child-menu, .selected ul, #navAudience .selected ul {
-			border-width: 0;
+		#toggle {
+			background: url(../images/custom/toggleImage.gif) 50% center no-repeat;
+			cursor: pointer;
 			display: block;
-			margin: 0;
-			padding: 0;
-			position: static;
-			width: auto;
+			height: 44px;
+			position: absolute;
+			width: 50px;
+			z-index: 5;
+		}
 
-			li, .child-menu li {
-				background: transparent;
-				border-width: 0;
-				clear: both;
-				display: block;
-				margin: 0;
-				padding: 0;
-				width: 100%;
+		#nav-container {
+			background: $dark-gray;
+			height: 100%;
+			left: -260px;
+			overflow-x: auto;
+			position: fixed;
+			top: 0;
+			width: 260px;
+			z-index: 6;
+		}
 
-				&:hover, &:hover a {
-					color: $white;
+		&.nav-show {
+			#content, #footer-content, .page-title, .site-title {
+				left: 260px;
+			}
+
+			#nav-container {
+				left: 0;
+			}
+		}
+
+		#wrapper #navMain .selected .child-menu a:hover {
+			color: $white;
+		}
+
+		#navigation {
+			background: transparent;
+
+			#navMain, #navAudience, ul {
+				left: 0 !important;
+				margin: 0 !important;
+				position: relative !important;
+				top: 0 !important;
+				
+				li {
+					background: transparent;
+					margin: 0 !important;
+					padding: 0 !important;
+					width: 100% !important;
+				}
+
+				a {
+					border-width: 0 !important;
+					color: $white !important;
+					display: block !important;
+					font-size: 20px !important;
+					margin: 0 !important;
+					padding: 10px 20px !important;
+					position: relative !important;
 				}
 			}
 
-			a, .selected a {
-				border: solid 1px $hover-gray;
-				border-width: 1px 0 1px 0;
-				color: $white;
+			form {
+				top: 10px;
+				left: 31px;
+			}
+
+			#nav-content {
+				padding-top: 50px;
+
+				li {
+					border-bottom: 1px solid #FFF;
+
+					&:last-child, li {
+						border-width: 0;
+					}
+
+					&.selected > a {
+						font-weight: bold;
+					}
+				}
+				
+				.child-menu a {
+					font-size: 16px !important;
+					padding: 5px 20px 5px 35px !important;
+				}
+
+				.grandchild-menu a {
+					padding-left: 50px !important;
+				}
+			}
+
+			#navMain, #navAudience {
+				& > li:last-child {
+					margin-bottom: 25px !important;
+				}
+			}
+
+			.child-menu, .grandchild-menu {
 				display: block;
-				font-size: 20px;
-				margin: 0;
-				padding: .8em .5em .8em 25px;
+			}
+
+			#mobile-buttons {
+				display: block;
+			}
+
+			.has-child-marker:after {
+				border: 0 solid #FFF;
+				border-left-width: 1px;
+				content: "\25BA";
+				display: block;
+				padding: 5px 10px;
+				position: absolute;
+				right: 5px;
+				top: 4px;
+			}
+
+			.has-grandchild-marker:after {
+				border-width: 1px;
+				font-size: 14px;
+				padding: 2px 8px;
+				right: 10px;
+				top: 3px;
+			}
+
+			.has-child-marker.child-show:after {
+				content: "\25BC";
+			}
+		}
+
+		#content {
+			padding-top: 50px;
+
+			.aui-carousel {
+				margin: auto;
+			}
+
+			.carousel-item {
+				max-width: 100%;
+			}
+
+			.ad-image {
+				max-width: 20%
+			}
+
+			.about p {
+				float: none;
+				width: 100%;
+			}
+
+			.article-highlights {
+				margin: 5px 0;
+			}
+
+			.article-content img {
+				height: auto !important;
+				padding: 0;
+				width: 100% !important;
+			}
+
+			.link-icon-container {
+				width: 333px;
+
+				.link-icon-border {
+					border-right-width: 1px;
+				}
+
+				.link-icon-border:nth-child(3n+3) {
+					border-right-width: 0;
+				}
+
+				.link-icon-border:nth-child(n+4) .link-icon-box {
+					border: 1px solid #FFF;
+					border-width: 1px 0;
+					margin: -10.5px 0;
+					padding: 10px 0;
+				}
+			}
+
+			.news-image-asset .asset-small-image {
 				position: relative;
-				@include background-image(linear-gradient(#696969, $dark-gray));
+			}
+
+			.news-image-asset .asset-summary, .news-image-asset .asset-title {
+				padding: 0;
+			}
+
+			.portlet-site-map {
+				text-align: left;
 			}
 		}
 
-		.grandchild-menu {
-			display: block;
-		}
+		#footer #footer-content {
+			text-align: center;
 
-		#navMain, #navAudience {
-			li:hover a {
-				border: solid 1px $hover-gray;
-				border-width: 1px 0 1px 0;
-			}
-
-			.child-menu a, .child-menu a:hover, .selected ul a, .selected .selected a, li:hover li a, .selected ul .selected a {
-				background: transparent;
-				border-width: 0;
-				color: $white;
-				font-size: 16px;
-				padding: .5em .5em .5em 25px;
-			}
-
-			.child-menu .grandchild-menu a, .child-menu .selected .grandchild-menu a {
-				padding-left: 50px;
-			}
-
-			.selected a, .selected ul .selected a, .selected ul .selected a:hover {
-				@include background-image(linear-gradient($white, #696969));
-			}
-
-			.selected, .selected:hover {
-				background: $line-gray;
-			}
-
-			.selected .selected .selected a, .selected .selected .selected a:hover {
-				background: $white;
-				color: $black;
-			}
-
-			.selected .selected li a, .selected ul .selected li a:hover {
-				background: transparent;
+			.foot-nav {
+				width: 55%;
 			}
 		}
 
-		.triangle {
-			border-left: solid 1px $line-gray;
-			display: block;
-			padding: 10px 20px;
-			position: absolute;
-			right: 0;
-			top: 7px;
+		.portlet-layout .portlet-column-content {
+			padding: 10px;
 		}
 
-		#child-triangle {
-			font-size: 16px;
-			padding: 5px 22px;
-			top: 3px;
+		#desktop-view-link {
+			display: none;
 		}
 	}
+}
 
-	#content {
-		padding-top: 60px;
-
-		.aui-carousel {
-			margin: auto;
-		}
-
-		.carousel-item {
-			max-width: 100%;
-		}
-
-		.ad-image {
-			max-width: 20%
-		}
-
-		.about p {
-			float: none;
+@media screen and (max-width: 599px) {
+	.mobile.mobile-enabled {
+		#nav-content, #heading, #content, #footer-content, .page-title {
 			width: 100%;
 		}
 
-		.article-highlights {
-			margin: 5px 0;
+		#column-1, #column-2, #column-3, #column-4, #column-5, #column-6 {
+			display: block;
+			margin: 0;
+			padding: 0;
+			width: 100%;
 		}
 
-		.link-icon-container {
-			width: 333px;
-
-			.link-icon-border {
-				border-right-width: 1px;
-			}
-
-			.link-icon-border:nth-child(3n+3) {
-				border-right-width: 0;
-			}
-
-			.link-icon-border:nth-child(n+4) .link-icon-box {
-				border: 1px solid #FFF;
-				border-width: 1px 0;
-				margin: -10.5px 0;
-				padding: 10px 0;
-			}
+		.article-sidebar, .article-body {
+			border-bottom: 1px solid $line-gray;
+			border-right-width: 0;
+			float: none;
+			margin-bottom: 10px;
+			width: 100%;
 		}
 
-		.news-image-asset .asset-small-image {
-			position: relative;
-		}
-
-		.news-image-asset .asset-summary, .news-image-asset .asset-title {
+		.article-summary, .article-content {
 			padding: 0;
 		}
 
-		.portlet-site-map {
-			text-align: left;
+		.asset-small-image, .featured img, .about img {
+			height: auto !important;
+			width: 100% !important;
+		}
+		
+		#footer {
+			.info, .contact, .foot-nav {
+				margin: 10px 0;
+				text-align: center;
+				top: 0;
+				width: 100% !important;
+			}
 		}
 	}
+}
 
-	.portlet-layout .portlet-column-content {
-		padding: 10px;
-		text-align: center;
-	}
+.no-scroll {
+	position: fixed;
+}
 
-	#footer {
-		.info, .contact, .foot-nav {
-			margin: 10px 0;
-			text-align: center;
-			top: 0;
-			width: 100%;
-		}
+#mobile-buttons {
+	display: none;
+}
 
-		#footer-content {
-			width: 100%;
-		}
-	}
+#desktop-view-link {
+	color: $yellow;
+	display: block;
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 5px;
+	text-align: center;
 }
 
 /* ---------- Extras ---------- */
@@ -806,4 +862,26 @@ h1, h2, h3 {
 
 #dockbar {
 	@include background-image(linear-gradient($hover-gray, $line-gray));
+}
+
+@media screen and (max-width: 999px) {
+	.mobile.mobile-enabled {
+		.site-title {
+			@include box-shadow(#383837 0 1px 8px);
+		}
+		
+		#nav-container {
+			@include box-shadow(#383837 1px 45px 8px);
+			-webkit-overflow-scrolling: touch;
+
+			.has-grandchild-marker:after {
+				@include border-radius(12px);
+			}
+		}
+
+		#content, #footer-content, #nav-container, .page-title, .site-title, .nav-show #content, .nav-show #footer-content, .nav-show #nav-container, .nav-show .page-title, .nav-show .site-title {
+			@include transition-duration(1s);
+			@include transition-property(left);
+		}
+	}	
 }

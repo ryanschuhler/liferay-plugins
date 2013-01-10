@@ -1,39 +1,41 @@
 {
 	"assets": [
 		{
-			"name": "Congress Awards Gold To Palmer.xml",
+			"abstractSummary": "Zoe golf icon Arnold Palmer received the Congressional Gold Medal at a special ceremony at the U.S. Capitol on Sept. 12. The medal is the highest civilian award in the U.S., along with the Presidential Medal of Freedom, which Palmer received in 2004.",
+			"name": "Congress Awards Gold to Palmer.xml",
+			"smallImage": "1.gif",
 			"tags": [
 				"Zoe News"
 			]
 		},
 		{
+			"abstractSummary": "U.S. News and World Report’s 2013 Best Colleges guide ranked Zoe 1st among national universities with the best undergraduate teaching.  The list highlights 'schools where the faculty has an unusually strong commitment to undergraduate teaching.'",
 			"name": "U.S. News Ranks ZOE 13th in Teaching.xml",
+			"smallImage": "2.gif",
 			"tags": [
 				"Zoe News"
 			]
 		},
 		{
-			"name": "U.S. News Ranks ZOE 13th in Teaching.xml",
-			"tags": [
-				"Zoe News"
-			]
-		},
-		{
+			"abstractSummary": "Refugees, ballad singers, classic car collectors and victims of forced sterilization —Wake Forest third-year documentary film students have spent the last year working on movies that show what life is like from these different perspectives.",
 			"name": "Telling Stories, Building Bridges.xml",
+			"smallImage": "3.gif",
 			"tags": [
 				"Zoe News"
 			]
 		},
 		{
+			"abstractSummary": "Matt Browning, Ed.D., associate vice president for internationalization, urges a responsible revolution, challenging students to choose action over apathy, people over possessions, and grace over judgment because everyone matters.",
 			"name": "A Responsible Revolution.xml",
 			"tags": [
-				"Academics"
+				"Academic News"
 			]
 		},
 		{
+			"abstractSummary": "Rethinking Race in University Admissions: The Supreme Court Takes Up Fisher v. Texas",
 			"name": "Constitution Day 2012.xml",
 			"tags": [
-				"Academics"
+				"Academic News"
 			]
 		},
 		{
@@ -58,6 +60,41 @@
 			"name": "Last day to drop courses.xml",
 			"tags": [
 				"Academics Upcoming"
+			]
+		},
+		{
+			"name": "Ad 1.xml",
+			"tags": [
+				"Other"
+			]
+		},
+		{
+			"name": "Ad 2.xml",
+			"tags": [
+				"Other"
+			]
+		},{
+			"name": "Ad 3.xml",
+			"tags": [
+				"Other"
+			]
+		},
+		{
+			"name": "Ad 4.xml",
+			"tags": [
+				"Other"
+			]
+		},
+		{
+			"name": "Byrum Welcome.xml",
+			"tags": [
+				"Other"
+			]
+		},
+		{
+			"name": "Student Icon Box.xml",
+			"tags": [
+				"Other"
 			]
 		}
 	]

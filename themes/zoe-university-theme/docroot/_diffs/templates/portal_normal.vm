@@ -2,14 +2,14 @@
 
 #parse ($init)
 
-<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+<html class="#language("lang.dir") $html_class" dir="#language("lang.dir")" lang="$w3c_language_id">
 
 <head>
 	<title>$the_title - $company_name</title>
 
 	$theme.include($top_head_include)
 
-	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+	$meta_data_mobile
 </head>
 
 <body class="$css_class">
@@ -24,9 +24,11 @@ $theme.include($body_top_include)
 	<a href="#main-content" id="skip-to-content">#language("skip-to-content")</a>
 
 	<header id="banner" role="banner">
-		<a id="toggle"><span>Toggle Navigation</span></a>
 		<div id="heading">
 			<h1 class="site-title">
+				#if ($is_mobile) 
+					<a id="toggle"><span>Toggle Navigation</span></a>
+				#end
 				<a class="$logo_css_class" href="$site_default_url" title="#language("go-to") $site_name">
 					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
 				</a>
@@ -131,6 +133,10 @@ $theme.include($body_top_include)
 </div>
 
 $theme.include($body_bottom_include)
+
+#if ($is_mobile)
+	<a id="desktop-view-link" class="desktop-link">Go To Mobile View</a>
+#end
 
 </body>
 
